@@ -1,0 +1,43 @@
+﻿Build started 4/16/2017 10:13:09 PM.
+     1>Project "D:\NguyenVanSon\SmartParkingSystem\SmartParkingSystem\SmartParkingSystem.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\SmartParkingSystem.unsuccessfulbuild".
+       GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       ClCompile:
+         All outputs are up-to-date.
+         D:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\SmartParkingSystem.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.0\MySql.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Configuration.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt BUS_HeThong.cpp DA_HeThong.cpp frmDatabase.cpp frmHeThong.cpp frmLogin.cpp frmMain.cpp HeThong.cpp SmartParkingSystem.cpp /clr:nostdlib 
+         BUS_HeThong.cpp
+         DA_HeThong.cpp
+         frmDatabase.cpp
+     1>d:\nguyenvanson\smartparkingsystem\smartparkingsystem\frmHeThong.h(725): error C2078: too many initializers
+     1>d:\nguyenvanson\smartparkingsystem\smartparkingsystem\frmHeThong.h(725): error C2440: 'initializing' : cannot convert from 'System::String ^' to 'SmartParkingSystem::HeThong ^'
+                 No user-defined-conversion operator available, or
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+         frmHeThong.cpp
+     1>d:\nguyenvanson\smartparkingsystem\smartparkingsystem\frmHeThong.h(725): error C2078: too many initializers
+     1>d:\nguyenvanson\smartparkingsystem\smartparkingsystem\frmHeThong.h(725): error C2440: 'initializing' : cannot convert from 'System::String ^' to 'SmartParkingSystem::HeThong ^'
+                 No user-defined-conversion operator available, or
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+         frmLogin.cpp
+     1>d:\nguyenvanson\smartparkingsystem\smartparkingsystem\frmHeThong.h(725): error C2078: too many initializers
+     1>d:\nguyenvanson\smartparkingsystem\smartparkingsystem\frmHeThong.h(725): error C2440: 'initializing' : cannot convert from 'System::String ^' to 'SmartParkingSystem::HeThong ^'
+                 No user-defined-conversion operator available, or
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+         frmMain.cpp
+     1>d:\nguyenvanson\smartparkingsystem\smartparkingsystem\frmHeThong.h(725): error C2078: too many initializers
+     1>d:\nguyenvanson\smartparkingsystem\smartparkingsystem\frmHeThong.h(725): error C2440: 'initializing' : cannot convert from 'System::String ^' to 'SmartParkingSystem::HeThong ^'
+                 No user-defined-conversion operator available, or
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+         HeThong.cpp
+         SmartParkingSystem.cpp
+     1>d:\nguyenvanson\smartparkingsystem\smartparkingsystem\frmHeThong.h(725): error C2078: too many initializers
+     1>d:\nguyenvanson\smartparkingsystem\smartparkingsystem\frmHeThong.h(725): error C2440: 'initializing' : cannot convert from 'System::String ^' to 'SmartParkingSystem::HeThong ^'
+                 No user-defined-conversion operator available, or
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+         Generating Code...
+     1>Done Building Project "D:\NguyenVanSon\SmartParkingSystem\SmartParkingSystem\SmartParkingSystem.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.50
