@@ -306,6 +306,10 @@ namespace SmartParkingSystem {
 					}
 				}
 			}
+			catch (Exception ^e)
+				{
+					MessageBox::Show(e->Message);
+				}
 			finally
 			{
 				if (dr != nullptr)

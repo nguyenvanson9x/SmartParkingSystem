@@ -46,6 +46,7 @@ DataTable ^ DBUtils::getDataTable(String ^ sql)
 
 void DBUtils::ExcuteNonQuery(String ^ sql)
 {
+	//throw gcnew Exception();
 	OpenConnection();
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	cmd->ExecuteNonQuery();
