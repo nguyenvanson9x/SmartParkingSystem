@@ -21,7 +21,8 @@ namespace SmartParkingSystem {
 		{
 			InitializeComponent();
 			b = gcnew BUS_HeThong();
-			Enable_Button(true, false);
+			//Enable_Button(true, false);
+			dgvAccount->ClearSelection();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -722,7 +723,7 @@ namespace SmartParkingSystem {
 				 HeThong ^ht = gcnew HeThong(0, username, password, fullname, type);
 				 b->Them(ht);
 				 loadData();
-				 Enable_Button(true, false);
+				 //Enable_Button(true, false);
 			 }
 	private: System::Void btnCapnhat_Click(System::Object^  sender, System::EventArgs^  e) {
 				 int id, row;
@@ -738,7 +739,7 @@ namespace SmartParkingSystem {
 				 b->CapNhat(ht);
 				 loadData();
 				 setNull();
-				 Enable_Button(true, false);
+				 //Enable_Button(true, false);
 			 }
 	private: System::Void btnXoa_Click(System::Object^  sender, System::EventArgs^  e) {
 				 int id, row;
@@ -748,11 +749,12 @@ namespace SmartParkingSystem {
 				 b->Xoa(id);
 				 loadData();
 				 setNull();
-				 Enable_Button(true, false);
+				 //Enable_Button(true, false);
 			 }
 	private: System::Void btnHuy_Click(System::Object^  sender, System::EventArgs^  e) {
 				 setNull();
-				 Enable_Button(true, false);
+				 //Enable_Button(true, false);
+				 MessageBox::Show(cbChucvu->SelectedIndex + "");
 			 }
 	private: System::Void btnTimkiem_Click(System::Object^  sender, System::EventArgs^  e) {
 				 String ^search = txtSearch->Text;
@@ -781,7 +783,6 @@ namespace SmartParkingSystem {
 				 cbChucvu->Text = type;
 				 
 				 //Enable_Button(false, true);
-				 Enable_Button(true, false);
 			 }
 	private: System::Void frmHeThong_Load(System::Object^  sender, System::EventArgs^  e) {
 
