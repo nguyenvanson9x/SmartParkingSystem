@@ -11,6 +11,8 @@ namespace SmartParkingSystem {
 		void updateHT(HeThong^ user);
 		void deleteHT(int id);
 		void Search(String^ sqlSearch, DataGridView^ dgv);
+		void showMoney(String^ sqlMoney, String^ money, TextBox^ txtGiahientai);
+		void updateTicket(String^ loaixe, int money, String^ type);
 	};
 
 }

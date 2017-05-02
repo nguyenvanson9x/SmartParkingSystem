@@ -72,3 +72,27 @@ void DA_HeThong::Search(String^ sqlSearch, DataGridView^ dgv)
 	}
 	
 }
+
+void DA_HeThong::showMoney(String^ sqlMoney, String^ money, TextBox^ txtGiahientai)
+{
+	MySqlDataReader^ dr;
+	try {
+	dr = DBUtils::getDataReader(sqlMoney);
+	if (dr != nullptr)
+		while (dr->Read())
+			txtGiahientai->Text = dr[money]->ToString();
+	}
+	catch (Exception^ e) {
+		MessageBox::Show(e->Message);
+	}
+	finally {
+		dr->Close();
+	}
+
+}
+
+void DA_HeThong::updateTicket(String^ loaixe, int money, String^ type)
+{
+	String^ sqlUpdateTicket = "update loaixe set " + type + "='" + money + "' where Loaixe='" + loaixe + "'";
+	DBUtils::ExcuteNonQuery(sqlUpdateTicket);
+}

@@ -85,6 +85,9 @@
     <ClCompile Include="BUS_HeThong.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Convert_Hethong.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -142,6 +145,9 @@
       <Filter>Header Files\HeThong</Filter>
     </ClInclude>
     <ClInclude Include="HeThong.h">
+      <Filter>Header Files\HeThong</Filter>
+    </ClInclude>
+    <ClInclude Include="Convert_Hethong.h">
       <Filter>Header Files\HeThong</Filter>
     </ClInclude>
   </ItemGroup>

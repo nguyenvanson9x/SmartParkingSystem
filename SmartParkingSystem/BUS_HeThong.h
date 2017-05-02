@@ -3,6 +3,7 @@
 #include "HeThong.h"
 namespace SmartParkingSystem {
 	using namespace System::Windows::Forms;
+	using namespace System;
 	public ref class BUS_HeThong
 	{
 	private:
@@ -14,6 +15,8 @@ namespace SmartParkingSystem {
 		void CapNhat(HeThong^);
 		void Xoa(int);
 		void Search(String^, DataGridView^);
+		void showTicket(String^ Loaixe, String^ Loaive, TextBox^ txtGiahientai);
+		void Thaydoi(ComboBox^ cbLoaixe, ComboBox^ cbLoaive, TextBox^ txtGiahientai, TextBox^ txtGiadieuchinh);
 		//void ShowTicket(String^, String^, TextBox^);
 	};
 }

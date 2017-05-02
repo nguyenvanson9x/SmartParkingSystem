@@ -100,6 +100,7 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="BUS_HeThong.cpp" />
     <ClCompile Include="connect.cpp" />
+    <ClCompile Include="Convert_Hethong.cpp" />
     <ClCompile Include="DA_HeThong.cpp" />
     <ClCompile Include="DBMySQLUtils.cpp" />
     <ClCompile Include="DBUtils.cpp" />
@@ -124,6 +125,7 @@
     <ClInclude Include="app_config.h" />
     <ClInclude Include="BUS_HeThong.h" />
     <ClInclude Include="connect.h" />
+    <ClInclude Include="Convert_Hethong.h" />
     <ClInclude Include="DA_HeThong.h" />
     <ClInclude Include="DBMySQLUtils.h" />
     <ClInclude Include="DBUtils.h" />
