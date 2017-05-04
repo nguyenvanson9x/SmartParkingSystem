@@ -36,10 +36,13 @@ namespace SmartParkingSystem {
 		}
 	private: System::Windows::Forms::Panel^  pnTitle;
 	private: System::Windows::Forms::Label^  lbTitle;
+	private: System::Windows::Forms::TableLayoutPanel^  tbContainer;
+
+
 	protected:
 
 
-	private: System::Windows::Forms::TableLayoutPanel^  tableLayoutPanel1;
+
 	protected:
 
 	private:
@@ -57,13 +60,13 @@ namespace SmartParkingSystem {
 		{
 			this->pnTitle = (gcnew System::Windows::Forms::Panel());
 			this->lbTitle = (gcnew System::Windows::Forms::Label());
-			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->tbContainer = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->pnTitle->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// pnTitle
 			// 
-			this->pnTitle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->pnTitle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->pnTitle->Controls->Add(this->lbTitle);
 			this->pnTitle->Dock = System::Windows::Forms::DockStyle::Top;
@@ -76,7 +79,7 @@ namespace SmartParkingSystem {
 			// lbTitle
 			// 
 			this->lbTitle->AutoSize = true;
-			this->lbTitle->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbTitle->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbTitle->ForeColor = System::Drawing::Color::White;
 			this->lbTitle->Location = System::Drawing::Point(12, 9);
@@ -85,25 +88,24 @@ namespace SmartParkingSystem {
 			this->lbTitle->TabIndex = 0;
 			this->lbTitle->Text = L"Thống kê";
 			// 
-			// tableLayoutPanel1
+			// tbContainer
 			// 
-			this->tableLayoutPanel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
+			this->tbContainer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->tableLayoutPanel1->BackColor = System::Drawing::Color::White;
-			this->tableLayoutPanel1->ColumnCount = 2;
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 50);
-			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(0);
-			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
-			this->tableLayoutPanel1->RowCount = 2;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(1083, 631);
-			this->tableLayoutPanel1->TabIndex = 1;
+			this->tbContainer->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(230)), static_cast<System::Int32>(static_cast<System::Byte>(230)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(230)));
+			this->tbContainer->ColumnCount = 1;
+			this->tbContainer->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tbContainer->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tbContainer->Location = System::Drawing::Point(0, 50);
+			this->tbContainer->Margin = System::Windows::Forms::Padding(0);
+			this->tbContainer->Name = L"tbContainer";
+			this->tbContainer->RowCount = 1;
+			this->tbContainer->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tbContainer->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tbContainer->Size = System::Drawing::Size(1083, 631);
+			this->tbContainer->TabIndex = 1;
 			// 
 			// frmThongKe
 			// 
@@ -111,7 +113,7 @@ namespace SmartParkingSystem {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1083, 680);
-			this->Controls->Add(this->tableLayoutPanel1);
+			this->Controls->Add(this->tbContainer);
 			this->Controls->Add(this->pnTitle);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"frmThongKe";
