@@ -22,6 +22,7 @@ namespace SmartParkingSystem {
 		static MySqlDataReader^ getDataReader(String^ sql); // Lấy dữ liệu từ csdl
 		static void loadData(DataGridView^, String^); // Đưa dữ liệu từ csdl vào bảng DataGridView
 		static void loadData_To_Collection(TextBox^, String^, String^); // Gợi ý khi nhập cho Textbox
+		static void loadDataSort(DataGridView^, String^);
 	};
 }
 

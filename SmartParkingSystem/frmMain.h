@@ -602,7 +602,7 @@ namespace SmartParkingSystem {
 		mouseDown = false;
 	}
 	private: System::Void frmMain_Load(System::Object^  sender, System::EventArgs^  e) {
-		btnNhanXe_Click(sender, e);
+		//btnNhanXe_Click(sender, e);
 	}
 	private: System::Void btnGioiThieu_Click(System::Object^  sender, System::EventArgs^  e) {
 	}

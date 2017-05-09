@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+﻿#include "StdAfx.h"
 #include "DBUtils.h"
 
 using namespace SmartParkingSystem;
@@ -52,20 +52,43 @@ void DBUtils::ExcuteNonQuery(String ^ sql)
 	cmd->ExecuteNonQuery();
 	disConnect();
 }
-
 MySqlDataReader^ DBUtils::getDataReader(String ^ sql)
 {
 	OpenConnection();
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dr = cmd->ExecuteReader();
 	return dr;
+	
 }
-
 void DBUtils::loadData(DataGridView ^dgv, String ^sql)
 {
 	DataView ^dv = gcnew DataView(DBUtils::getDataTable(sql));
 	dgv->DataSource = dv;
 }
+void DBUtils::loadDataSort(DataGridView^ dgv, String^ sql){
+	OpenConnection();
+	MySqlCommand^ da = gcnew MySqlCommand(sql, conn);
+	MySqlDataAdapter^ sda;
+	try
+	{
+		sda=gcnew MySqlDataAdapter();
+		sda->SelectCommand=da;
+		DataTable^ dt = gcnew DataTable();
+		sda->Fill(dt);
+		BindingSource^ bSource=gcnew BindingSource();
+		
+		bSource->DataSource=dt;
+		dgv->DataSource=bSource;
+		sda->Update(dt);
+	}
+	catch (Exception^ e)
+	{
+		MessageBox::Show(e->Message);
+	}finally{
+		disConnect();
+	}
+}
+
 
 void DBUtils::loadData_To_Collection(TextBox ^txt, String ^sql, String ^type)
 {

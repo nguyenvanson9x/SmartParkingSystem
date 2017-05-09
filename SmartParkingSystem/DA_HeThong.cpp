@@ -1,4 +1,4 @@
-﻿#include "StdAfx.h"
+﻿#include "stdafx.h"
 #include "DA_HeThong.h"
 
 using namespace SmartParkingSystem;

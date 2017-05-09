@@ -141,6 +141,7 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->txtServer->Name = L"txtServer";
 	this->txtServer->Size = System::Drawing::Size(220, 30);
 	this->txtServer->TabIndex = 1;
+	this->txtServer->Text="localhost";
 	// 
 	// txtPassword
 	// 
@@ -168,6 +169,7 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->txtUsername->Name = L"txtUsername";
 	this->txtUsername->Size = System::Drawing::Size(220, 30);
 	this->txtUsername->TabIndex = 4;
+	this->txtUsername ->Text="root";
 	// 
 	// txtDatabase
 	// 
@@ -181,6 +183,7 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->txtDatabase->Name = L"txtDatabase";
 	this->txtDatabase->Size = System::Drawing::Size(220, 30);
 	this->txtDatabase->TabIndex = 3;
+	this->txtDatabase->Text="sps";
 	// 
 	// txtPort
 	// 
@@ -194,6 +197,7 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->txtPort->Name = L"txtPort";
 	this->txtPort->Size = System::Drawing::Size(220, 30);
 	this->txtPort->TabIndex = 2;
+	this->txtPort->Text="3306";
 	// 
 	// btnLogin
 	// 

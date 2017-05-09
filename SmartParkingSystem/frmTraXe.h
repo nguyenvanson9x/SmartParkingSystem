@@ -1,5 +1,8 @@
 ﻿#pragma once
-
+#include "frmConfigDatabase.h"
+#include "DBUtils.h"
+#include "BUS_Traxe.h"
+#include "Convert_Hethong.h"
 namespace SmartParkingSystem {
 
 	using namespace System;
@@ -18,6 +21,8 @@ namespace SmartParkingSystem {
 		frmTraXe(void)
 		{
 			InitializeComponent();
+			b = gcnew BUS_Traxe();
+			dgvCar->ClearSelection();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -69,6 +74,9 @@ namespace SmartParkingSystem {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
+		BUS_Traxe^ b;
+		int so_ve;
+		String ^bks,^loai_ve,^loai_xe,^thoi_gian_vao,^trang_thai,^id,^thoi_gian_ra,^gia_ve;
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -112,13 +120,13 @@ namespace SmartParkingSystem {
 			this->pnTitle->SuspendLayout();
 			this->tbContainer->SuspendLayout();
 			this->pnCar->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCar))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dgvCar))->BeginInit();
 			this->pnCar_Info->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// pnTitle
 			// 
-			this->pnTitle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->pnTitle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->pnTitle->Controls->Add(this->lbTitle);
 			this->pnTitle->Dock = System::Windows::Forms::DockStyle::Top;
@@ -131,7 +139,7 @@ namespace SmartParkingSystem {
 			// lbTitle
 			// 
 			this->lbTitle->AutoSize = true;
-			this->lbTitle->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbTitle->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbTitle->ForeColor = System::Drawing::Color::White;
 			this->lbTitle->Location = System::Drawing::Point(12, 9);
@@ -142,10 +150,10 @@ namespace SmartParkingSystem {
 			// 
 			// tbContainer
 			// 
-			this->tbContainer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
+			this->tbContainer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->tbContainer->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(230)), static_cast<System::Int32>(static_cast<System::Byte>(230)),
+			this->tbContainer->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(230)), static_cast<System::Int32>(static_cast<System::Byte>(230)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(230)));
 			this->tbContainer->ColumnCount = 2;
 			this->tbContainer->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 70)));
@@ -179,8 +187,8 @@ namespace SmartParkingSystem {
 			// 
 			// dgvCar
 			// 
-			this->dgvCar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
+			this->dgvCar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->dgvCar->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dgvCar->BackgroundColor = System::Drawing::Color::White;
@@ -191,12 +199,15 @@ namespace SmartParkingSystem {
 			this->dgvCar->RowHeadersVisible = false;
 			this->dgvCar->Size = System::Drawing::Size(743, 465);
 			this->dgvCar->TabIndex = 4;
+			this->dgvCar->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &frmTraXe::dgvCar_CellContentClick);
+			this->dgvCar->DataBindingComplete += gcnew System::Windows::Forms::DataGridViewBindingCompleteEventHandler(this, &frmTraXe::dgvCar_DataBindingComplete);
+			this->dgvCar->RowEnter += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &frmTraXe::dgvCar_RowEnter);
 			// 
 			// lbSum
 			// 
 			this->lbSum->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->lbSum->AutoSize = true;
-			this->lbSum->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbSum->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbSum->Location = System::Drawing::Point(0, 587);
 			this->lbSum->Margin = System::Windows::Forms::Padding(0);
@@ -213,10 +224,10 @@ namespace SmartParkingSystem {
 			this->btnTrolai->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnTrolai->FlatAppearance->BorderSize = 0;
 			this->btnTrolai->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTrolai->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btnTrolai->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnTrolai->ForeColor = System::Drawing::Color::White;
-			this->btnTrolai->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnTrolai.Image")));
+			this->btnTrolai->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnTrolai.Image")));
 			this->btnTrolai->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnTrolai->Location = System::Drawing::Point(636, 60);
 			this->btnTrolai->Name = L"btnTrolai";
@@ -229,10 +240,10 @@ namespace SmartParkingSystem {
 			// 
 			// txtSearch
 			// 
-			this->txtSearch->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
+			this->txtSearch->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtSearch->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtSearch->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtSearch->Location = System::Drawing::Point(179, 67);
 			this->txtSearch->Name = L"txtSearch";
@@ -247,10 +258,10 @@ namespace SmartParkingSystem {
 			this->btnTimkiem->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnTimkiem->FlatAppearance->BorderSize = 0;
 			this->btnTimkiem->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTimkiem->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btnTimkiem->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnTimkiem->ForeColor = System::Drawing::Color::White;
-			this->btnTimkiem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnTimkiem.Image")));
+			this->btnTimkiem->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnTimkiem.Image")));
 			this->btnTimkiem->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnTimkiem->Location = System::Drawing::Point(505, 62);
 			this->btnTimkiem->Name = L"btnTimkiem";
@@ -263,10 +274,10 @@ namespace SmartParkingSystem {
 			// 
 			// lbCar
 			// 
-			this->lbCar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(248)), static_cast<System::Int32>(static_cast<System::Byte>(248)),
+			this->lbCar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(248)), static_cast<System::Int32>(static_cast<System::Byte>(248)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(248)));
 			this->lbCar->Dock = System::Windows::Forms::DockStyle::Top;
-			this->lbCar->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbCar->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbCar->Location = System::Drawing::Point(0, 0);
 			this->lbCar->Margin = System::Windows::Forms::Padding(0);
@@ -307,9 +318,9 @@ namespace SmartParkingSystem {
 			// 
 			// txtLoaive
 			// 
-			this->txtLoaive->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->txtLoaive->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtLoaive->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtLoaive->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtLoaive->Location = System::Drawing::Point(123, 317);
 			this->txtLoaive->Name = L"txtLoaive";
@@ -318,10 +329,10 @@ namespace SmartParkingSystem {
 			// 
 			// txtThoigianra
 			// 
-			this->txtThoigianra->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->txtThoigianra->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->txtThoigianra->CustomFormat = L"dd/MM/yyyy";
-			this->txtThoigianra->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtThoigianra->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtThoigianra->Format = System::Windows::Forms::DateTimePickerFormat::Short;
 			this->txtThoigianra->Location = System::Drawing::Point(123, 448);
@@ -331,9 +342,9 @@ namespace SmartParkingSystem {
 			// 
 			// txtTongtien
 			// 
-			this->txtTongtien->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->txtTongtien->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtTongtien->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtTongtien->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtTongtien->Location = System::Drawing::Point(123, 505);
 			this->txtTongtien->Name = L"txtTongtien";
@@ -342,10 +353,10 @@ namespace SmartParkingSystem {
 			// 
 			// lbTongtien
 			// 
-			this->lbTongtien->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->lbTongtien->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbTongtien->AutoSize = true;
-			this->lbTongtien->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbTongtien->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbTongtien->Location = System::Drawing::Point(20, 513);
 			this->lbTongtien->Name = L"lbTongtien";
@@ -355,10 +366,10 @@ namespace SmartParkingSystem {
 			// 
 			// lbThoigianra
 			// 
-			this->lbThoigianra->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->lbThoigianra->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbThoigianra->AutoSize = true;
-			this->lbThoigianra->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbThoigianra->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbThoigianra->Location = System::Drawing::Point(20, 450);
 			this->lbThoigianra->Name = L"lbThoigianra";
@@ -368,9 +379,9 @@ namespace SmartParkingSystem {
 			// 
 			// txtVitri
 			// 
-			this->txtVitri->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->txtVitri->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtVitri->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtVitri->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtVitri->Location = System::Drawing::Point(123, 258);
 			this->txtVitri->Name = L"txtVitri";
@@ -379,9 +390,9 @@ namespace SmartParkingSystem {
 			// 
 			// txtLoaixe
 			// 
-			this->txtLoaixe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->txtLoaixe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtLoaixe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtLoaixe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtLoaixe->Location = System::Drawing::Point(123, 132);
 			this->txtLoaixe->Name = L"txtLoaixe";
@@ -390,9 +401,10 @@ namespace SmartParkingSystem {
 			// 
 			// txtThoigianvao
 			// 
-			this->txtThoigianvao->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->txtThoigianvao->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtThoigianvao->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtThoigianvao->Enabled = false;
+			this->txtThoigianvao->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtThoigianvao->Location = System::Drawing::Point(123, 385);
 			this->txtThoigianvao->Name = L"txtThoigianvao";
@@ -401,9 +413,9 @@ namespace SmartParkingSystem {
 			// 
 			// txtBienso
 			// 
-			this->txtBienso->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->txtBienso->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtBienso->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtBienso->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtBienso->Location = System::Drawing::Point(123, 195);
 			this->txtBienso->Name = L"txtBienso";
@@ -412,9 +424,9 @@ namespace SmartParkingSystem {
 			// 
 			// txtSove
 			// 
-			this->txtSove->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->txtSove->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtSove->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtSove->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtSove->Location = System::Drawing::Point(123, 69);
 			this->txtSove->Name = L"txtSove";
@@ -423,10 +435,10 @@ namespace SmartParkingSystem {
 			// 
 			// lbThoigianvao
 			// 
-			this->lbThoigianvao->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->lbThoigianvao->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbThoigianvao->AutoSize = true;
-			this->lbThoigianvao->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbThoigianvao->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbThoigianvao->Location = System::Drawing::Point(20, 387);
 			this->lbThoigianvao->Name = L"lbThoigianvao";
@@ -436,10 +448,10 @@ namespace SmartParkingSystem {
 			// 
 			// lbLoaive
 			// 
-			this->lbLoaive->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->lbLoaive->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbLoaive->AutoSize = true;
-			this->lbLoaive->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbLoaive->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbLoaive->Location = System::Drawing::Point(20, 324);
 			this->lbLoaive->Name = L"lbLoaive";
@@ -449,10 +461,10 @@ namespace SmartParkingSystem {
 			// 
 			// lbVitri
 			// 
-			this->lbVitri->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->lbVitri->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbVitri->AutoSize = true;
-			this->lbVitri->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbVitri->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbVitri->Location = System::Drawing::Point(20, 261);
 			this->lbVitri->Name = L"lbVitri";
@@ -462,10 +474,10 @@ namespace SmartParkingSystem {
 			// 
 			// lbBienso
 			// 
-			this->lbBienso->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->lbBienso->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbBienso->AutoSize = true;
-			this->lbBienso->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbBienso->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbBienso->Location = System::Drawing::Point(20, 198);
 			this->lbBienso->Name = L"lbBienso";
@@ -475,10 +487,10 @@ namespace SmartParkingSystem {
 			// 
 			// lbLoaixe
 			// 
-			this->lbLoaixe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->lbLoaixe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbLoaixe->AutoSize = true;
-			this->lbLoaixe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbLoaixe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbLoaixe->Location = System::Drawing::Point(20, 135);
 			this->lbLoaixe->Name = L"lbLoaixe";
@@ -488,10 +500,10 @@ namespace SmartParkingSystem {
 			// 
 			// lbSove
 			// 
-			this->lbSove->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->lbSove->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbSove->AutoSize = true;
-			this->lbSove->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbSove->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbSove->Location = System::Drawing::Point(20, 72);
 			this->lbSove->Name = L"lbSove";
@@ -507,10 +519,10 @@ namespace SmartParkingSystem {
 			this->btnTraxe->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnTraxe->FlatAppearance->BorderSize = 0;
 			this->btnTraxe->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTraxe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btnTraxe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnTraxe->ForeColor = System::Drawing::Color::White;
-			this->btnTraxe->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnTraxe.Image")));
+			this->btnTraxe->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnTraxe.Image")));
 			this->btnTraxe->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnTraxe->Location = System::Drawing::Point(24, 550);
 			this->btnTraxe->Name = L"btnTraxe";
@@ -523,10 +535,10 @@ namespace SmartParkingSystem {
 			// 
 			// lbCar_Info
 			// 
-			this->lbCar_Info->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(248)), static_cast<System::Int32>(static_cast<System::Byte>(248)),
+			this->lbCar_Info->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(248)), static_cast<System::Int32>(static_cast<System::Byte>(248)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(248)));
 			this->lbCar_Info->Dock = System::Windows::Forms::DockStyle::Top;
-			this->lbCar_Info->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbCar_Info->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbCar_Info->Location = System::Drawing::Point(0, 0);
 			this->lbCar_Info->Margin = System::Windows::Forms::Padding(0);
@@ -544,10 +556,10 @@ namespace SmartParkingSystem {
 			this->btnHuy->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnHuy->FlatAppearance->BorderSize = 0;
 			this->btnHuy->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnHuy->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btnHuy->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnHuy->ForeColor = System::Drawing::Color::White;
-			this->btnHuy->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnHuy.Image")));
+			this->btnHuy->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnHuy.Image")));
 			this->btnHuy->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnHuy->Location = System::Drawing::Point(123, 550);
 			this->btnHuy->Name = L"btnHuy";
@@ -575,7 +587,7 @@ namespace SmartParkingSystem {
 			this->tbContainer->ResumeLayout(false);
 			this->pnCar->ResumeLayout(false);
 			this->pnCar->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCar))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dgvCar))->EndInit();
 			this->pnCar_Info->ResumeLayout(false);
 			this->pnCar_Info->PerformLayout();
 			this->ResumeLayout(false);
@@ -583,14 +595,70 @@ namespace SmartParkingSystem {
 		}
 #pragma endregion
 	private: System::Void btnTimkiem_Click(System::Object^  sender, System::EventArgs^  e) {
+			String^ search=txtSearch->Text;
+			b->Search(search,dgvCar);
+			txtSearch->Clear();
 	}
 	private: System::Void btnTrolai_Click(System::Object^  sender, System::EventArgs^  e) {
+			loadData();
+			txtSearch->Clear();
 	}
 	private: System::Void btnTraxe_Click(System::Object^  sender, System::EventArgs^  e) {
+			id=txtSove->Text;
+			bks=txtBienso->Text;
+			loai_ve=txtLoaive->Text;
+			loai_xe=txtLoaixe->Text;
+			thoi_gian_ra=txtThoigianra->Text;
+			thoi_gian_vao=txtThoigianvao->Text;
+			gia_ve=txtTongtien->Text;
+			so_ve=Int32::Parse(id);
+			Xe^ xe=gcnew Xe(so_ve,bks,thoi_gian_vao,thoi_gian_ra,gia_ve,loai_ve,loai_xe);
+			b->Traxe(xe,txtTongtien->Text);
+			loadData();
+			
 	}
 	private: System::Void btnHuy_Click(System::Object^  sender, System::EventArgs^  e) {
+			setNull();
 	}
 	private: System::Void frmTraXe_Load(System::Object^  sender, System::EventArgs^  e) {
+			loadData();
 	}
-	};
+	private:System::Void loadData(){
+				String^ sql=L"SELECT nhanxe.Sove,nhanxe.BKS,nhanxe.Loaive,xe.Loaixe,nhanxe.Thoigianvao FROM nhanxe,xe WHERE (nhanxe.BKS=xe.BKS) AND (Trangthai='N')";
+				DBUtils::loadDataSort(dgvCar,sql);
+				lbSum->Text=L"Tổng số xe:" + b->showTongXe();
+	}
+	private:System::Void setNull(){
+				txtSove->Clear();
+				txtBienso->Clear();
+				txtThoigianvao->Clear();
+				txtLoaixe->Clear();
+				txtLoaive->Clear();
+				txtTongtien->Clear();
+				txtThoigianvao->Clear();
+	}
+	private: System::Void dgvCar_RowEnter(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+				 int row;
+				 row=e->RowIndex;
+				
+				 txtSove->Text= dgvCar[0, row]->Value->ToString();
+				 txtBienso->Text= dgvCar[1, row]->Value->ToString();
+				 txtLoaive->Text= dgvCar[2, row]->Value->ToString();
+				 txtLoaixe->Text= dgvCar[3, row]->Value->ToString();
+				 txtThoigianvao->Text= dgvCar[4, row]->Value->ToString();
+				 
+				 b->showData(txtTongtien,txtLoaive->Text,txtLoaixe->Text);
+				
+				
+	}
+	private: System::Void dgvCar_DataBindingComplete(System::Object^  sender, System::Windows::Forms::DataGridViewBindingCompleteEventArgs^  e) {
+				 dgvCar->ClearSelection();
+				// dgvCar->CurrentRow->Selected = false;
+				 setNull();
+	}
+	private: System::Void dgvCar_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+				
+	}
+
+};
 }

@@ -1,0 +1,214 @@
+  SmartParkingSystem.frmConfigDatabase.resources - Embedded, ContainedInManifestFile, 
+  SmartParkingSystem.frmDatabase.resources - Embedded, ContainedInManifestFile, 
+  SmartParkingSystem.frmHeThong.resources - Embedded, ContainedInManifestFile, 
+  SmartParkingSystem.frmLogin.resources - Embedded, ContainedInManifestFile, 
+  SmartParkingSystem.frmMain.resources - Embedded, ContainedInManifestFile, 
+  SmartParkingSystem.frmNhanXe.resources - Embedded, ContainedInManifestFile, 
+  SmartParkingSystem.frmSoDo.resources - Embedded, ContainedInManifestFile, 
+  SmartParkingSystem.frmThongKe.resources - Embedded, ContainedInManifestFile, 
+  SmartParkingSystem.frmTraXe.resources - Embedded, ContainedInManifestFile, 
+  SmartParkingSystem.frmVeThang.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly SmartParkingSystem, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d: 
+	hash=None, flags=None
+Assembly System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Microsoft.VisualC, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class SmartParkingSystem.app_config: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    EditAppSetting(String, String): PrivateScope, Public, Static, HideBySig
+    AddAppSetting(String, String): PrivateScope, Public, Static, HideBySig
+    RemoveAppSetting(String): PrivateScope, Public, Static, HideBySig
+Class SmartParkingSystem.HeThong: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String MatKhau 'get set' : 
+    System.String TaiKhoan 'get set' : 
+    System.String HoTen 'get set' : 
+    System.String ChucVu 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_ChucVu(): PrivateScope, Public, HideBySig, SpecialName
+    set_ChucVu(String): PrivateScope, Public, HideBySig, SpecialName
+    get_HoTen(): PrivateScope, Public, HideBySig, SpecialName
+    set_HoTen(String): PrivateScope, Public, HideBySig, SpecialName
+    get_TaiKhoan(): PrivateScope, Public, HideBySig, SpecialName
+    set_TaiKhoan(String): PrivateScope, Public, HideBySig, SpecialName
+    get_MatKhau(): PrivateScope, Public, HideBySig, SpecialName
+    set_MatKhau(String): PrivateScope, Public, HideBySig, SpecialName
+Class SmartParkingSystem.DBMySQLUtils: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetDBConnection(String, String, String, String, String): PrivateScope, Public, Static, HideBySig
+Class SmartParkingSystem.connect: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Properties:
+    System.String Password 'get set' : 
+    System.String Username 'get set' : 
+    System.String Database 'get set' : 
+    System.String Port 'get set' : 
+    System.String Host 'get set' : 
+  Methods:
+    GetInstance(): PrivateScope, Public, Static, HideBySig
+    getConnection(): PrivateScope, Public, HideBySig
+    get_value(): PrivateScope, Public, Static, HideBySig
+    push_to_connect(String, String, String, String, String): PrivateScope, Public, Static, HideBySig
+    check_connection(): PrivateScope, Public, Static, HideBySig
+    get_Host(): PrivateScope, Public, HideBySig, SpecialName
+    set_Host(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Port(): PrivateScope, Public, HideBySig, SpecialName
+    set_Port(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Database(): PrivateScope, Public, HideBySig, SpecialName
+    set_Database(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Username(): PrivateScope, Public, HideBySig, SpecialName
+    set_Username(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Password(): PrivateScope, Public, HideBySig, SpecialName
+    set_Password(String): PrivateScope, Public, HideBySig, SpecialName
+Class SmartParkingSystem.DBUtils: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    OpenConnection(): PrivateScope, Public, Static, HideBySig
+    getConnection(): PrivateScope, Public, Static, HideBySig
+    disConnect(): PrivateScope, Public, Static, HideBySig
+    getDataTable(String): PrivateScope, Public, Static, HideBySig
+    ExcuteNonQuery(String): PrivateScope, Public, Static, HideBySig
+    getDataReader(String): PrivateScope, Public, Static, HideBySig
+    loadData(DataGridView, String): PrivateScope, Public, Static, HideBySig
+    loadData_To_Collection(TextBox, String, String): PrivateScope, Public, Static, HideBySig
+    loadDataSort(DataGridView, String): PrivateScope, Public, Static, HideBySig
+Class SmartParkingSystem.DA_HeThong: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InsertHT(HeThong): PrivateScope, Public, HideBySig
+    updateHT(HeThong): PrivateScope, Public, HideBySig
+    deleteHT(Int32): PrivateScope, Public, HideBySig
+    Search(String, DataGridView): PrivateScope, Public, HideBySig
+    showMoney(String, String, TextBox): PrivateScope, Public, HideBySig
+    updateTicket(String, Int32, String): PrivateScope, Public, HideBySig
+Class SmartParkingSystem.BUS_HeThong: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Them(HeThong): PrivateScope, Public, HideBySig
+    CapNhat(HeThong): PrivateScope, Public, HideBySig
+    Xoa(Int32): PrivateScope, Public, HideBySig
+    Search(String, DataGridView): PrivateScope, Public, HideBySig
+    showTicket(String, String, TextBox): PrivateScope, Public, HideBySig
+    Thaydoi(ComboBox, ComboBox, TextBox, TextBox): PrivateScope, Public, HideBySig
+Class SmartParkingSystem.Convert_Hethong: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GUI_To_DB(String): PrivateScope, Public, Static, HideBySig
+    DB_To_GUI(String): PrivateScope, Public, Static, HideBySig
+Class SmartParkingSystem.Xe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String, System.String, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String GiaVe 'get set' : 
+    System.String BienKiemSoat 'get set' : 
+    System.String LoaiVe 'get set' : 
+    System.String ThoiGianRa 'get set' : 
+    System.String ThoiGianVao 'get set' : 
+    System.String LoaiXe 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_LoaiXe(): PrivateScope, Public, HideBySig, SpecialName
+    set_LoaiXe(String): PrivateScope, Public, HideBySig, SpecialName
+    get_ThoiGianVao(): PrivateScope, Public, HideBySig, SpecialName
+    set_ThoiGianVao(String): PrivateScope, Public, HideBySig, SpecialName
+    get_ThoiGianRa(): PrivateScope, Public, HideBySig, SpecialName
+    set_ThoiGianRa(String): PrivateScope, Public, HideBySig, SpecialName
+    get_LoaiVe(): PrivateScope, Public, HideBySig, SpecialName
+    set_LoaiVe(String): PrivateScope, Public, HideBySig, SpecialName
+    get_BienKiemSoat(): PrivateScope, Public, HideBySig, SpecialName
+    set_BienKiemSoat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_GiaVe(): PrivateScope, Public, HideBySig, SpecialName
+    set_GiaVe(String): PrivateScope, Public, HideBySig, SpecialName
+Class SmartParkingSystem.DA_Nhanxe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InsertNX(Xe): PrivateScope, Public, HideBySig
+    UpdateNX(Int32, String, String, String, String): PrivateScope, Public, HideBySig
+    InsertX(String, String): PrivateScope, Public, HideBySig
+    TongXe(): PrivateScope, Public, HideBySig
+    deleteNX(Int32, String): PrivateScope, Public, HideBySig
+    Search(String, DataGridView): PrivateScope, Public, HideBySig
+    check_Ve(String, String): PrivateScope, Public, HideBySig
+    check_gui(String, String): PrivateScope, Public, HideBySig
+    checkInsert(String): PrivateScope, Public, HideBySig
+Class SmartParkingSystem.BUS_Nhanxe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Them(Xe, String, String): PrivateScope, Public, HideBySig
+    CapNhat(Int32, String, String, String, String): PrivateScope, Public, HideBySig
+    Xoa(Int32, String): PrivateScope, Public, HideBySig
+    Search(String, DataGridView): PrivateScope, Public, HideBySig
+    showTongXe(): PrivateScope, Public, HideBySig
+Class SmartParkingSystem.DA_Traxe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InsertTX(Xe, String): PrivateScope, Public, HideBySig
+    UpdateTX(Int32, Xe): PrivateScope, Public, HideBySig
+    Search(String, DataGridView): PrivateScope, Public, HideBySig
+    TongXe(): PrivateScope, Public, HideBySig
+    TongTien(String): PrivateScope, Public, HideBySig
+Class SmartParkingSystem.BUS_Traxe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Traxe(Xe, String): PrivateScope, Public, HideBySig
+    Search(String, DataGridView): PrivateScope, Public, HideBySig
+    showData(TextBox, String, String): PrivateScope, Public, HideBySig
+    showTongXe(): PrivateScope, Public, HideBySig
+Class SmartParkingSystem.frmConfigDatabase: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SmartParkingSystem.frmHeThong: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SmartParkingSystem.frmNhanXe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SmartParkingSystem.frmTraXe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SmartParkingSystem.frmSoDo: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SmartParkingSystem.frmThongKe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SmartParkingSystem.frmVeThang: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SmartParkingSystem.frmMain: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    get_btnHeThong(): PrivateScope, Public, HideBySig
+Class SmartParkingSystem.frmLogin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SmartParkingSystem.frmDatabase: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
