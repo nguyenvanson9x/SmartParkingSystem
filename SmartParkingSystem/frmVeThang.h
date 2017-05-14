@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "DBUtils.h"
 #include "BUS_VeThang.h"
+#include "Convert_Hethong.h"
 namespace SmartParkingSystem {
 
 	using namespace System;
@@ -9,6 +10,7 @@ namespace SmartParkingSystem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Globalization;
 
 	/// <summary>
 	/// Summary for frmVeThang
@@ -91,8 +93,8 @@ namespace SmartParkingSystem {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->pnTitle = (gcnew System::Windows::Forms::Panel());
 			this->lbTitle = (gcnew System::Windows::Forms::Label());
 			this->tbContainer = (gcnew System::Windows::Forms::TableLayoutPanel());
@@ -282,7 +284,7 @@ namespace SmartParkingSystem {
 			// 
 			this->txtNgayHetHan->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtNgayHetHan->CustomFormat = L"dd/MM/yyyy";
+			this->txtNgayHetHan->CustomFormat = L"yyyy-MM-dd";
 			this->txtNgayHetHan->Enabled = false;
 			this->txtNgayHetHan->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
@@ -296,7 +298,7 @@ namespace SmartParkingSystem {
 			// 
 			this->txtNgayBatDau->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtNgayBatDau->CustomFormat = L"dd/MM/yyyy";
+			this->txtNgayBatDau->CustomFormat = L"yyyy-MM-dd";
 			this->txtNgayBatDau->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtNgayBatDau->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
@@ -304,6 +306,7 @@ namespace SmartParkingSystem {
 			this->txtNgayBatDau->Name = L"txtNgayBatDau";
 			this->txtNgayBatDau->Size = System::Drawing::Size(156, 26);
 			this->txtNgayBatDau->TabIndex = 10;
+			this->txtNgayBatDau->ValueChanged += gcnew System::EventHandler(this, &frmVeThang::txtNgayBatDau_ValueChanged);
 			// 
 			// lbNgayHetHan
 			// 
@@ -385,7 +388,6 @@ namespace SmartParkingSystem {
 			// 
 			this->txtGiaVe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtGiaVe->Enabled = false;
 			this->txtGiaVe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtGiaVe->Location = System::Drawing::Point(133, 408);
@@ -402,7 +404,6 @@ namespace SmartParkingSystem {
 				static_cast<System::Byte>(0)));
 			this->txtBienXe->Location = System::Drawing::Point(133, 219);
 			this->txtBienXe->Name = L"txtBienXe";
-			this->txtBienXe->ReadOnly = true;
 			this->txtBienXe->Size = System::Drawing::Size(156, 26);
 			this->txtBienXe->TabIndex = 3;
 			// 
@@ -507,15 +508,15 @@ namespace SmartParkingSystem {
 			this->dgvTicket->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dgvTicket->BackgroundColor = System::Drawing::Color::White;
 			this->dgvTicket->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dgvTicket->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgvTicket->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this->dgvTicket->ColumnHeadersHeight = 28;
 			this->dgvTicket->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::DisableResizing;
 			this->dgvTicket->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {this->clMaThe, this->clBienSo, 
@@ -526,9 +527,9 @@ namespace SmartParkingSystem {
 			this->dgvTicket->ReadOnly = true;
 			this->dgvTicket->RowHeadersVisible = false;
 			this->dgvTicket->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dgvTicket->RowsDefaultCellStyle = dataGridViewCellStyle2;
+			this->dgvTicket->RowsDefaultCellStyle = dataGridViewCellStyle6;
 			this->dgvTicket->Size = System::Drawing::Size(743, 467);
 			this->dgvTicket->TabIndex = 4;
 			this->dgvTicket->TabStop = false;
@@ -693,25 +694,85 @@ namespace SmartParkingSystem {
 				 loadData();
 			 }
 	private: System::Void btnThem_Click(System::Object^  sender, System::EventArgs^  e) {
-				 loai_xe = cbLoaixe->SelectedItem->ToString();
-				 bien_xe = txtBienXe->Text;
-				 
+				 try {
+					 loai_xe = Convert_Hethong::GUI_To_DB(txtBienXe->Text);
+					 bien_xe = txtBienXe->Text;
+					 date_start = txtNgayBatDau->Value.ToString("yyyy-MM-dd");
+					 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
+					 gia_ve = Int32::Parse(txtGiaVe->Text);
+					 VeThang ^ticket = gcnew VeThang(0, loai_xe, bien_xe, date_start, date_end, gia_ve);
+					 b->Add(ticket);
+				 }
+				 catch (Exception^ e) {
+					 MessageBox::Show(e->Message + "*");
+				 }
+
 			 }
 	private: System::Void btnSua_Click(System::Object^  sender, System::EventArgs^  e) {
+				 try {
+					 loai_xe = cbLoaixe->SelectedItem->ToString();
+					 bien_xe = txtBienXe->Text;
+					 date_start = txtNgayBatDau->Value.ToString("yyyy-MM-dd");
+					 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
+					 gia_ve = Int32::Parse(txtGiaVe->Text);
+
+					 
+					 VeThang ^ticket = gcnew VeThang(0, loai_xe, bien_xe, date_start, date_end, gia_ve);
+					 b->Update(ticket);
+				 }
+				 catch (Exception^ e) {
+					 MessageBox::Show(e->Message);
+				 }
 			 }
 	private: System::Void btnXoa_Click(System::Object^  sender, System::EventArgs^  e) {
+				 int id, row;
+				 row = dgvTicket->CurrentCell->RowIndex;
+				 id = Int32::Parse(dgvTicket[0, row]->Value->ToString());
+
+				 b->Delete(id);
 			 }
 	private: System::Void btnHuy_Click(System::Object^  sender, System::EventArgs^  e) {
+				 setNull();
 			 }
 	private: System::Void btnTimkiem_Click(System::Object^  sender, System::EventArgs^  e) {
+				 String ^search = txtSearch->Text;
+				 b->Search(search, dgvTicket);
+				 txtSearch->Clear();
 			 }
 	private: System::Void btnTrolai_Click(System::Object^  sender, System::EventArgs^  e) {
+				 loadData();
 			 }
 	private: System::Void dgvTicket_RowEnter(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+				 int row;
+				 String^ partten = "yyyy-MM-dd";
+				 row = e->RowIndex;
+				 try {
+				 txtMaThe->Text = dgvTicket[0, row]->Value->ToString();
+				 txtBienXe->Text = dgvTicket[1, row]->Value->ToString();
+				 cbLoaixe->Text = dgvTicket[2, row]->Value->ToString();
+
+				 date_start = dgvTicket[3, row]->Value->ToString();
+				 date_end = dgvTicket[4, row]->Value->ToString();
+				 MessageBox::Show(date_start);
+				 
+					 DateTime dt = DateTime::ParseExact(date_start, partten, CultureInfo::InvariantCulture);
+					txtNgayBatDau->Value = dt;
+					 //txtNgayBatDau->Value = dt;
+				 //txtNgayHetHan->Value = DateTime::ParseExact(date_end, partten, CultureInfo::InvariantCulture);
+				 }
+				 catch (Exception^ e) {
+					 MessageBox::Show(e->Message);
+				 }
+				 txtGiaVe->Text = dgvTicket[5, row]->Value->ToString();
 			 }
 	private: void loadData() {
 				 String ^sql = L"select Mathe, BKS, Loaixe, Ngaybatdau, Ngayketthuc, Tien from quanlyvethang;";
 				 DBUtils::loadData(dgvTicket, sql);
+			 }
+	private: void setNull() {
+			 }
+	private: System::Void txtNgayBatDau_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+				 txtNgayHetHan->Value = txtNgayBatDau->Value.AddDays(30);
 			 }
 	};
 }
