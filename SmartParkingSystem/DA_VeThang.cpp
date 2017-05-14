@@ -16,16 +16,14 @@ void DA_VeThang::Add(VeThang ^ ticket)
 	date_start = ticket->DateStart;
 	date_end = ticket->DateEnd;
 	gia_ve = ticket->GiaVe;
-	MessageBox::Show(date_start + "DS");
-	
+
 	sql = String::Format("insert into quanlyvethang (Mathe, BKS, Loaixe, Ngaybatdau, Ngayketthuc, Tien) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')","0", bien_xe, loai_xe, date_start, date_end, gia_ve);
-	MessageBox::Show(sql);
 	try {
 		DBUtils::ExcuteNonQuery(sql);
 	}
 	catch(Exception^e) {
 		MessageBox::Show(e->Message);
-		
+
 	}
 }
 

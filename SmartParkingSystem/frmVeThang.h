@@ -694,15 +694,19 @@ namespace SmartParkingSystem {
 				 loadData();
 			 }
 	private: System::Void btnThem_Click(System::Object^  sender, System::EventArgs^  e) {
-
-				 loai_xe = Convert_Hethong::GUI_To_DB(txtBienXe->Text);
-				 bien_xe = txtBienXe->Text;
-				 date_start = txtNgayBatDau->Value.ToString("yyyy-MM-dd");
-				 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
-				 gia_ve = Int32::Parse(txtGiaVe->Text);
-				 VeThang ^ticket = gcnew VeThang(0, loai_xe, bien_xe, date_start, date_end, gia_ve);
-				 b->Add(ticket);
-
+				 try {
+					 loai_xe = Convert_Hethong::GUI_To_DB(cbLoaixe->SelectedItem->ToString());
+					 bien_xe = txtBienXe->Text;
+					 date_start = txtNgayBatDau->Value.ToString("yyyy-MM-dd");
+					 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
+					 gia_ve = Int32::Parse(txtGiaVe->Text);
+					 VeThang ^ticket = gcnew VeThang(0, loai_xe, bien_xe, date_start, date_end, gia_ve);
+					 b->Add(ticket);
+					 loadData();
+				 }
+				 catch (Exception^ e) {
+					 MessageBox::Show(e->Message);
+				 }
 
 			 }
 	private: System::Void btnSua_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -712,7 +716,6 @@ namespace SmartParkingSystem {
 					 date_start = txtNgayBatDau->Value.ToString("yyyy-MM-dd");
 					 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
 					 gia_ve = Int32::Parse(txtGiaVe->Text);
-
 
 					 VeThang ^ticket = gcnew VeThang(0, loai_xe, bien_xe, date_start, date_end, gia_ve);
 					 b->Update(ticket);

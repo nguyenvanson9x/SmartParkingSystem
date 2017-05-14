@@ -4,7 +4,6 @@ using namespace SmartParkingSystem;
 
 BUS_VeThang::BUS_VeThang(void)
 {
-	da = gcnew DA_VeThang();
 }
 
 void BUS_VeThang::Add(VeThang ^ ticket)
