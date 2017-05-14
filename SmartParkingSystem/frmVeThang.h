@@ -694,18 +694,15 @@ namespace SmartParkingSystem {
 				 loadData();
 			 }
 	private: System::Void btnThem_Click(System::Object^  sender, System::EventArgs^  e) {
-				 try {
-					 loai_xe = Convert_Hethong::GUI_To_DB(txtBienXe->Text);
-					 bien_xe = txtBienXe->Text;
-					 date_start = txtNgayBatDau->Value.ToString("yyyy-MM-dd");
-					 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
-					 gia_ve = Int32::Parse(txtGiaVe->Text);
-					 VeThang ^ticket = gcnew VeThang(0, loai_xe, bien_xe, date_start, date_end, gia_ve);
-					 b->Add(ticket);
-				 }
-				 catch (Exception^ e) {
-					 MessageBox::Show(e->Message + "*");
-				 }
+
+				 loai_xe = Convert_Hethong::GUI_To_DB(txtBienXe->Text);
+				 bien_xe = txtBienXe->Text;
+				 date_start = txtNgayBatDau->Value.ToString("yyyy-MM-dd");
+				 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
+				 gia_ve = Int32::Parse(txtGiaVe->Text);
+				 VeThang ^ticket = gcnew VeThang(0, loai_xe, bien_xe, date_start, date_end, gia_ve);
+				 b->Add(ticket);
+
 
 			 }
 	private: System::Void btnSua_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -716,7 +713,7 @@ namespace SmartParkingSystem {
 					 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
 					 gia_ve = Int32::Parse(txtGiaVe->Text);
 
-					 
+
 					 VeThang ^ticket = gcnew VeThang(0, loai_xe, bien_xe, date_start, date_end, gia_ve);
 					 b->Update(ticket);
 				 }
@@ -745,20 +742,21 @@ namespace SmartParkingSystem {
 	private: System::Void dgvTicket_RowEnter(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 				 int row;
 				 String^ partten = "yyyy-MM-dd";
+
 				 row = e->RowIndex;
 				 try {
-				 txtMaThe->Text = dgvTicket[0, row]->Value->ToString();
-				 txtBienXe->Text = dgvTicket[1, row]->Value->ToString();
-				 cbLoaixe->Text = dgvTicket[2, row]->Value->ToString();
+					 txtMaThe->Text = dgvTicket[0, row]->Value->ToString();
+					 txtBienXe->Text = dgvTicket[1, row]->Value->ToString();
+					 cbLoaixe->Text = Convert_Hethong::DB_To_GUI(dgvTicket[2, row]->Value->ToString());
 
-				 date_start = dgvTicket[3, row]->Value->ToString();
-				 date_end = dgvTicket[4, row]->Value->ToString();
-				 MessageBox::Show(date_start);
-				 
-					 DateTime dt = DateTime::ParseExact(date_start, partten, CultureInfo::InvariantCulture);
-					txtNgayBatDau->Value = dt;
-					 //txtNgayBatDau->Value = dt;
-				 //txtNgayHetHan->Value = DateTime::ParseExact(date_end, partten, CultureInfo::InvariantCulture);
+					 date_start = dgvTicket[3, row]->Value->ToString();
+					 date_end = dgvTicket[4, row]->Value->ToString();
+
+					 DateTime dt_s = DateTime::Parse(date_start);
+					 DateTime dt_e = DateTime::Parse(date_end);
+
+					 txtNgayBatDau->Value = dt_s;
+					 txtNgayHetHan->Value = dt_e;
 				 }
 				 catch (Exception^ e) {
 					 MessageBox::Show(e->Message);

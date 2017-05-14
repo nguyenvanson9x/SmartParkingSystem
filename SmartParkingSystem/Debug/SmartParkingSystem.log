@@ -1,4 +1,4 @@
-﻿Build started 5/14/2017 12:51:03 PM.
+﻿Build started 5/15/2017 12:26:55 AM.
      1>Project "D:\NguyenVanSon\SmartParkingSystem\SmartParkingSystem\SmartParkingSystem.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\SmartParkingSystem.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -15,8 +15,7 @@
          Generating Code...
          All outputs are up-to-date.
        CoreResGen:
-         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.0\MySql.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Configuration.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile frmVeThang.resx,Debug\SmartParkingSystem.frmVeThang.resources
-         Processing resource file "frmVeThang.resx" into "Debug\SmartParkingSystem.frmVeThang.resources".
+         No resources are out of date with respect to their source files. Skipping resource generation.
        ResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -61,4 +60,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.78
+Time Elapsed 00:00:03.31
