@@ -145,6 +145,15 @@
     <ClCompile Include="BUS_Traxe.cpp">
       <Filter>Source Files\Tra xe</Filter>
     </ClCompile>
+    <ClCompile Include="BUS_VeThang.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DA_VeThang.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VeThang.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -221,6 +230,15 @@
     </ClInclude>
     <ClInclude Include="BUS_Traxe.h">
       <Filter>Header Files\Traxe</Filter>
+    </ClInclude>
+    <ClInclude Include="BUS_VeThang.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DA_VeThang.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VeThang.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

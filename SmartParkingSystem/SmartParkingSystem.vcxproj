@@ -101,11 +101,13 @@
     <ClCompile Include="BUS_HeThong.cpp" />
     <ClCompile Include="BUS_Nhanxe.cpp" />
     <ClCompile Include="BUS_Traxe.cpp" />
+    <ClCompile Include="BUS_VeThang.cpp" />
     <ClCompile Include="connect.cpp" />
     <ClCompile Include="Convert_Hethong.cpp" />
     <ClCompile Include="DA_HeThong.cpp" />
     <ClCompile Include="DA_Nhanxe.cpp" />
     <ClCompile Include="DA_Traxe.cpp" />
+    <ClCompile Include="DA_VeThang.cpp" />
     <ClCompile Include="DBMySQLUtils.cpp" />
     <ClCompile Include="DBUtils.cpp" />
     <ClCompile Include="frmConfigDatabase.cpp" />
@@ -124,6 +126,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="VeThang.cpp" />
     <ClCompile Include="Xe.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,11 +134,13 @@
     <ClInclude Include="BUS_HeThong.h" />
     <ClInclude Include="BUS_Nhanxe.h" />
     <ClInclude Include="BUS_Traxe.h" />
+    <ClInclude Include="BUS_VeThang.h" />
     <ClInclude Include="connect.h" />
     <ClInclude Include="Convert_Hethong.h" />
     <ClInclude Include="DA_HeThong.h" />
     <ClInclude Include="DA_Nhanxe.h" />
     <ClInclude Include="DA_Traxe.h" />
+    <ClInclude Include="DA_VeThang.h" />
     <ClInclude Include="DBMySQLUtils.h" />
     <ClInclude Include="DBUtils.h" />
     <ClInclude Include="frmConfigDatabase.h">
@@ -171,6 +176,7 @@
     <ClInclude Include="HeThong.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="VeThang.h" />
     <ClInclude Include="Xe.h" />
   </ItemGroup>
   <ItemGroup>

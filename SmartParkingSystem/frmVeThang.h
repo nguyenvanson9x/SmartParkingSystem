@@ -1,5 +1,6 @@
 ﻿#pragma once
-
+#include "DBUtils.h"
+#include "BUS_VeThang.h"
 namespace SmartParkingSystem {
 
 	using namespace System;
@@ -18,6 +19,7 @@ namespace SmartParkingSystem {
 		frmVeThang(void)
 		{
 			InitializeComponent();
+			b = gcnew BUS_VeThang();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -38,76 +40,49 @@ namespace SmartParkingSystem {
 	private: System::Windows::Forms::Label^  lbTitle;
 	private: System::Windows::Forms::TableLayoutPanel^  tbContainer;
 	private: System::Windows::Forms::Panel^  pnTicketInfo;
-	protected:
-
-
-
-
-
 	private: System::Windows::Forms::DataGridView^  dgvTicket;
-
 	private: System::Windows::Forms::Label^  lbSum;
 	private: System::Windows::Forms::Button^  btnTrolai;
 	private: System::Windows::Forms::TextBox^  txtSearch;
 	private: System::Windows::Forms::Button^  btnTimkiem;
 	private: System::Windows::Forms::Label^  lbCar;
-
-
-
-
-
-
 	private: System::Windows::Forms::Panel^  pnTicket;
 	private: System::Windows::Forms::Button^  btnHuy;
 	private: System::Windows::Forms::Button^  btnSua;
+	private: System::Windows::Forms::TextBox^  txtGiaVe;
 
+	private: System::Windows::Forms::TextBox^  txtBienXe;
 
-
-	private: System::Windows::Forms::TextBox^  txtGiadieuchinh;
-	private: System::Windows::Forms::TextBox^  txtGiahientai;
 	private: System::Windows::Forms::ComboBox^  cbLoaixe;
-
 	private: System::Windows::Forms::Label^  lbGiaVe;
-
-
 	private: System::Windows::Forms::Label^  lbBienXe;
-
 	private: System::Windows::Forms::Label^  lbLoaixe;
 	private: System::Windows::Forms::Label^  lbMaThe;
-
 	private: System::Windows::Forms::Label^  lbTicket;
 	private: System::Windows::Forms::TextBox^  txtMaThe;
 	private: System::Windows::Forms::Label^  lbNgayHetHan;
-
 	private: System::Windows::Forms::Label^  lbNgayBatDau;
+	private: System::Windows::Forms::DateTimePicker^  txtNgayHetHan;
+	private: System::Windows::Forms::DateTimePicker^  txtNgayBatDau;
+	private: System::Windows::Forms::Button^  btnXoa;
+	private: System::Windows::Forms::Button^  btnThem;
+	private: System::Windows::Forms::TextBox^  txtTrangThai;
+	private: System::Windows::Forms::Label^  lbTrangThai;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clMaThe;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clBienSo;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clLoaiXe;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clNgayBatDau;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clNgayKetThuc;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clTien;
-	private: System::Windows::Forms::DateTimePicker^  txtNgayHetHan;
-
-	private: System::Windows::Forms::DateTimePicker^  txtNgayBatDau;
-
-	private: System::Windows::Forms::Button^  btnXoa;
-	private: System::Windows::Forms::Button^  btnThem;
-	private: System::Windows::Forms::TextBox^  txtTrangThai;
-	private: System::Windows::Forms::Label^  lbTrangThai;
-
-
-
-
-
-
-
-	protected:
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container ^components;
+		BUS_VeThang ^b;
+		int id, gia_ve;
+		String ^loai_xe, ^bien_xe, ^date_start, ^date_end; 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -116,13 +91,14 @@ namespace SmartParkingSystem {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(frmVeThang::typeid));
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle13 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle14 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->pnTitle = (gcnew System::Windows::Forms::Panel());
 			this->lbTitle = (gcnew System::Windows::Forms::Label());
 			this->tbContainer = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->pnTicket = (gcnew System::Windows::Forms::Panel());
+			this->txtTrangThai = (gcnew System::Windows::Forms::TextBox());
+			this->lbTrangThai = (gcnew System::Windows::Forms::Label());
 			this->btnXoa = (gcnew System::Windows::Forms::Button());
 			this->btnThem = (gcnew System::Windows::Forms::Button());
 			this->txtNgayHetHan = (gcnew System::Windows::Forms::DateTimePicker());
@@ -132,8 +108,8 @@ namespace SmartParkingSystem {
 			this->txtMaThe = (gcnew System::Windows::Forms::TextBox());
 			this->btnHuy = (gcnew System::Windows::Forms::Button());
 			this->btnSua = (gcnew System::Windows::Forms::Button());
-			this->txtGiadieuchinh = (gcnew System::Windows::Forms::TextBox());
-			this->txtGiahientai = (gcnew System::Windows::Forms::TextBox());
+			this->txtGiaVe = (gcnew System::Windows::Forms::TextBox());
+			this->txtBienXe = (gcnew System::Windows::Forms::TextBox());
 			this->cbLoaixe = (gcnew System::Windows::Forms::ComboBox());
 			this->lbGiaVe = (gcnew System::Windows::Forms::Label());
 			this->lbBienXe = (gcnew System::Windows::Forms::Label());
@@ -153,8 +129,6 @@ namespace SmartParkingSystem {
 			this->txtSearch = (gcnew System::Windows::Forms::TextBox());
 			this->btnTimkiem = (gcnew System::Windows::Forms::Button());
 			this->lbCar = (gcnew System::Windows::Forms::Label());
-			this->txtTrangThai = (gcnew System::Windows::Forms::TextBox());
-			this->lbTrangThai = (gcnew System::Windows::Forms::Label());
 			this->pnTitle->SuspendLayout();
 			this->tbContainer->SuspendLayout();
 			this->pnTicket->SuspendLayout();
@@ -221,8 +195,8 @@ namespace SmartParkingSystem {
 			this->pnTicket->Controls->Add(this->txtMaThe);
 			this->pnTicket->Controls->Add(this->btnHuy);
 			this->pnTicket->Controls->Add(this->btnSua);
-			this->pnTicket->Controls->Add(this->txtGiadieuchinh);
-			this->pnTicket->Controls->Add(this->txtGiahientai);
+			this->pnTicket->Controls->Add(this->txtGiaVe);
+			this->pnTicket->Controls->Add(this->txtBienXe);
 			this->pnTicket->Controls->Add(this->cbLoaixe);
 			this->pnTicket->Controls->Add(this->lbGiaVe);
 			this->pnTicket->Controls->Add(this->lbBienXe);
@@ -236,6 +210,32 @@ namespace SmartParkingSystem {
 			this->pnTicket->Size = System::Drawing::Size(313, 612);
 			this->pnTicket->TabIndex = 2;
 			// 
+			// txtTrangThai
+			// 
+			this->txtTrangThai->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->txtTrangThai->Enabled = false;
+			this->txtTrangThai->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->txtTrangThai->ForeColor = System::Drawing::Color::Red;
+			this->txtTrangThai->Location = System::Drawing::Point(133, 464);
+			this->txtTrangThai->Name = L"txtTrangThai";
+			this->txtTrangThai->Size = System::Drawing::Size(156, 26);
+			this->txtTrangThai->TabIndex = 15;
+			this->txtTrangThai->Text = L"Hết hạn";
+			// 
+			// lbTrangThai
+			// 
+			this->lbTrangThai->AutoSize = true;
+			this->lbTrangThai->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->lbTrangThai->ForeColor = System::Drawing::Color::Red;
+			this->lbTrangThai->Location = System::Drawing::Point(26, 467);
+			this->lbTrangThai->Name = L"lbTrangThai";
+			this->lbTrangThai->Size = System::Drawing::Size(68, 19);
+			this->lbTrangThai->TabIndex = 14;
+			this->lbTrangThai->Text = L"Trạng thái";
+			// 
 			// btnXoa
 			// 
 			this->btnXoa->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
@@ -247,7 +247,6 @@ namespace SmartParkingSystem {
 			this->btnXoa->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnXoa->ForeColor = System::Drawing::Color::White;
-			this->btnXoa->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnXoa.Image")));
 			this->btnXoa->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnXoa->Location = System::Drawing::Point(26, 565);
 			this->btnXoa->Name = L"btnXoa";
@@ -256,6 +255,7 @@ namespace SmartParkingSystem {
 			this->btnXoa->Text = L"Xóa";
 			this->btnXoa->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnXoa->UseVisualStyleBackColor = false;
+			this->btnXoa->Click += gcnew System::EventHandler(this, &frmVeThang::btnXoa_Click);
 			// 
 			// btnThem
 			// 
@@ -268,7 +268,6 @@ namespace SmartParkingSystem {
 			this->btnThem->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnThem->ForeColor = System::Drawing::Color::White;
-			this->btnThem->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnThem.Image")));
 			this->btnThem->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnThem->Location = System::Drawing::Point(26, 510);
 			this->btnThem->Name = L"btnThem";
@@ -277,12 +276,14 @@ namespace SmartParkingSystem {
 			this->btnThem->Text = L"Thêm";
 			this->btnThem->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnThem->UseVisualStyleBackColor = false;
+			this->btnThem->Click += gcnew System::EventHandler(this, &frmVeThang::btnThem_Click);
 			// 
 			// txtNgayHetHan
 			// 
 			this->txtNgayHetHan->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->txtNgayHetHan->CustomFormat = L"dd/MM/yyyy";
+			this->txtNgayHetHan->Enabled = false;
 			this->txtNgayHetHan->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtNgayHetHan->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
@@ -349,7 +350,6 @@ namespace SmartParkingSystem {
 			this->btnHuy->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnHuy->ForeColor = System::Drawing::Color::White;
-			this->btnHuy->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnHuy.Image")));
 			this->btnHuy->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnHuy->Location = System::Drawing::Point(184, 565);
 			this->btnHuy->Name = L"btnHuy";
@@ -358,6 +358,7 @@ namespace SmartParkingSystem {
 			this->btnHuy->Text = L"Hủy";
 			this->btnHuy->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnHuy->UseVisualStyleBackColor = false;
+			this->btnHuy->Click += gcnew System::EventHandler(this, &frmVeThang::btnHuy_Click);
 			// 
 			// btnSua
 			// 
@@ -370,7 +371,6 @@ namespace SmartParkingSystem {
 			this->btnSua->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnSua->ForeColor = System::Drawing::Color::White;
-			this->btnSua->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnSua.Image")));
 			this->btnSua->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnSua->Location = System::Drawing::Point(184, 510);
 			this->btnSua->Name = L"btnSua";
@@ -379,31 +379,32 @@ namespace SmartParkingSystem {
 			this->btnSua->Text = L"Sửa";
 			this->btnSua->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnSua->UseVisualStyleBackColor = false;
+			this->btnSua->Click += gcnew System::EventHandler(this, &frmVeThang::btnSua_Click);
 			// 
-			// txtGiadieuchinh
+			// txtGiaVe
 			// 
-			this->txtGiadieuchinh->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
+			this->txtGiaVe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtGiadieuchinh->Enabled = false;
-			this->txtGiadieuchinh->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->txtGiaVe->Enabled = false;
+			this->txtGiaVe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->txtGiadieuchinh->Location = System::Drawing::Point(133, 408);
-			this->txtGiadieuchinh->Name = L"txtGiadieuchinh";
-			this->txtGiadieuchinh->Size = System::Drawing::Size(156, 26);
-			this->txtGiadieuchinh->TabIndex = 4;
+			this->txtGiaVe->Location = System::Drawing::Point(133, 408);
+			this->txtGiaVe->Name = L"txtGiaVe";
+			this->txtGiaVe->Size = System::Drawing::Size(156, 26);
+			this->txtGiaVe->TabIndex = 4;
 			// 
-			// txtGiahientai
+			// txtBienXe
 			// 
-			this->txtGiahientai->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
+			this->txtBienXe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtGiahientai->BackColor = System::Drawing::Color::White;
-			this->txtGiahientai->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->txtBienXe->BackColor = System::Drawing::Color::White;
+			this->txtBienXe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->txtGiahientai->Location = System::Drawing::Point(133, 219);
-			this->txtGiahientai->Name = L"txtGiahientai";
-			this->txtGiahientai->ReadOnly = true;
-			this->txtGiahientai->Size = System::Drawing::Size(156, 26);
-			this->txtGiahientai->TabIndex = 3;
+			this->txtBienXe->Location = System::Drawing::Point(133, 219);
+			this->txtBienXe->Name = L"txtBienXe";
+			this->txtBienXe->ReadOnly = true;
+			this->txtBienXe->Size = System::Drawing::Size(156, 26);
+			this->txtBienXe->TabIndex = 3;
 			// 
 			// cbLoaixe
 			// 
@@ -506,64 +507,81 @@ namespace SmartParkingSystem {
 			this->dgvTicket->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dgvTicket->BackgroundColor = System::Drawing::Color::White;
 			this->dgvTicket->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle13->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle13->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle13->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle13->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle13->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dgvTicket->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgvTicket->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dgvTicket->ColumnHeadersHeight = 28;
+			this->dgvTicket->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::DisableResizing;
 			this->dgvTicket->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {this->clMaThe, this->clBienSo, 
 				this->clLoaiXe, this->clNgayBatDau, this->clNgayKetThuc, this->clTien});
 			this->dgvTicket->Location = System::Drawing::Point(0, 118);
 			this->dgvTicket->Margin = System::Windows::Forms::Padding(0);
 			this->dgvTicket->Name = L"dgvTicket";
+			this->dgvTicket->ReadOnly = true;
 			this->dgvTicket->RowHeadersVisible = false;
-			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->dgvTicket->RowsDefaultCellStyle = dataGridViewCellStyle14;
+			this->dgvTicket->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->dgvTicket->RowsDefaultCellStyle = dataGridViewCellStyle2;
 			this->dgvTicket->Size = System::Drawing::Size(743, 467);
 			this->dgvTicket->TabIndex = 4;
 			this->dgvTicket->TabStop = false;
+			this->dgvTicket->RowEnter += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &frmVeThang::dgvTicket_RowEnter);
 			// 
 			// clMaThe
 			// 
 			this->clMaThe->DataPropertyName = L"Mathe";
 			this->clMaThe->HeaderText = L"Mã thẻ";
 			this->clMaThe->Name = L"clMaThe";
+			this->clMaThe->ReadOnly = true;
+			this->clMaThe->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 			// 
 			// clBienSo
 			// 
 			this->clBienSo->DataPropertyName = L"BKS";
 			this->clBienSo->HeaderText = L"Biển số";
 			this->clBienSo->Name = L"clBienSo";
+			this->clBienSo->ReadOnly = true;
+			this->clBienSo->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 			// 
 			// clLoaiXe
 			// 
 			this->clLoaiXe->DataPropertyName = L"Loaixe";
 			this->clLoaiXe->HeaderText = L"Loại xe";
 			this->clLoaiXe->Name = L"clLoaiXe";
+			this->clLoaiXe->ReadOnly = true;
+			this->clLoaiXe->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 			// 
 			// clNgayBatDau
 			// 
 			this->clNgayBatDau->DataPropertyName = L"Ngaybatdau";
 			this->clNgayBatDau->HeaderText = L"Ngày bắt đầu";
 			this->clNgayBatDau->Name = L"clNgayBatDau";
+			this->clNgayBatDau->ReadOnly = true;
+			this->clNgayBatDau->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 			// 
 			// clNgayKetThuc
 			// 
 			this->clNgayKetThuc->DataPropertyName = L"Ngayketthuc";
 			this->clNgayKetThuc->HeaderText = L"Ngày hết hạn";
 			this->clNgayKetThuc->Name = L"clNgayKetThuc";
+			this->clNgayKetThuc->ReadOnly = true;
+			this->clNgayKetThuc->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 			// 
 			// clTien
 			// 
+			this->clTien->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
 			this->clTien->DataPropertyName = L"Tien";
 			this->clTien->HeaderText = L"Tiền";
 			this->clTien->Name = L"clTien";
+			this->clTien->ReadOnly = true;
+			this->clTien->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 			// 
 			// lbSum
 			// 
@@ -589,7 +607,6 @@ namespace SmartParkingSystem {
 			this->btnTrolai->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnTrolai->ForeColor = System::Drawing::Color::White;
-			this->btnTrolai->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnTrolai.Image")));
 			this->btnTrolai->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnTrolai->Location = System::Drawing::Point(636, 60);
 			this->btnTrolai->Name = L"btnTrolai";
@@ -598,6 +615,7 @@ namespace SmartParkingSystem {
 			this->btnTrolai->Text = L"Trở lại";
 			this->btnTrolai->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnTrolai->UseVisualStyleBackColor = false;
+			this->btnTrolai->Click += gcnew System::EventHandler(this, &frmVeThang::btnTrolai_Click);
 			// 
 			// txtSearch
 			// 
@@ -622,7 +640,6 @@ namespace SmartParkingSystem {
 			this->btnTimkiem->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnTimkiem->ForeColor = System::Drawing::Color::White;
-			this->btnTimkiem->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnTimkiem.Image")));
 			this->btnTimkiem->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnTimkiem->Location = System::Drawing::Point(505, 60);
 			this->btnTimkiem->Name = L"btnTimkiem";
@@ -631,6 +648,7 @@ namespace SmartParkingSystem {
 			this->btnTimkiem->Text = L"Tìm kiếm";
 			this->btnTimkiem->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnTimkiem->UseVisualStyleBackColor = false;
+			this->btnTimkiem->Click += gcnew System::EventHandler(this, &frmVeThang::btnTimkiem_Click);
 			// 
 			// lbCar
 			// 
@@ -647,32 +665,6 @@ namespace SmartParkingSystem {
 			this->lbCar->Text = L"Danh mục thẻ";
 			this->lbCar->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// txtTrangThai
-			// 
-			this->txtTrangThai->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtTrangThai->Enabled = false;
-			this->txtTrangThai->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->txtTrangThai->ForeColor = System::Drawing::Color::Red;
-			this->txtTrangThai->Location = System::Drawing::Point(133, 464);
-			this->txtTrangThai->Name = L"txtTrangThai";
-			this->txtTrangThai->Size = System::Drawing::Size(156, 26);
-			this->txtTrangThai->TabIndex = 15;
-			this->txtTrangThai->Text = L"Hết hạn";
-			// 
-			// lbTrangThai
-			// 
-			this->lbTrangThai->AutoSize = true;
-			this->lbTrangThai->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->lbTrangThai->ForeColor = System::Drawing::Color::Red;
-			this->lbTrangThai->Location = System::Drawing::Point(26, 467);
-			this->lbTrangThai->Name = L"lbTrangThai";
-			this->lbTrangThai->Size = System::Drawing::Size(68, 19);
-			this->lbTrangThai->TabIndex = 14;
-			this->lbTrangThai->Text = L"Trạng thái";
-			// 
 			// frmVeThang
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -684,6 +676,7 @@ namespace SmartParkingSystem {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"frmVeThang";
 			this->Text = L"frmVeThang";
+			this->Load += gcnew System::EventHandler(this, &frmVeThang::frmVeThang_Load);
 			this->pnTitle->ResumeLayout(false);
 			this->pnTitle->PerformLayout();
 			this->tbContainer->ResumeLayout(false);
@@ -696,5 +689,29 @@ namespace SmartParkingSystem {
 
 		}
 #pragma endregion
+	private: System::Void frmVeThang_Load(System::Object^  sender, System::EventArgs^  e) {
+				 loadData();
+			 }
+	private: System::Void btnThem_Click(System::Object^  sender, System::EventArgs^  e) {
+				 loai_xe = cbLoaixe->SelectedItem->ToString();
+				 bien_xe = txtBienXe->Text;
+				 
+			 }
+	private: System::Void btnSua_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void btnXoa_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void btnHuy_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void btnTimkiem_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void btnTrolai_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void dgvTicket_RowEnter(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+			 }
+	private: void loadData() {
+				 String ^sql = L"select Mathe, BKS, Loaixe, Ngaybatdau, Ngayketthuc, Tien from quanlyvethang;";
+				 DBUtils::loadData(dgvTicket, sql);
+			 }
 	};
 }
