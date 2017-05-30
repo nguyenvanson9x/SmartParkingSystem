@@ -70,12 +70,12 @@ namespace SmartParkingSystem {
 	private: System::Windows::Forms::Button^  btnThem;
 	private: System::Windows::Forms::TextBox^  txtTrangThai;
 	private: System::Windows::Forms::Label^  lbTrangThai;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clMaThe;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clBienSo;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clLoaiXe;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clNgayBatDau;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clNgayKetThuc;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clTien;
+
+
+
+
+
+
 
 	private:
 		/// <summary>
@@ -85,6 +85,19 @@ namespace SmartParkingSystem {
 		BUS_VeThang ^b;
 		int id, gia_ve;
 		String ^loai_xe, ^bien_xe, ^date_start, ^date_end; 
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clMaThe;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clBienSo;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clLoaiXe;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clNgayBatDau;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clNgayKetThuc;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clTien;
+
+
+
+
+
+
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -93,8 +106,8 @@ namespace SmartParkingSystem {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->pnTitle = (gcnew System::Windows::Forms::Panel());
 			this->lbTitle = (gcnew System::Windows::Forms::Label());
 			this->tbContainer = (gcnew System::Windows::Forms::TableLayoutPanel());
@@ -120,17 +133,17 @@ namespace SmartParkingSystem {
 			this->lbTicket = (gcnew System::Windows::Forms::Label());
 			this->pnTicketInfo = (gcnew System::Windows::Forms::Panel());
 			this->dgvTicket = (gcnew System::Windows::Forms::DataGridView());
+			this->lbSum = (gcnew System::Windows::Forms::Label());
+			this->btnTrolai = (gcnew System::Windows::Forms::Button());
+			this->txtSearch = (gcnew System::Windows::Forms::TextBox());
+			this->btnTimkiem = (gcnew System::Windows::Forms::Button());
+			this->lbCar = (gcnew System::Windows::Forms::Label());
 			this->clMaThe = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->clBienSo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->clLoaiXe = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->clNgayBatDau = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->clNgayKetThuc = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->clTien = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->lbSum = (gcnew System::Windows::Forms::Label());
-			this->btnTrolai = (gcnew System::Windows::Forms::Button());
-			this->txtSearch = (gcnew System::Windows::Forms::TextBox());
-			this->btnTimkiem = (gcnew System::Windows::Forms::Button());
-			this->lbCar = (gcnew System::Windows::Forms::Label());
 			this->pnTitle->SuspendLayout();
 			this->tbContainer->SuspendLayout();
 			this->pnTicket->SuspendLayout();
@@ -224,7 +237,6 @@ namespace SmartParkingSystem {
 			this->txtTrangThai->Name = L"txtTrangThai";
 			this->txtTrangThai->Size = System::Drawing::Size(156, 26);
 			this->txtTrangThai->TabIndex = 15;
-			this->txtTrangThai->Text = L"Hết hạn";
 			// 
 			// lbTrangThai
 			// 
@@ -284,7 +296,7 @@ namespace SmartParkingSystem {
 			// 
 			this->txtNgayHetHan->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtNgayHetHan->CustomFormat = L"yyyy-MM-dd";
+			this->txtNgayHetHan->CustomFormat = L"dd-MM-yyyy";
 			this->txtNgayHetHan->Enabled = false;
 			this->txtNgayHetHan->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
@@ -298,7 +310,7 @@ namespace SmartParkingSystem {
 			// 
 			this->txtNgayBatDau->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtNgayBatDau->CustomFormat = L"yyyy-MM-dd";
+			this->txtNgayBatDau->CustomFormat = L"dd-MM-yyyy";
 			this->txtNgayBatDau->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtNgayBatDau->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
@@ -508,15 +520,15 @@ namespace SmartParkingSystem {
 			this->dgvTicket->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dgvTicket->BackgroundColor = System::Drawing::Color::White;
 			this->dgvTicket->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dgvTicket->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgvTicket->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dgvTicket->ColumnHeadersHeight = 28;
 			this->dgvTicket->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::DisableResizing;
 			this->dgvTicket->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {this->clMaThe, this->clBienSo, 
@@ -527,62 +539,13 @@ namespace SmartParkingSystem {
 			this->dgvTicket->ReadOnly = true;
 			this->dgvTicket->RowHeadersVisible = false;
 			this->dgvTicket->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dgvTicket->RowsDefaultCellStyle = dataGridViewCellStyle6;
+			this->dgvTicket->RowsDefaultCellStyle = dataGridViewCellStyle2;
 			this->dgvTicket->Size = System::Drawing::Size(743, 467);
 			this->dgvTicket->TabIndex = 4;
 			this->dgvTicket->TabStop = false;
 			this->dgvTicket->RowEnter += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &frmVeThang::dgvTicket_RowEnter);
-			// 
-			// clMaThe
-			// 
-			this->clMaThe->DataPropertyName = L"Mathe";
-			this->clMaThe->HeaderText = L"Mã thẻ";
-			this->clMaThe->Name = L"clMaThe";
-			this->clMaThe->ReadOnly = true;
-			this->clMaThe->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
-			// 
-			// clBienSo
-			// 
-			this->clBienSo->DataPropertyName = L"BKS";
-			this->clBienSo->HeaderText = L"Biển số";
-			this->clBienSo->Name = L"clBienSo";
-			this->clBienSo->ReadOnly = true;
-			this->clBienSo->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
-			// 
-			// clLoaiXe
-			// 
-			this->clLoaiXe->DataPropertyName = L"Loaixe";
-			this->clLoaiXe->HeaderText = L"Loại xe";
-			this->clLoaiXe->Name = L"clLoaiXe";
-			this->clLoaiXe->ReadOnly = true;
-			this->clLoaiXe->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
-			// 
-			// clNgayBatDau
-			// 
-			this->clNgayBatDau->DataPropertyName = L"Ngaybatdau";
-			this->clNgayBatDau->HeaderText = L"Ngày bắt đầu";
-			this->clNgayBatDau->Name = L"clNgayBatDau";
-			this->clNgayBatDau->ReadOnly = true;
-			this->clNgayBatDau->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
-			// 
-			// clNgayKetThuc
-			// 
-			this->clNgayKetThuc->DataPropertyName = L"Ngayketthuc";
-			this->clNgayKetThuc->HeaderText = L"Ngày hết hạn";
-			this->clNgayKetThuc->Name = L"clNgayKetThuc";
-			this->clNgayKetThuc->ReadOnly = true;
-			this->clNgayKetThuc->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
-			// 
-			// clTien
-			// 
-			this->clTien->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->clTien->DataPropertyName = L"Tien";
-			this->clTien->HeaderText = L"Tiền";
-			this->clTien->Name = L"clTien";
-			this->clTien->ReadOnly = true;
-			this->clTien->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 			// 
 			// lbSum
 			// 
@@ -665,6 +628,55 @@ namespace SmartParkingSystem {
 			this->lbCar->TabIndex = 1;
 			this->lbCar->Text = L"Danh mục thẻ";
 			this->lbCar->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// clMaThe
+			// 
+			this->clMaThe->DataPropertyName = L"Mathe";
+			this->clMaThe->HeaderText = L"Mã thẻ";
+			this->clMaThe->Name = L"clMaThe";
+			this->clMaThe->ReadOnly = true;
+			this->clMaThe->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
+			// 
+			// clBienSo
+			// 
+			this->clBienSo->DataPropertyName = L"BKS";
+			this->clBienSo->HeaderText = L"Biển số";
+			this->clBienSo->Name = L"clBienSo";
+			this->clBienSo->ReadOnly = true;
+			this->clBienSo->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
+			// 
+			// clLoaiXe
+			// 
+			this->clLoaiXe->DataPropertyName = L"Loaixe";
+			this->clLoaiXe->HeaderText = L"Loại xe";
+			this->clLoaiXe->Name = L"clLoaiXe";
+			this->clLoaiXe->ReadOnly = true;
+			this->clLoaiXe->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
+			// 
+			// clNgayBatDau
+			// 
+			this->clNgayBatDau->DataPropertyName = L"Ngaybatdau";
+			this->clNgayBatDau->HeaderText = L"Ngày bắt đầu";
+			this->clNgayBatDau->Name = L"clNgayBatDau";
+			this->clNgayBatDau->ReadOnly = true;
+			this->clNgayBatDau->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
+			// 
+			// clNgayKetThuc
+			// 
+			this->clNgayKetThuc->DataPropertyName = L"Ngayketthuc";
+			this->clNgayKetThuc->HeaderText = L"Ngày hết hạn";
+			this->clNgayKetThuc->Name = L"clNgayKetThuc";
+			this->clNgayKetThuc->ReadOnly = true;
+			this->clNgayKetThuc->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
+			// 
+			// clTien
+			// 
+			this->clTien->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->clTien->DataPropertyName = L"Tien";
+			this->clTien->HeaderText = L"Tiền";
+			this->clTien->Name = L"clTien";
+			this->clTien->ReadOnly = true;
+			this->clTien->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 			// 
 			// frmVeThang
 			// 
@@ -771,6 +783,13 @@ namespace SmartParkingSystem {
 				 DBUtils::loadData(dgvTicket, sql);
 			 }
 	private: void setNull() {
+				 txtMaThe->Clear();
+				 cbLoaixe->SelectedIndex = 0;
+				 txtBienXe->Clear();
+				 txtNgayBatDau->Text = "";
+				 txtNgayHetHan->Text = "";
+				 txtGiaVe->Clear();
+				 txtTrangThai->Clear();
 			 }
 	private: System::Void txtNgayBatDau_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 				 txtNgayHetHan->Value = txtNgayBatDau->Value.AddDays(30);

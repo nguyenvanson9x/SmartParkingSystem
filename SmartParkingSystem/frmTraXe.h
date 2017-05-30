@@ -58,13 +58,13 @@ namespace SmartParkingSystem {
 	private: System::Windows::Forms::TextBox^  txtSove;
 	private: System::Windows::Forms::Label^  lbThoigianvao;
 	private: System::Windows::Forms::Label^  lbLoaive;
-	private: System::Windows::Forms::Label^  lbVitri;
+
 	private: System::Windows::Forms::Label^  lbBienso;
 	private: System::Windows::Forms::Label^  lbLoaixe;
 	private: System::Windows::Forms::Label^  lbSove;
 	private: System::Windows::Forms::Label^  lbTongtien;
 	private: System::Windows::Forms::Label^  lbThoigianra;
-	private: System::Windows::Forms::TextBox^  txtVitri;
+
 	private: System::Windows::Forms::TextBox^  txtLoaixe;
 	private: System::Windows::Forms::TextBox^  txtTongtien;
 	private: System::Windows::Forms::DateTimePicker^  txtThoigianra;
@@ -103,14 +103,12 @@ namespace SmartParkingSystem {
 			this->txtTongtien = (gcnew System::Windows::Forms::TextBox());
 			this->lbTongtien = (gcnew System::Windows::Forms::Label());
 			this->lbThoigianra = (gcnew System::Windows::Forms::Label());
-			this->txtVitri = (gcnew System::Windows::Forms::TextBox());
 			this->txtLoaixe = (gcnew System::Windows::Forms::TextBox());
 			this->txtThoigianvao = (gcnew System::Windows::Forms::TextBox());
 			this->txtBienso = (gcnew System::Windows::Forms::TextBox());
 			this->txtSove = (gcnew System::Windows::Forms::TextBox());
 			this->lbThoigianvao = (gcnew System::Windows::Forms::Label());
 			this->lbLoaive = (gcnew System::Windows::Forms::Label());
-			this->lbVitri = (gcnew System::Windows::Forms::Label());
 			this->lbBienso = (gcnew System::Windows::Forms::Label());
 			this->lbLoaixe = (gcnew System::Windows::Forms::Label());
 			this->lbSove = (gcnew System::Windows::Forms::Label());
@@ -295,14 +293,12 @@ namespace SmartParkingSystem {
 			this->pnCar_Info->Controls->Add(this->txtTongtien);
 			this->pnCar_Info->Controls->Add(this->lbTongtien);
 			this->pnCar_Info->Controls->Add(this->lbThoigianra);
-			this->pnCar_Info->Controls->Add(this->txtVitri);
 			this->pnCar_Info->Controls->Add(this->txtLoaixe);
 			this->pnCar_Info->Controls->Add(this->txtThoigianvao);
 			this->pnCar_Info->Controls->Add(this->txtBienso);
 			this->pnCar_Info->Controls->Add(this->txtSove);
 			this->pnCar_Info->Controls->Add(this->lbThoigianvao);
 			this->pnCar_Info->Controls->Add(this->lbLoaive);
-			this->pnCar_Info->Controls->Add(this->lbVitri);
 			this->pnCar_Info->Controls->Add(this->lbBienso);
 			this->pnCar_Info->Controls->Add(this->lbLoaixe);
 			this->pnCar_Info->Controls->Add(this->lbSove);
@@ -322,7 +318,7 @@ namespace SmartParkingSystem {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->txtLoaive->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->txtLoaive->Location = System::Drawing::Point(123, 317);
+			this->txtLoaive->Location = System::Drawing::Point(123, 285);
 			this->txtLoaive->Name = L"txtLoaive";
 			this->txtLoaive->Size = System::Drawing::Size(170, 26);
 			this->txtLoaive->TabIndex = 5;
@@ -335,7 +331,7 @@ namespace SmartParkingSystem {
 			this->txtThoigianra->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtThoigianra->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-			this->txtThoigianra->Location = System::Drawing::Point(123, 448);
+			this->txtThoigianra->Location = System::Drawing::Point(123, 429);
 			this->txtThoigianra->Name = L"txtThoigianra";
 			this->txtThoigianra->Size = System::Drawing::Size(170, 26);
 			this->txtThoigianra->TabIndex = 7;
@@ -346,7 +342,7 @@ namespace SmartParkingSystem {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->txtTongtien->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->txtTongtien->Location = System::Drawing::Point(123, 505);
+			this->txtTongtien->Location = System::Drawing::Point(123, 501);
 			this->txtTongtien->Name = L"txtTongtien";
 			this->txtTongtien->Size = System::Drawing::Size(170, 26);
 			this->txtTongtien->TabIndex = 8;
@@ -358,7 +354,7 @@ namespace SmartParkingSystem {
 			this->lbTongtien->AutoSize = true;
 			this->lbTongtien->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->lbTongtien->Location = System::Drawing::Point(20, 513);
+			this->lbTongtien->Location = System::Drawing::Point(20, 510);
 			this->lbTongtien->Name = L"lbTongtien";
 			this->lbTongtien->Size = System::Drawing::Size(65, 19);
 			this->lbTongtien->TabIndex = 0;
@@ -371,22 +367,11 @@ namespace SmartParkingSystem {
 			this->lbThoigianra->AutoSize = true;
 			this->lbThoigianra->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->lbThoigianra->Location = System::Drawing::Point(20, 450);
+			this->lbThoigianra->Location = System::Drawing::Point(20, 437);
 			this->lbThoigianra->Name = L"lbThoigianra";
 			this->lbThoigianra->Size = System::Drawing::Size(80, 19);
 			this->lbThoigianra->TabIndex = 0;
 			this->lbThoigianra->Text = L"Thời gian ra";
-			// 
-			// txtVitri
-			// 
-			this->txtVitri->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtVitri->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->txtVitri->Location = System::Drawing::Point(123, 258);
-			this->txtVitri->Name = L"txtVitri";
-			this->txtVitri->Size = System::Drawing::Size(170, 26);
-			this->txtVitri->TabIndex = 4;
 			// 
 			// txtLoaixe
 			// 
@@ -394,7 +379,7 @@ namespace SmartParkingSystem {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->txtLoaixe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->txtLoaixe->Location = System::Drawing::Point(123, 132);
+			this->txtLoaixe->Location = System::Drawing::Point(123, 141);
 			this->txtLoaixe->Name = L"txtLoaixe";
 			this->txtLoaixe->Size = System::Drawing::Size(170, 26);
 			this->txtLoaixe->TabIndex = 2;
@@ -406,7 +391,7 @@ namespace SmartParkingSystem {
 			this->txtThoigianvao->Enabled = false;
 			this->txtThoigianvao->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->txtThoigianvao->Location = System::Drawing::Point(123, 385);
+			this->txtThoigianvao->Location = System::Drawing::Point(123, 357);
 			this->txtThoigianvao->Name = L"txtThoigianvao";
 			this->txtThoigianvao->Size = System::Drawing::Size(170, 26);
 			this->txtThoigianvao->TabIndex = 6;
@@ -417,7 +402,7 @@ namespace SmartParkingSystem {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->txtBienso->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->txtBienso->Location = System::Drawing::Point(123, 195);
+			this->txtBienso->Location = System::Drawing::Point(123, 213);
 			this->txtBienso->Name = L"txtBienso";
 			this->txtBienso->Size = System::Drawing::Size(170, 26);
 			this->txtBienso->TabIndex = 3;
@@ -440,7 +425,7 @@ namespace SmartParkingSystem {
 			this->lbThoigianvao->AutoSize = true;
 			this->lbThoigianvao->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->lbThoigianvao->Location = System::Drawing::Point(20, 387);
+			this->lbThoigianvao->Location = System::Drawing::Point(20, 364);
 			this->lbThoigianvao->Name = L"lbThoigianvao";
 			this->lbThoigianvao->Size = System::Drawing::Size(90, 19);
 			this->lbThoigianvao->TabIndex = 0;
@@ -453,24 +438,11 @@ namespace SmartParkingSystem {
 			this->lbLoaive->AutoSize = true;
 			this->lbLoaive->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->lbLoaive->Location = System::Drawing::Point(20, 324);
+			this->lbLoaive->Location = System::Drawing::Point(20, 291);
 			this->lbLoaive->Name = L"lbLoaive";
 			this->lbLoaive->Size = System::Drawing::Size(54, 19);
 			this->lbLoaive->TabIndex = 0;
 			this->lbLoaive->Text = L"Loại vé";
-			// 
-			// lbVitri
-			// 
-			this->lbVitri->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->lbVitri->AutoSize = true;
-			this->lbVitri->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->lbVitri->Location = System::Drawing::Point(20, 261);
-			this->lbVitri->Name = L"lbVitri";
-			this->lbVitri->Size = System::Drawing::Size(39, 19);
-			this->lbVitri->TabIndex = 0;
-			this->lbVitri->Text = L"Vị trí";
 			// 
 			// lbBienso
 			// 
@@ -479,7 +451,7 @@ namespace SmartParkingSystem {
 			this->lbBienso->AutoSize = true;
 			this->lbBienso->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->lbBienso->Location = System::Drawing::Point(20, 198);
+			this->lbBienso->Location = System::Drawing::Point(20, 218);
 			this->lbBienso->Name = L"lbBienso";
 			this->lbBienso->Size = System::Drawing::Size(54, 19);
 			this->lbBienso->TabIndex = 0;
@@ -492,7 +464,7 @@ namespace SmartParkingSystem {
 			this->lbLoaixe->AutoSize = true;
 			this->lbLoaixe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->lbLoaixe->Location = System::Drawing::Point(20, 135);
+			this->lbLoaixe->Location = System::Drawing::Point(20, 145);
 			this->lbLoaixe->Name = L"lbLoaixe";
 			this->lbLoaixe->Size = System::Drawing::Size(54, 19);
 			this->lbLoaixe->TabIndex = 0;
