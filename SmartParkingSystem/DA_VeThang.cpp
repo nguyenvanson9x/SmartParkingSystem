@@ -47,7 +47,6 @@ void DA_VeThang::Delete(int id)
 {
 }
 
-void SmartParkingSystem::DA_VeThang::Search(String^ sql, System::Windows::Forms::DataGridView^ dgvTicket)
+void DA_VeThang::Search(String^ sql, System::Windows::Forms::DataGridView^ dgvTicket)
 {
-	throw gcnew System::NotImplementedException();
 }

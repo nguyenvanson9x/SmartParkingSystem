@@ -6,7 +6,6 @@ using namespace SmartParkingSystem;
 BUS_Traxe::BUS_Traxe(void){};
 void BUS_Traxe::Traxe(Xe^ xe,String^ tong_tien){
 	da->InsertTX(xe,tong_tien);
-	//Xe^ xe1=gcnew Xe(xe->Id, "", "", "", "", "", "");
 	da->UpdateTX(xe->Id,xe);
 };
 void BUS_Traxe::Search(String^ search, DataGridView^ dgv){

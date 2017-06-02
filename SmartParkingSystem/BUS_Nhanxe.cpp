@@ -21,7 +21,6 @@ void BUS_Nhanxe::Them(Xe^ xe,String^ ticket,String^ loai_xe){
 		MessageBox::Show(L"Xe đã gửi rồi!!");
 };
 void BUS_Nhanxe::CapNhat(int sove,String^ bks,String^ loai_ve,String^ loai_xe,String^ thoi_gian_vao){
-	da->InsertX(bks,loai_xe);
 	da->UpdateNX(sove,bks,loai_ve,loai_xe,thoi_gian_vao);
 };
 void BUS_Nhanxe::Xoa(int sove,String^ bks){

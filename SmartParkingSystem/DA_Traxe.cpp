@@ -5,8 +5,8 @@ using namespace SmartParkingSystem;
 DA_Traxe::DA_Traxe(void){};
 
 void DA_Traxe::InsertTX(Xe^ xe,String^ tong_tien){
-	String^ sqlInsert=L"insert into thongke values('"+xe->Id+"','"+xe->BienKiemSoat+"','"+xe->LoaiVe+"','"+xe->LoaiXe+"','"+xe->ThoiGianVao+"','"+xe->ThoiGianRa+"','"+tong_tien+"')";
-	DBUtils::ExcuteNonQuery(sqlInsert);
+	String^ sqlInsertTX=L"insert into traxe values('"+xe->Id+"','"+xe->ThoiGianRa+"','"+tong_tien+"')";
+	DBUtils::ExcuteNonQuery(sqlInsertTX);
 };
 void DA_Traxe::UpdateTX(int id,Xe^ xe){
 	String^ loai_xe=xe->LoaiXe;

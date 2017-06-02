@@ -526,9 +526,9 @@ namespace SmartParkingSystem {
 #pragma endregion
 	private: System::Void btnThongKe_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
-private: System::Void btnXuatExcel_Click(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void frmThongKe_Load(System::Object^  sender, System::EventArgs^  e) {
-		 }
-};
+	private: System::Void btnXuatExcel_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void frmThongKe_Load(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	};
 }

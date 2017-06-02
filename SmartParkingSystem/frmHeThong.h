@@ -24,6 +24,7 @@ namespace SmartParkingSystem {
 			b = gcnew BUS_HeThong();
 			//Enable_Button(true, false);
 			dgvAccount->ClearSelection();
+			show_pass = 0;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -86,11 +87,18 @@ namespace SmartParkingSystem {
 		/// </summary>
 		BUS_HeThong ^b;
 		String ^id, ^username, ^password, ^fullname, ^type;
+		int show_pass;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clID;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clUSERNAME;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clPASSWORD;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clTEN;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clCHUCVU;
+	private: System::Windows::Forms::Button^  btnShowPassWord;
+
+
+
+
+
 
 #pragma region Windows Form Designer generated code
 			 /// <summary>
@@ -101,14 +109,15 @@ namespace SmartParkingSystem {
 			 {
 				 this->components = (gcnew System::ComponentModel::Container());
 				 System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(frmHeThong::typeid));
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 this->pnTitle = (gcnew System::Windows::Forms::Panel());
 				 this->btn_config_db = (gcnew System::Windows::Forms::Button());
 				 this->lbTitle = (gcnew System::Windows::Forms::Label());
 				 this->tbContainer = (gcnew System::Windows::Forms::TableLayoutPanel());
 				 this->pnCar = (gcnew System::Windows::Forms::Panel());
+				 this->btnShowPassWord = (gcnew System::Windows::Forms::Button());
 				 this->lbSer = (gcnew System::Windows::Forms::Label());
 				 this->cbChucvu = (gcnew System::Windows::Forms::ComboBox());
 				 this->txtHoten = (gcnew System::Windows::Forms::TextBox());
@@ -223,6 +232,7 @@ namespace SmartParkingSystem {
 				 // pnCar
 				 // 
 				 this->pnCar->BackColor = System::Drawing::Color::White;
+				 this->pnCar->Controls->Add(this->btnShowPassWord);
 				 this->pnCar->Controls->Add(this->lbSer);
 				 this->pnCar->Controls->Add(this->cbChucvu);
 				 this->pnCar->Controls->Add(this->txtHoten);
@@ -249,6 +259,21 @@ namespace SmartParkingSystem {
 				 this->pnCar->Size = System::Drawing::Size(743, 611);
 				 this->pnCar->TabIndex = 0;
 				 // 
+				 // btnShowPassWord
+				 // 
+				 this->btnShowPassWord->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+				 this->btnShowPassWord->BackColor = System::Drawing::Color::Transparent;
+				 this->btnShowPassWord->FlatAppearance->BorderSize = 0;
+				 this->btnShowPassWord->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+				 this->btnShowPassWord->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnShowPassWord.Image")));
+				 this->btnShowPassWord->Location = System::Drawing::Point(552, 140);
+				 this->btnShowPassWord->Name = L"btnShowPassWord";
+				 this->btnShowPassWord->Size = System::Drawing::Size(26, 26);
+				 this->btnShowPassWord->TabIndex = 14;
+				 this->toolTip->SetToolTip(this->btnShowPassWord, L"Hiện mật khẩu");
+				 this->btnShowPassWord->UseVisualStyleBackColor = false;
+				 this->btnShowPassWord->Click += gcnew System::EventHandler(this, &frmHeThong::btnShowPassWord_Click);
+				 // 
 				 // lbSer
 				 // 
 				 this->lbSer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
@@ -269,7 +294,7 @@ namespace SmartParkingSystem {
 					 static_cast<System::Byte>(0)));
 				 this->cbChucvu->FormattingEnabled = true;
 				 this->cbChucvu->Items->AddRange(gcnew cli::array< System::Object^  >(2) {L"Nhân Viên", L"Quản Lý"});
-				 this->cbChucvu->Location = System::Drawing::Point(202, 220);
+				 this->cbChucvu->Location = System::Drawing::Point(285, 220);
 				 this->cbChucvu->Name = L"cbChucvu";
 				 this->cbChucvu->Size = System::Drawing::Size(261, 27);
 				 this->cbChucvu->TabIndex = 5;
@@ -280,7 +305,7 @@ namespace SmartParkingSystem {
 					 | System::Windows::Forms::AnchorStyles::Right));
 				 this->txtHoten->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 this->txtHoten->Location = System::Drawing::Point(202, 180);
+				 this->txtHoten->Location = System::Drawing::Point(285, 180);
 				 this->txtHoten->Name = L"txtHoten";
 				 this->txtHoten->Size = System::Drawing::Size(261, 26);
 				 this->txtHoten->TabIndex = 4;
@@ -291,7 +316,7 @@ namespace SmartParkingSystem {
 					 | System::Windows::Forms::AnchorStyles::Right));
 				 this->txtMatkhau->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 this->txtMatkhau->Location = System::Drawing::Point(202, 140);
+				 this->txtMatkhau->Location = System::Drawing::Point(285, 140);
 				 this->txtMatkhau->Name = L"txtMatkhau";
 				 this->txtMatkhau->Size = System::Drawing::Size(261, 26);
 				 this->txtMatkhau->TabIndex = 3;
@@ -303,7 +328,7 @@ namespace SmartParkingSystem {
 					 | System::Windows::Forms::AnchorStyles::Right));
 				 this->txtTaikhoan->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 this->txtTaikhoan->Location = System::Drawing::Point(202, 100);
+				 this->txtTaikhoan->Location = System::Drawing::Point(285, 100);
 				 this->txtTaikhoan->Name = L"txtTaikhoan";
 				 this->txtTaikhoan->Size = System::Drawing::Size(261, 26);
 				 this->txtTaikhoan->TabIndex = 2;
@@ -315,7 +340,7 @@ namespace SmartParkingSystem {
 				 this->txtID->Enabled = false;
 				 this->txtID->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 this->txtID->Location = System::Drawing::Point(202, 60);
+				 this->txtID->Location = System::Drawing::Point(285, 60);
 				 this->txtID->Name = L"txtID";
 				 this->txtID->Size = System::Drawing::Size(261, 26);
 				 this->txtID->TabIndex = 1;
@@ -332,15 +357,15 @@ namespace SmartParkingSystem {
 				 this->dgvAccount->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 				 this->dgvAccount->BackgroundColor = System::Drawing::Color::White;
 				 this->dgvAccount->BorderStyle = System::Windows::Forms::BorderStyle::None;
-				 dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				 dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
-				 dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				 dataGridViewCellStyle4->BackColor = System::Drawing::SystemColors::Control;
+				 dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
-				 dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-				 dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				 dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				 this->dgvAccount->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+				 dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::WindowText;
+				 dataGridViewCellStyle4->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+				 dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				 dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				 this->dgvAccount->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
 				 this->dgvAccount->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 				 this->dgvAccount->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {this->clID, this->clUSERNAME, 
 					 this->clPASSWORD, this->clTEN, this->clCHUCVU});
@@ -348,20 +373,20 @@ namespace SmartParkingSystem {
 				 this->dgvAccount->Margin = System::Windows::Forms::Padding(0);
 				 this->dgvAccount->Name = L"dgvAccount";
 				 this->dgvAccount->ReadOnly = true;
-				 dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				 dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Control;
-				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				 dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Control;
+				 dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::WindowText;
-				 dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-				 dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				 dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				 this->dgvAccount->RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+				 dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
+				 dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+				 dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				 dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				 this->dgvAccount->RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
 				 this->dgvAccount->RowHeadersVisible = false;
 				 this->dgvAccount->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-				 dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->dgvAccount->RowsDefaultCellStyle = dataGridViewCellStyle3;
+				 this->dgvAccount->RowsDefaultCellStyle = dataGridViewCellStyle6;
 				 this->dgvAccount->RowTemplate->Height = 30;
 				 this->dgvAccount->Size = System::Drawing::Size(743, 231);
 				 this->dgvAccount->TabIndex = 12;
@@ -392,6 +417,7 @@ namespace SmartParkingSystem {
 				 this->clPASSWORD->Name = L"clPASSWORD";
 				 this->clPASSWORD->ReadOnly = true;
 				 this->clPASSWORD->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
+				 this->clPASSWORD->Visible = false;
 				 // 
 				 // clTEN
 				 // 
@@ -456,12 +482,11 @@ namespace SmartParkingSystem {
 				 this->btnHuy->ForeColor = System::Drawing::Color::White;
 				 this->btnHuy->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnHuy.Image")));
 				 this->btnHuy->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-				 this->btnHuy->Location = System::Drawing::Point(373, 268);
+				 this->btnHuy->Location = System::Drawing::Point(543, 268);
 				 this->btnHuy->Name = L"btnHuy";
-				 this->btnHuy->Size = System::Drawing::Size(75, 33);
+				 this->btnHuy->Size = System::Drawing::Size(115, 33);
 				 this->btnHuy->TabIndex = 9;
 				 this->btnHuy->Text = L"Hủy";
-				 this->btnHuy->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 				 this->btnHuy->UseVisualStyleBackColor = false;
 				 this->btnHuy->Click += gcnew System::EventHandler(this, &frmHeThong::btnHuy_Click);
 				 // 
@@ -477,12 +502,11 @@ namespace SmartParkingSystem {
 				 this->btnXoa->ForeColor = System::Drawing::Color::White;
 				 this->btnXoa->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnXoa.Image")));
 				 this->btnXoa->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-				 this->btnXoa->Location = System::Drawing::Point(297, 268);
+				 this->btnXoa->Location = System::Drawing::Point(390, 268);
 				 this->btnXoa->Name = L"btnXoa";
-				 this->btnXoa->Size = System::Drawing::Size(70, 33);
+				 this->btnXoa->Size = System::Drawing::Size(115, 33);
 				 this->btnXoa->TabIndex = 8;
 				 this->btnXoa->Text = L"Xóa";
-				 this->btnXoa->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 				 this->btnXoa->UseVisualStyleBackColor = false;
 				 this->btnXoa->Click += gcnew System::EventHandler(this, &frmHeThong::btnXoa_Click);
 				 // 
@@ -498,7 +522,7 @@ namespace SmartParkingSystem {
 				 this->btnCapnhat->ForeColor = System::Drawing::Color::White;
 				 this->btnCapnhat->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnCapnhat.Image")));
 				 this->btnCapnhat->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-				 this->btnCapnhat->Location = System::Drawing::Point(176, 268);
+				 this->btnCapnhat->Location = System::Drawing::Point(237, 268);
 				 this->btnCapnhat->Name = L"btnCapnhat";
 				 this->btnCapnhat->Size = System::Drawing::Size(115, 33);
 				 this->btnCapnhat->TabIndex = 7;
@@ -519,12 +543,11 @@ namespace SmartParkingSystem {
 				 this->btnThem->ForeColor = System::Drawing::Color::White;
 				 this->btnThem->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnThem.Image")));
 				 this->btnThem->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-				 this->btnThem->Location = System::Drawing::Point(85, 268);
+				 this->btnThem->Location = System::Drawing::Point(84, 268);
 				 this->btnThem->Name = L"btnThem";
-				 this->btnThem->Size = System::Drawing::Size(85, 33);
+				 this->btnThem->Size = System::Drawing::Size(115, 33);
 				 this->btnThem->TabIndex = 6;
 				 this->btnThem->Text = L"Thêm";
-				 this->btnThem->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 				 this->btnThem->UseVisualStyleBackColor = false;
 				 this->btnThem->Click += gcnew System::EventHandler(this, &frmHeThong::btnThem_Click);
 				 // 
@@ -533,7 +556,7 @@ namespace SmartParkingSystem {
 				 this->lbChucvu->AutoSize = true;
 				 this->lbChucvu->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 this->lbChucvu->Location = System::Drawing::Point(81, 220);
+				 this->lbChucvu->Location = System::Drawing::Point(164, 220);
 				 this->lbChucvu->Name = L"lbChucvu";
 				 this->lbChucvu->Size = System::Drawing::Size(61, 19);
 				 this->lbChucvu->TabIndex = 0;
@@ -545,7 +568,7 @@ namespace SmartParkingSystem {
 				 this->lbFullName->AutoSize = true;
 				 this->lbFullName->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 this->lbFullName->Location = System::Drawing::Point(81, 180);
+				 this->lbFullName->Location = System::Drawing::Point(164, 180);
 				 this->lbFullName->Name = L"lbFullName";
 				 this->lbFullName->Size = System::Drawing::Size(50, 19);
 				 this->lbFullName->TabIndex = 0;
@@ -557,7 +580,7 @@ namespace SmartParkingSystem {
 				 this->lbMatkhau->AutoSize = true;
 				 this->lbMatkhau->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 this->lbMatkhau->Location = System::Drawing::Point(81, 140);
+				 this->lbMatkhau->Location = System::Drawing::Point(164, 140);
 				 this->lbMatkhau->Name = L"lbMatkhau";
 				 this->lbMatkhau->Size = System::Drawing::Size(67, 19);
 				 this->lbMatkhau->TabIndex = 0;
@@ -569,7 +592,7 @@ namespace SmartParkingSystem {
 				 this->lbTaikhoan->AutoSize = true;
 				 this->lbTaikhoan->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 this->lbTaikhoan->Location = System::Drawing::Point(81, 100);
+				 this->lbTaikhoan->Location = System::Drawing::Point(164, 100);
 				 this->lbTaikhoan->Name = L"lbTaikhoan";
 				 this->lbTaikhoan->Size = System::Drawing::Size(69, 19);
 				 this->lbTaikhoan->TabIndex = 0;
@@ -581,7 +604,7 @@ namespace SmartParkingSystem {
 				 this->lbID->AutoSize = true;
 				 this->lbID->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 this->lbID->Location = System::Drawing::Point(81, 60);
+				 this->lbID->Location = System::Drawing::Point(164, 60);
 				 this->lbID->Name = L"lbID";
 				 this->lbID->Size = System::Drawing::Size(25, 19);
 				 this->lbID->TabIndex = 0;
@@ -873,7 +896,8 @@ namespace SmartParkingSystem {
 					 cbChucvu->Text = L"Nhân viên";
 				 else
 					 cbChucvu->Text = L"Quản lý";
-
+				 txtMatkhau->UseSystemPasswordChar = true;
+				 show_pass = 0;
 				 //Enable_Button(false, true);
 			 }
 	private: System::Void frmHeThong_Load(System::Object^  sender, System::EventArgs^  e) {
@@ -896,6 +920,7 @@ namespace SmartParkingSystem {
 				 txtTaikhoan->Clear();
 				 txtMatkhau->Clear();
 				 cbChucvu->Text = "";
+				 show_pass = 0;
 			 }
 	private: System::Void dgvAccount_DataBindingComplete(System::Object^  sender, System::Windows::Forms::DataGridViewBindingCompleteEventArgs^  e) {
 				 dgvAccount->ClearSelection();
@@ -923,6 +948,19 @@ namespace SmartParkingSystem {
 				 }
 				 catch (Exception^) {
 
+				 }
+
+			 }
+	private: System::Void btnShowPassWord_Click(System::Object^  sender, System::EventArgs^  e) {
+
+				 if (show_pass == 0) {
+					 show_pass = 1;
+					 txtMatkhau->UseSystemPasswordChar = false;
+					 return;
+				 }
+				 if (show_pass == 1) {
+					 show_pass = 0;
+					 txtMatkhau->UseSystemPasswordChar = true;
 				 }
 
 			 }

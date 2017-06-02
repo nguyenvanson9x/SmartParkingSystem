@@ -136,6 +136,17 @@
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="btnShowPassWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAARhJREFUOE+1k20rBGEUQAfZ0pJ/odYHligk0uaH2BKlsO1Xv0DyUvbFS5YPKL/S
+        Oc/OM80yxgc5dWrunbnP3HunSf6DWWzjI/ZTH/AEp7GUXXzF5RCNsoLe2w5RARZf4FiIihnHa9wKUQ7b
+        9vSy4oiHvGM1RCnOnG/bNjv4jE94iY4Q2cCj4eUQFyYzOMAWzqN5F7iIZ3iDFZRYE3DTE/iBNRNwh/t4
+        iF0TsITx2poMA2d7wTkTYG4Pm9gzAatYeEBsx8V44xTt5Da1jo7gV5pEcbQMZ84vaR2v8B598BwXMLKJ
+        jpbh8t7QMX7DXfkZp0KUo4G+tewQix3JDgvZQU9fC9Eotm2XPxZH/GGO8evPdIDf2v4jSfIJtZIspyhy
+        9J4AAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="clID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

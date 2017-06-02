@@ -106,6 +106,7 @@ namespace SmartParkingSystem {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(frmVeThang::typeid));
 			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->pnTitle = (gcnew System::Windows::Forms::Panel());
@@ -133,17 +134,17 @@ namespace SmartParkingSystem {
 			this->lbTicket = (gcnew System::Windows::Forms::Label());
 			this->pnTicketInfo = (gcnew System::Windows::Forms::Panel());
 			this->dgvTicket = (gcnew System::Windows::Forms::DataGridView());
-			this->lbSum = (gcnew System::Windows::Forms::Label());
-			this->btnTrolai = (gcnew System::Windows::Forms::Button());
-			this->txtSearch = (gcnew System::Windows::Forms::TextBox());
-			this->btnTimkiem = (gcnew System::Windows::Forms::Button());
-			this->lbCar = (gcnew System::Windows::Forms::Label());
 			this->clMaThe = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->clBienSo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->clLoaiXe = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->clNgayBatDau = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->clNgayKetThuc = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->clTien = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->lbSum = (gcnew System::Windows::Forms::Label());
+			this->btnTrolai = (gcnew System::Windows::Forms::Button());
+			this->txtSearch = (gcnew System::Windows::Forms::TextBox());
+			this->btnTimkiem = (gcnew System::Windows::Forms::Button());
+			this->lbCar = (gcnew System::Windows::Forms::Label());
 			this->pnTitle->SuspendLayout();
 			this->tbContainer->SuspendLayout();
 			this->pnTicket->SuspendLayout();
@@ -261,13 +262,13 @@ namespace SmartParkingSystem {
 			this->btnXoa->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnXoa->ForeColor = System::Drawing::Color::White;
+			this->btnXoa->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnXoa.Image")));
 			this->btnXoa->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnXoa->Location = System::Drawing::Point(26, 565);
 			this->btnXoa->Name = L"btnXoa";
-			this->btnXoa->Size = System::Drawing::Size(95, 33);
+			this->btnXoa->Size = System::Drawing::Size(115, 33);
 			this->btnXoa->TabIndex = 13;
 			this->btnXoa->Text = L"Xóa";
-			this->btnXoa->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnXoa->UseVisualStyleBackColor = false;
 			this->btnXoa->Click += gcnew System::EventHandler(this, &frmVeThang::btnXoa_Click);
 			// 
@@ -282,13 +283,13 @@ namespace SmartParkingSystem {
 			this->btnThem->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnThem->ForeColor = System::Drawing::Color::White;
+			this->btnThem->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnThem.Image")));
 			this->btnThem->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnThem->Location = System::Drawing::Point(26, 510);
+			this->btnThem->Location = System::Drawing::Point(26, 513);
 			this->btnThem->Name = L"btnThem";
-			this->btnThem->Size = System::Drawing::Size(95, 33);
+			this->btnThem->Size = System::Drawing::Size(115, 33);
 			this->btnThem->TabIndex = 12;
 			this->btnThem->Text = L"Thêm";
-			this->btnThem->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnThem->UseVisualStyleBackColor = false;
 			this->btnThem->Click += gcnew System::EventHandler(this, &frmVeThang::btnThem_Click);
 			// 
@@ -365,13 +366,13 @@ namespace SmartParkingSystem {
 			this->btnHuy->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnHuy->ForeColor = System::Drawing::Color::White;
+			this->btnHuy->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnHuy.Image")));
 			this->btnHuy->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnHuy->Location = System::Drawing::Point(184, 565);
+			this->btnHuy->Location = System::Drawing::Point(174, 565);
 			this->btnHuy->Name = L"btnHuy";
-			this->btnHuy->Size = System::Drawing::Size(95, 33);
+			this->btnHuy->Size = System::Drawing::Size(115, 33);
 			this->btnHuy->TabIndex = 6;
 			this->btnHuy->Text = L"Hủy";
-			this->btnHuy->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnHuy->UseVisualStyleBackColor = false;
 			this->btnHuy->Click += gcnew System::EventHandler(this, &frmVeThang::btnHuy_Click);
 			// 
@@ -386,13 +387,13 @@ namespace SmartParkingSystem {
 			this->btnSua->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnSua->ForeColor = System::Drawing::Color::White;
+			this->btnSua->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnSua.Image")));
 			this->btnSua->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnSua->Location = System::Drawing::Point(184, 510);
+			this->btnSua->Location = System::Drawing::Point(174, 513);
 			this->btnSua->Name = L"btnSua";
-			this->btnSua->Size = System::Drawing::Size(95, 33);
+			this->btnSua->Size = System::Drawing::Size(115, 33);
 			this->btnSua->TabIndex = 5;
 			this->btnSua->Text = L"Sửa";
-			this->btnSua->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnSua->UseVisualStyleBackColor = false;
 			this->btnSua->Click += gcnew System::EventHandler(this, &frmVeThang::btnSua_Click);
 			// 
@@ -522,7 +523,7 @@ namespace SmartParkingSystem {
 			this->dgvTicket->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
 			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
@@ -546,88 +547,6 @@ namespace SmartParkingSystem {
 			this->dgvTicket->TabIndex = 4;
 			this->dgvTicket->TabStop = false;
 			this->dgvTicket->RowEnter += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &frmVeThang::dgvTicket_RowEnter);
-			// 
-			// lbSum
-			// 
-			this->lbSum->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			this->lbSum->AutoSize = true;
-			this->lbSum->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->lbSum->Location = System::Drawing::Point(0, 589);
-			this->lbSum->Margin = System::Windows::Forms::Padding(0);
-			this->lbSum->Name = L"lbSum";
-			this->lbSum->Size = System::Drawing::Size(104, 21);
-			this->lbSum->TabIndex = 0;
-			this->lbSum->Text = L"Tổng số thẻ:";
-			// 
-			// btnTrolai
-			// 
-			this->btnTrolai->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->btnTrolai->AutoSize = true;
-			this->btnTrolai->BackColor = System::Drawing::Color::Gold;
-			this->btnTrolai->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btnTrolai->FlatAppearance->BorderSize = 0;
-			this->btnTrolai->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTrolai->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->btnTrolai->ForeColor = System::Drawing::Color::White;
-			this->btnTrolai->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnTrolai->Location = System::Drawing::Point(636, 60);
-			this->btnTrolai->Name = L"btnTrolai";
-			this->btnTrolai->Size = System::Drawing::Size(95, 33);
-			this->btnTrolai->TabIndex = 3;
-			this->btnTrolai->Text = L"Trở lại";
-			this->btnTrolai->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->btnTrolai->UseVisualStyleBackColor = false;
-			this->btnTrolai->Click += gcnew System::EventHandler(this, &frmVeThang::btnTrolai_Click);
-			// 
-			// txtSearch
-			// 
-			this->txtSearch->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
-				| System::Windows::Forms::AnchorStyles::Left) 
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->txtSearch->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->txtSearch->Location = System::Drawing::Point(179, 65);
-			this->txtSearch->Name = L"txtSearch";
-			this->txtSearch->Size = System::Drawing::Size(320, 26);
-			this->txtSearch->TabIndex = 1;
-			// 
-			// btnTimkiem
-			// 
-			this->btnTimkiem->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->btnTimkiem->AutoSize = true;
-			this->btnTimkiem->BackColor = System::Drawing::Color::DodgerBlue;
-			this->btnTimkiem->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btnTimkiem->FlatAppearance->BorderSize = 0;
-			this->btnTimkiem->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTimkiem->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->btnTimkiem->ForeColor = System::Drawing::Color::White;
-			this->btnTimkiem->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnTimkiem->Location = System::Drawing::Point(505, 60);
-			this->btnTimkiem->Name = L"btnTimkiem";
-			this->btnTimkiem->Size = System::Drawing::Size(125, 33);
-			this->btnTimkiem->TabIndex = 2;
-			this->btnTimkiem->Text = L"Tìm kiếm";
-			this->btnTimkiem->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->btnTimkiem->UseVisualStyleBackColor = false;
-			this->btnTimkiem->Click += gcnew System::EventHandler(this, &frmVeThang::btnTimkiem_Click);
-			// 
-			// lbCar
-			// 
-			this->lbCar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(248)), static_cast<System::Int32>(static_cast<System::Byte>(248)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(248)));
-			this->lbCar->Dock = System::Windows::Forms::DockStyle::Top;
-			this->lbCar->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->lbCar->Location = System::Drawing::Point(0, 0);
-			this->lbCar->Margin = System::Windows::Forms::Padding(0);
-			this->lbCar->Name = L"lbCar";
-			this->lbCar->Size = System::Drawing::Size(743, 36);
-			this->lbCar->TabIndex = 1;
-			this->lbCar->Text = L"Danh mục thẻ";
-			this->lbCar->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// clMaThe
 			// 
@@ -677,6 +596,90 @@ namespace SmartParkingSystem {
 			this->clTien->Name = L"clTien";
 			this->clTien->ReadOnly = true;
 			this->clTien->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
+			// 
+			// lbSum
+			// 
+			this->lbSum->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			this->lbSum->AutoSize = true;
+			this->lbSum->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->lbSum->Location = System::Drawing::Point(0, 589);
+			this->lbSum->Margin = System::Windows::Forms::Padding(0);
+			this->lbSum->Name = L"lbSum";
+			this->lbSum->Size = System::Drawing::Size(104, 21);
+			this->lbSum->TabIndex = 0;
+			this->lbSum->Text = L"Tổng số thẻ:";
+			// 
+			// btnTrolai
+			// 
+			this->btnTrolai->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->btnTrolai->AutoSize = true;
+			this->btnTrolai->BackColor = System::Drawing::Color::Gold;
+			this->btnTrolai->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btnTrolai->FlatAppearance->BorderSize = 0;
+			this->btnTrolai->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnTrolai->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->btnTrolai->ForeColor = System::Drawing::Color::White;
+			this->btnTrolai->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnTrolai.Image")));
+			this->btnTrolai->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnTrolai->Location = System::Drawing::Point(636, 60);
+			this->btnTrolai->Name = L"btnTrolai";
+			this->btnTrolai->Size = System::Drawing::Size(95, 33);
+			this->btnTrolai->TabIndex = 3;
+			this->btnTrolai->Text = L"Trở lại";
+			this->btnTrolai->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->btnTrolai->UseVisualStyleBackColor = false;
+			this->btnTrolai->Click += gcnew System::EventHandler(this, &frmVeThang::btnTrolai_Click);
+			// 
+			// txtSearch
+			// 
+			this->txtSearch->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
+				| System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->txtSearch->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->txtSearch->Location = System::Drawing::Point(179, 65);
+			this->txtSearch->Name = L"txtSearch";
+			this->txtSearch->Size = System::Drawing::Size(320, 26);
+			this->txtSearch->TabIndex = 1;
+			// 
+			// btnTimkiem
+			// 
+			this->btnTimkiem->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->btnTimkiem->AutoSize = true;
+			this->btnTimkiem->BackColor = System::Drawing::Color::DodgerBlue;
+			this->btnTimkiem->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btnTimkiem->FlatAppearance->BorderSize = 0;
+			this->btnTimkiem->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnTimkiem->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->btnTimkiem->ForeColor = System::Drawing::Color::White;
+			this->btnTimkiem->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnTimkiem.Image")));
+			this->btnTimkiem->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnTimkiem->Location = System::Drawing::Point(505, 60);
+			this->btnTimkiem->Name = L"btnTimkiem";
+			this->btnTimkiem->Size = System::Drawing::Size(125, 33);
+			this->btnTimkiem->TabIndex = 2;
+			this->btnTimkiem->Text = L"Tìm kiếm";
+			this->btnTimkiem->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->btnTimkiem->UseVisualStyleBackColor = false;
+			this->btnTimkiem->Click += gcnew System::EventHandler(this, &frmVeThang::btnTimkiem_Click);
+			// 
+			// lbCar
+			// 
+			this->lbCar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(248)), static_cast<System::Int32>(static_cast<System::Byte>(248)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(248)));
+			this->lbCar->Dock = System::Windows::Forms::DockStyle::Top;
+			this->lbCar->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->lbCar->Location = System::Drawing::Point(0, 0);
+			this->lbCar->Margin = System::Windows::Forms::Padding(0);
+			this->lbCar->Name = L"lbCar";
+			this->lbCar->Size = System::Drawing::Size(743, 36);
+			this->lbCar->TabIndex = 1;
+			this->lbCar->Text = L"Danh mục thẻ";
+			this->lbCar->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// frmVeThang
 			// 

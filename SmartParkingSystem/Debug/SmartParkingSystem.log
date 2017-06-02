@@ -1,9 +1,100 @@
-﻿Build started 5/30/2017 10:18:38 PM.
-     1>Project "D:\NguyenVanSon\SmartParkingSystem\SmartParkingSystem\SmartParkingSystem.vcxproj" on node 2 (clean target(s)).
-     1>_PrepareForClean:
-         Deleting file "Debug\SmartParkingSystem.lastbuildstate".
-     1>Done Building Project "D:\NguyenVanSon\SmartParkingSystem\SmartParkingSystem\SmartParkingSystem.vcxproj" (clean target(s)).
+﻿Build started 6/2/2017 2:04:13 PM.
+     1>Project "D:\NguyenVanSon\SmartParkingSystem\SmartParkingSystem\SmartParkingSystem.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\SmartParkingSystem.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       ClCompile:
+         D:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\SmartParkingSystem.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.0\MySql.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Configuration.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt stdafx.cpp /clr:nostdlib 
+         stdafx.cpp
+         D:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\SmartParkingSystem.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.0\MySql.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Configuration.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt app_config.cpp AssemblyInfo.cpp BUS_HeThong.cpp BUS_Nhanxe.cpp BUS_Traxe.cpp BUS_VeThang.cpp connect.cpp Convert_Hethong.cpp DA_HeThong.cpp DA_Nhanxe.cpp DA_Traxe.cpp DA_VeThang.cpp DBMySQLUtils.cpp DBUtils.cpp frmConfigDatabase.cpp frmDatabase.cpp frmHeThong.cpp frmLogin.cpp frmMain.cpp frmNhanXe.cpp frmSoDo.cpp frmThongKe.cpp frmTraXe.cpp frmVeThang.cpp HeThong.cpp SmartParkingSystem.cpp VeThang.cpp Xe.cpp /clr:nostdlib 
+         app_config.cpp
+         AssemblyInfo.cpp
+         BUS_HeThong.cpp
+         BUS_Nhanxe.cpp
+         BUS_Traxe.cpp
+         BUS_VeThang.cpp
+         connect.cpp
+         Convert_Hethong.cpp
+         DA_HeThong.cpp
+         DA_Nhanxe.cpp
+         DA_Traxe.cpp
+         DA_VeThang.cpp
+         DBMySQLUtils.cpp
+         DBUtils.cpp
+         frmConfigDatabase.cpp
+         frmDatabase.cpp
+         frmHeThong.cpp
+         frmLogin.cpp
+         frmMain.cpp
+         frmNhanXe.cpp
+         Generating Code...
+         Compiling...
+         frmSoDo.cpp
+         frmThongKe.cpp
+         frmTraXe.cpp
+         frmVeThang.cpp
+         HeThong.cpp
+         SmartParkingSystem.cpp
+         VeThang.cpp
+         Xe.cpp
+         Generating Code...
+         D:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /analyze- /errorReport:prompt "C:\Users\Nguyen Van Son\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cpp"
+         .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+       CoreResGen:
+         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.0\MySql.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Configuration.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile frmConfigDatabase.resx,Debug\SmartParkingSystem.frmConfigDatabase.resources frmDatabase.resx,Debug\SmartParkingSystem.frmDatabase.resources frmHeThong.resx,Debug\SmartParkingSystem.frmHeThong.resources frmLogin.resx,Debug\SmartParkingSystem.frmLogin.resources frmMain.resX,Debug\SmartParkingSystem.frmMain.resources frmNhanXe.resx,Debug\SmartParkingSystem.frmNhanXe.resources frmSoDo.resx,Debug\SmartParkingSystem.frmSoDo.resources frmThongKe.resx,Debug\SmartParkingSystem.frmThongKe.resources frmTraXe.resx,Debug\SmartParkingSystem.frmTraXe.resources frmVeThang.resx,Debug\SmartParkingSystem.frmVeThang.resources
+         Processing resource file "frmConfigDatabase.resx" into "Debug\SmartParkingSystem.frmConfigDatabase.resources".
+         Processing resource file "frmDatabase.resx" into "Debug\SmartParkingSystem.frmDatabase.resources".
+         Processing resource file "frmHeThong.resx" into "Debug\SmartParkingSystem.frmHeThong.resources".
+         Processing resource file "frmLogin.resx" into "Debug\SmartParkingSystem.frmLogin.resources".
+         Processing resource file "frmMain.resX" into "Debug\SmartParkingSystem.frmMain.resources".
+         Processing resource file "frmNhanXe.resx" into "Debug\SmartParkingSystem.frmNhanXe.resources".
+         Processing resource file "frmSoDo.resx" into "Debug\SmartParkingSystem.frmSoDo.resources".
+         Processing resource file "frmThongKe.resx" into "Debug\SmartParkingSystem.frmThongKe.resources".
+         Processing resource file "frmTraXe.resx" into "Debug\SmartParkingSystem.frmTraXe.resources".
+         Processing resource file "frmVeThang.resx" into "Debug\SmartParkingSystem.frmVeThang.resources".
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\app.res" app.rc 
+       Link:
+         D:\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NguyenVanSon\SmartParkingSystem\Debug\SmartParkingSystem.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\SmartParkingSystem.frmConfigDatabase.resources /ASSEMBLYRESOURCE:Debug\SmartParkingSystem.frmDatabase.resources /ASSEMBLYRESOURCE:Debug\SmartParkingSystem.frmHeThong.resources /ASSEMBLYRESOURCE:Debug\SmartParkingSystem.frmLogin.resources /ASSEMBLYRESOURCE:Debug\SmartParkingSystem.frmMain.resources /ASSEMBLYRESOURCE:Debug\SmartParkingSystem.frmNhanXe.resources /ASSEMBLYRESOURCE:Debug\SmartParkingSystem.frmSoDo.resources /ASSEMBLYRESOURCE:Debug\SmartParkingSystem.frmThongKe.resources /ASSEMBLYRESOURCE:Debug\SmartParkingSystem.frmTraXe.resources /ASSEMBLYRESOURCE:Debug\SmartParkingSystem.frmVeThang.resources /MANIFEST /ManifestFile:"Debug\SmartParkingSystem.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\NguyenVanSon\SmartParkingSystem\Debug\SmartParkingSystem.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         Debug\app_config.obj
+         Debug\AssemblyInfo.obj
+         Debug\BUS_HeThong.obj
+         Debug\BUS_Nhanxe.obj
+         Debug\BUS_Traxe.obj
+         Debug\BUS_VeThang.obj
+         Debug\connect.obj
+         Debug\Convert_Hethong.obj
+         Debug\DA_HeThong.obj
+         Debug\DA_Nhanxe.obj
+         Debug\DA_Traxe.obj
+         Debug\DA_VeThang.obj
+         Debug\DBMySQLUtils.obj
+         Debug\DBUtils.obj
+         Debug\frmConfigDatabase.obj
+         Debug\frmDatabase.obj
+         Debug\frmHeThong.obj
+         Debug\frmLogin.obj
+         Debug\frmMain.obj
+         Debug\frmNhanXe.obj
+         Debug\frmSoDo.obj
+         Debug\frmThongKe.obj
+         Debug\frmTraXe.obj
+         Debug\frmVeThang.obj
+         Debug\HeThong.obj
+         Debug\SmartParkingSystem.obj
+         Debug\stdafx.obj
+         Debug\VeThang.obj
+         Debug\Xe.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         SmartParkingSystem.vcxproj -> D:\NguyenVanSon\SmartParkingSystem\Debug\SmartParkingSystem.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\NguyenVanSon\SmartParkingSystem\Debug\SmartParkingSystem.exe;#1" /manifest Debug\SmartParkingSystem.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\SmartParkingSystem.unsuccessfulbuild".
+         Touching "Debug\SmartParkingSystem.lastbuildstate".
+     1>Done Building Project "D:\NguyenVanSon\SmartParkingSystem\SmartParkingSystem\SmartParkingSystem.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.39
+Time Elapsed 00:00:08.25
