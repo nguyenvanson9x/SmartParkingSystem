@@ -51,6 +51,7 @@ namespace SmartParkingSystem {
 	private: System::Windows::Forms::TextBox^  txtPassword;
 	private: System::Windows::Forms::Label^  lbPassword;
 	private: System::Windows::Forms::Button^  btnExit;
+
 	private: System::Windows::Forms::Button^  btnLogin;
 
 
@@ -63,19 +64,21 @@ namespace SmartParkingSystem {
 			 {
 				 System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(frmLogin::typeid));
 				 this->pnTitle = (gcnew System::Windows::Forms::Panel());
+				 this->btnExit = (gcnew System::Windows::Forms::Button());
 				 this->lbTitle = (gcnew System::Windows::Forms::Label());
 				 this->txtUsername = (gcnew System::Windows::Forms::TextBox());
 				 this->lbUsername = (gcnew System::Windows::Forms::Label());
 				 this->txtPassword = (gcnew System::Windows::Forms::TextBox());
 				 this->lbPassword = (gcnew System::Windows::Forms::Label());
-				 this->btnExit = (gcnew System::Windows::Forms::Button());
 				 this->btnLogin = (gcnew System::Windows::Forms::Button());
+				 this->pnTitle->SuspendLayout();
 				 this->SuspendLayout();
 				 // 
 				 // pnTitle
 				 // 
-				 this->pnTitle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				 this->pnTitle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 					 static_cast<System::Int32>(static_cast<System::Byte>(56)));
+				 this->pnTitle->Controls->Add(this->btnExit);
 				 this->pnTitle->Dock = System::Windows::Forms::DockStyle::Top;
 				 this->pnTitle->Location = System::Drawing::Point(0, 0);
 				 this->pnTitle->Margin = System::Windows::Forms::Padding(0);
@@ -86,49 +89,67 @@ namespace SmartParkingSystem {
 				 this->pnTitle->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmLogin::pnTitle_MouseMove);
 				 this->pnTitle->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmLogin::pnTitle_MouseUp);
 				 // 
+				 // btnExit
+				 // 
+				 this->btnExit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
+					 static_cast<System::Int32>(static_cast<System::Byte>(56)));
+				 this->btnExit->FlatAppearance->BorderSize = 0;
+				 this->btnExit->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), 
+					 static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+				 this->btnExit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+				 this->btnExit->ForeColor = System::Drawing::Color::White;
+				 this->btnExit->Location = System::Drawing::Point(335, 0);
+				 this->btnExit->Margin = System::Windows::Forms::Padding(0);
+				 this->btnExit->Name = L"btnExit";
+				 this->btnExit->Size = System::Drawing::Size(25, 25);
+				 this->btnExit->TabIndex = 4;
+				 this->btnExit->Text = L"X";
+				 this->btnExit->UseVisualStyleBackColor = false;
+				 this->btnExit->Click += gcnew System::EventHandler(this, &frmLogin::btnExit_Click);
+				 // 
 				 // lbTitle
 				 // 
 				 this->lbTitle->AutoSize = true;
-				 this->lbTitle->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				 this->lbTitle->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->lbTitle->ForeColor = System::Drawing::Color::White;
 				 this->lbTitle->Location = System::Drawing::Point(12, 36);
 				 this->lbTitle->Name = L"lbTitle";
 				 this->lbTitle->Size = System::Drawing::Size(235, 31);
-				 this->lbTitle->TabIndex = 2;
+				 this->lbTitle->TabIndex = 4;
 				 this->lbTitle->Text = L"Đăng nhập hệ thống";
 				 // 
 				 // txtUsername
 				 // 
-				 this->txtUsername->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				 this->txtUsername->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 					 static_cast<System::Int32>(static_cast<System::Byte>(56)));
 				 this->txtUsername->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->txtUsername->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				 this->txtUsername->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->txtUsername->ForeColor = System::Drawing::Color::White;
 				 this->txtUsername->Location = System::Drawing::Point(41, 167);
 				 this->txtUsername->Name = L"txtUsername";
 				 this->txtUsername->Size = System::Drawing::Size(271, 30);
-				 this->txtUsername->TabIndex = 1;
+				 this->txtUsername->TabIndex = 0;
 				 // 
 				 // lbUsername
 				 // 
 				 this->lbUsername->AutoSize = true;
-				 this->lbUsername->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				 this->lbUsername->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->lbUsername->ForeColor = System::Drawing::Color::White;
 				 this->lbUsername->Location = System::Drawing::Point(41, 130);
 				 this->lbUsername->Name = L"lbUsername";
 				 this->lbUsername->Size = System::Drawing::Size(104, 22);
-				 this->lbUsername->TabIndex = 0;
+				 this->lbUsername->TabIndex = 4;
 				 this->lbUsername->Text = L"Người dùng";
 				 // 
 				 // txtPassword
 				 // 
-				 this->txtPassword->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				 this->txtPassword->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 					 static_cast<System::Int32>(static_cast<System::Byte>(56)));
 				 this->txtPassword->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->txtPassword->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				 this->txtPassword->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->txtPassword->ForeColor = System::Drawing::Color::White;
 				 this->txtPassword->Location = System::Drawing::Point(41, 282);
@@ -140,54 +161,33 @@ namespace SmartParkingSystem {
 				 // lbPassword
 				 // 
 				 this->lbPassword->AutoSize = true;
-				 this->lbPassword->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				 this->lbPassword->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->lbPassword->ForeColor = System::Drawing::Color::White;
 				 this->lbPassword->Location = System::Drawing::Point(41, 245);
 				 this->lbPassword->Name = L"lbPassword";
 				 this->lbPassword->Size = System::Drawing::Size(82, 22);
-				 this->lbPassword->TabIndex = 0;
+				 this->lbPassword->TabIndex = 4;
 				 this->lbPassword->Text = L"Mật khẩu";
-				 // 
-				 // btnExit
-				 // 
-				 this->btnExit->AutoSize = true;
-				 this->btnExit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-					 static_cast<System::Int32>(static_cast<System::Byte>(80)));
-				 this->btnExit->Cursor = System::Windows::Forms::Cursors::Hand;
-				 this->btnExit->FlatAppearance->BorderSize = 0;
-				 this->btnExit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->btnExit->Font = (gcnew System::Drawing::Font(L"Times New Roman", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-					 static_cast<System::Byte>(0)));
-				 this->btnExit->ForeColor = System::Drawing::Color::White;
-				 this->btnExit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnExit.Image")));
-				 this->btnExit->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-				 this->btnExit->Location = System::Drawing::Point(211, 360);
-				 this->btnExit->Name = L"btnExit";
-				 this->btnExit->Size = System::Drawing::Size(105, 42);
-				 this->btnExit->TabIndex = 4;
-				 this->btnExit->Text = L"Thoát";
-				 this->btnExit->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-				 this->btnExit->UseVisualStyleBackColor = false;
-				 this->btnExit->Click += gcnew System::EventHandler(this, &frmLogin::btnExit_Click);
 				 // 
 				 // btnLogin
 				 // 
 				 this->btnLogin->AutoSize = true;
-				 this->btnLogin->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(36)), static_cast<System::Int32>(static_cast<System::Byte>(149)),
-					 static_cast<System::Int32>(static_cast<System::Byte>(138)));
+				 this->btnLogin->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(82)), 
+					 static_cast<System::Int32>(static_cast<System::Byte>(82)));
 				 this->btnLogin->Cursor = System::Windows::Forms::Cursors::Hand;
 				 this->btnLogin->FlatAppearance->BorderSize = 0;
-				 this->btnLogin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::LightSeaGreen;
+				 this->btnLogin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), 
+					 static_cast<System::Int32>(static_cast<System::Byte>(67)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
 				 this->btnLogin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->btnLogin->Font = (gcnew System::Drawing::Font(L"Times New Roman", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				 this->btnLogin->Font = (gcnew System::Drawing::Font(L"Times New Roman", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->btnLogin->ForeColor = System::Drawing::Color::White;
-				 this->btnLogin->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnLogin.Image")));
+				 this->btnLogin->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnLogin.Image")));
 				 this->btnLogin->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-				 this->btnLogin->Location = System::Drawing::Point(45, 360);
+				 this->btnLogin->Location = System::Drawing::Point(103, 360);
 				 this->btnLogin->Name = L"btnLogin";
-				 this->btnLogin->Size = System::Drawing::Size(153, 42);
+				 this->btnLogin->Size = System::Drawing::Size(155, 42);
 				 this->btnLogin->TabIndex = 3;
 				 this->btnLogin->Text = L"Đăng nhập";
 				 this->btnLogin->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -198,10 +198,9 @@ namespace SmartParkingSystem {
 				 // 
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-				 this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				 this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 					 static_cast<System::Int32>(static_cast<System::Byte>(56)));
 				 this->ClientSize = System::Drawing::Size(360, 480);
-				 this->Controls->Add(this->btnExit);
 				 this->Controls->Add(this->btnLogin);
 				 this->Controls->Add(this->txtPassword);
 				 this->Controls->Add(this->lbPassword);
@@ -210,10 +209,14 @@ namespace SmartParkingSystem {
 				 this->Controls->Add(this->lbTitle);
 				 this->Controls->Add(this->pnTitle);
 				 this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-				 this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+				 this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
 				 this->Name = L"frmLogin";
 				 this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 				 this->Text = L"Đăng nhập hệ thống";
+				 this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &frmLogin::pnTitle_MouseDown);
+				 this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmLogin::pnTitle_MouseMove);
+				 this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmLogin::pnTitle_MouseUp);
+				 this->pnTitle->ResumeLayout(false);
 				 this->ResumeLayout(false);
 				 this->PerformLayout();
 

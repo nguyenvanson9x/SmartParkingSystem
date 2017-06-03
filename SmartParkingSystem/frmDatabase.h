@@ -52,7 +52,7 @@ namespace SmartParkingSystem {
 	private: System::Windows::Forms::TextBox^  txtPort;
 
 	private: System::Windows::Forms::Button^  btnLogin;
-	private: System::Windows::Forms::Button^  btnExit;
+
 
 	private:
 		/// <summary>
@@ -60,7 +60,8 @@ namespace SmartParkingSystem {
 		/// </summary>
 		System::ComponentModel::Container ^components;
 		bool mouseDown;
-		Point lastLocation;
+	private: System::Windows::Forms::Button^  btnExit;
+			 Point lastLocation;
 		void put_to_app_config();
 		void init_app_config();
 		String ^Host, ^Database, ^Port, ^Username, ^Password;

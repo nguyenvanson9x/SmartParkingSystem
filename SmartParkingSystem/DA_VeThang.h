@@ -11,6 +11,7 @@ namespace SmartParkingSystem {
 		void Update(VeThang ^ ticket);
 		void Delete(int id);
 		void Search(String^ sql, System::Windows::Forms::DataGridView^ dgvTicket);
+		void showMoney(String^ sql, System::Windows::Forms::TextBox^ txtGiaVe);
 	};
 }
 

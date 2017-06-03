@@ -85,7 +85,7 @@ namespace SmartParkingSystem {
 			// 
 			// pnTitle
 			// 
-			this->pnTitle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->pnTitle->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->pnTitle->Dock = System::Windows::Forms::DockStyle::Top;
 			this->pnTitle->Location = System::Drawing::Point(0, 0);
@@ -100,7 +100,7 @@ namespace SmartParkingSystem {
 			// lbTitle
 			// 
 			this->lbTitle->AutoSize = true;
-			this->lbTitle->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbTitle->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbTitle->ForeColor = System::Drawing::Color::White;
 			this->lbTitle->Location = System::Drawing::Point(12, 36);
@@ -112,7 +112,7 @@ namespace SmartParkingSystem {
 			// lbServer
 			// 
 			this->lbServer->AutoSize = true;
-			this->lbServer->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbServer->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbServer->ForeColor = System::Drawing::Color::White;
 			this->lbServer->Location = System::Drawing::Point(57, 126);
@@ -124,7 +124,7 @@ namespace SmartParkingSystem {
 			// lbPort
 			// 
 			this->lbPort->AutoSize = true;
-			this->lbPort->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbPort->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbPort->ForeColor = System::Drawing::Color::White;
 			this->lbPort->Location = System::Drawing::Point(57, 176);
@@ -136,7 +136,7 @@ namespace SmartParkingSystem {
 			// lbDatabase
 			// 
 			this->lbDatabase->AutoSize = true;
-			this->lbDatabase->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbDatabase->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbDatabase->ForeColor = System::Drawing::Color::White;
 			this->lbDatabase->Location = System::Drawing::Point(57, 226);
@@ -148,7 +148,7 @@ namespace SmartParkingSystem {
 			// lbUsername
 			// 
 			this->lbUsername->AutoSize = true;
-			this->lbUsername->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbUsername->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbUsername->ForeColor = System::Drawing::Color::White;
 			this->lbUsername->Location = System::Drawing::Point(57, 276);
@@ -160,7 +160,7 @@ namespace SmartParkingSystem {
 			// lbPassword
 			// 
 			this->lbPassword->AutoSize = true;
-			this->lbPassword->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbPassword->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->lbPassword->ForeColor = System::Drawing::Color::White;
 			this->lbPassword->Location = System::Drawing::Point(57, 326);
@@ -171,10 +171,10 @@ namespace SmartParkingSystem {
 			// 
 			// txtServer
 			// 
-			this->txtServer->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->txtServer->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->txtServer->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->txtServer->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtServer->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtServer->ForeColor = System::Drawing::Color::White;
 			this->txtServer->Location = System::Drawing::Point(223, 120);
@@ -184,10 +184,10 @@ namespace SmartParkingSystem {
 			// 
 			// txtPassword
 			// 
-			this->txtPassword->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->txtPassword->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->txtPassword->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->txtPassword->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtPassword->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtPassword->ForeColor = System::Drawing::Color::White;
 			this->txtPassword->Location = System::Drawing::Point(223, 320);
@@ -198,10 +198,10 @@ namespace SmartParkingSystem {
 			// 
 			// txtUsername
 			// 
-			this->txtUsername->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->txtUsername->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->txtUsername->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->txtUsername->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtUsername->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtUsername->ForeColor = System::Drawing::Color::White;
 			this->txtUsername->Location = System::Drawing::Point(223, 270);
@@ -211,10 +211,10 @@ namespace SmartParkingSystem {
 			// 
 			// txtDatabase
 			// 
-			this->txtDatabase->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->txtDatabase->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->txtDatabase->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->txtDatabase->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtDatabase->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtDatabase->ForeColor = System::Drawing::Color::White;
 			this->txtDatabase->Location = System::Drawing::Point(223, 220);
@@ -224,10 +224,10 @@ namespace SmartParkingSystem {
 			// 
 			// txtPort
 			// 
-			this->txtPort->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->txtPort->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->txtPort->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->txtPort->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtPort->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->txtPort->ForeColor = System::Drawing::Color::White;
 			this->txtPort->Location = System::Drawing::Point(223, 170);
@@ -243,16 +243,16 @@ namespace SmartParkingSystem {
 			this->btnCheckConnect->FlatAppearance->BorderSize = 0;
 			this->btnCheckConnect->FlatAppearance->MouseOverBackColor = System::Drawing::Color::ForestGreen;
 			this->btnCheckConnect->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnCheckConnect->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btnCheckConnect->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnCheckConnect->ForeColor = System::Drawing::Color::White;
-			this->btnCheckConnect->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCheckConnect.Image")));
+			this->btnCheckConnect->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnCheckConnect.Image")));
 			this->btnCheckConnect->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnCheckConnect->Location = System::Drawing::Point(39, 395);
+			this->btnCheckConnect->Location = System::Drawing::Point(34, 395);
 			this->btnCheckConnect->Name = L"btnCheckConnect";
-			this->btnCheckConnect->Size = System::Drawing::Size(170, 38);
+			this->btnCheckConnect->Size = System::Drawing::Size(115, 38);
 			this->btnCheckConnect->TabIndex = 6;
-			this->btnCheckConnect->Text = L"Kiểm tra kết nối";
+			this->btnCheckConnect->Text = L"Kiểm tra";
 			this->btnCheckConnect->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnCheckConnect->UseVisualStyleBackColor = false;
 			this->btnCheckConnect->Click += gcnew System::EventHandler(this, &frmConfigDatabase::btnCheckConnect_Click);
@@ -260,19 +260,20 @@ namespace SmartParkingSystem {
 			// btnExit
 			// 
 			this->btnExit->AutoSize = true;
-			this->btnExit->BackColor = System::Drawing::Color::SandyBrown;
+			this->btnExit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(69)), static_cast<System::Int32>(static_cast<System::Byte>(90)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(100)));
 			this->btnExit->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnExit->FlatAppearance->BorderSize = 0;
 			this->btnExit->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Orange;
 			this->btnExit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnExit->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btnExit->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnExit->ForeColor = System::Drawing::Color::White;
-			this->btnExit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnExit.Image")));
+			this->btnExit->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnExit.Image")));
 			this->btnExit->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnExit->Location = System::Drawing::Point(371, 395);
+			this->btnExit->Location = System::Drawing::Point(367, 395);
 			this->btnExit->Name = L"btnExit";
-			this->btnExit->Size = System::Drawing::Size(90, 38);
+			this->btnExit->Size = System::Drawing::Size(100, 38);
 			this->btnExit->TabIndex = 8;
 			this->btnExit->Text = L"Đóng";
 			this->btnExit->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -282,17 +283,21 @@ namespace SmartParkingSystem {
 			// btnSaveConfig
 			// 
 			this->btnSaveConfig->AutoSize = true;
-			this->btnSaveConfig->BackColor = System::Drawing::Color::RoyalBlue;
+			this->btnSaveConfig->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(221)), static_cast<System::Int32>(static_cast<System::Byte>(44)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->btnSaveConfig->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnSaveConfig->FlatAppearance->BorderSize = 0;
-			this->btnSaveConfig->FlatAppearance->MouseOverBackColor = System::Drawing::Color::MediumBlue;
+			this->btnSaveConfig->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(230)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(25)));
+			this->btnSaveConfig->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(30)));
 			this->btnSaveConfig->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnSaveConfig->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btnSaveConfig->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->btnSaveConfig->ForeColor = System::Drawing::Color::White;
-			this->btnSaveConfig->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSaveConfig.Image")));
+			this->btnSaveConfig->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnSaveConfig.Image")));
 			this->btnSaveConfig->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnSaveConfig->Location = System::Drawing::Point(215, 395);
+			this->btnSaveConfig->Location = System::Drawing::Point(183, 395);
 			this->btnSaveConfig->Name = L"btnSaveConfig";
 			this->btnSaveConfig->Size = System::Drawing::Size(150, 38);
 			this->btnSaveConfig->TabIndex = 7;
@@ -305,7 +310,7 @@ namespace SmartParkingSystem {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(56)));
 			this->ClientSize = System::Drawing::Size(500, 470);
 			this->Controls->Add(this->btnSaveConfig);

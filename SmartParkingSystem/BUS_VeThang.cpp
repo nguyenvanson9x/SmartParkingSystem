@@ -27,7 +27,7 @@ void BUS_VeThang::Delete(int id)
 	da->Delete(id);
 }
 
-void BUS_VeThang::Search(String ^ search, System::Windows::Forms::DataGridView^ dgvTicket)
+void BUS_VeThang::Search(String ^ search, DataGridView^ dgvTicket)
 {
 	String^ sql = "select * from quanlyvethang";
 	String^ sqlSearch = String::Format("select * from quanlyvethang where BKS = '{0}' or Loaixe = '{1}'", search, search);
@@ -35,4 +35,10 @@ void BUS_VeThang::Search(String ^ search, System::Windows::Forms::DataGridView^ 
 		da->Search(sql, dgvTicket);
 	else
 		da->Search(sqlSearch, dgvTicket);
+}
+
+void BUS_VeThang::showMoney(String^ Loaixe, TextBox^ txtGiaVe)
+{
+	String^ sql = String::Format("select Tien_Vethang from loaixe where Loaixe = '{0}'", Loaixe);
+	da->showMoney(sql, txtGiaVe);
 }
