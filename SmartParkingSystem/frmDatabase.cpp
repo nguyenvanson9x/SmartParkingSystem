@@ -28,6 +28,7 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 {
 	System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(frmDatabase::typeid));
 	this->pnTitle = (gcnew System::Windows::Forms::Panel());
+	this->btnExit = (gcnew System::Windows::Forms::Button());
 	this->lbTitle = (gcnew System::Windows::Forms::Label());
 	this->lbServer = (gcnew System::Windows::Forms::Label());
 	this->lbPort = (gcnew System::Windows::Forms::Label());
@@ -40,7 +41,6 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->txtDatabase = (gcnew System::Windows::Forms::TextBox());
 	this->txtPort = (gcnew System::Windows::Forms::TextBox());
 	this->btnLogin = (gcnew System::Windows::Forms::Button());
-	this->btnExit = (gcnew System::Windows::Forms::Button());
 	this->pnTitle->SuspendLayout();
 	this->SuspendLayout();
 	// 
@@ -54,10 +54,28 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->pnTitle->Margin = System::Windows::Forms::Padding(0);
 	this->pnTitle->Name = L"pnTitle";
 	this->pnTitle->Size = System::Drawing::Size(500, 25);
-	this->pnTitle->TabIndex = 0;
+	this->pnTitle->TabIndex = 7;
 	this->pnTitle->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &frmDatabase::pnTitle_MouseDown);
 	this->pnTitle->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmDatabase::pnTitle_MouseMove);
 	this->pnTitle->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmDatabase::pnTitle_MouseUp);
+	// 
+	// btnExit
+	// 
+	this->btnExit->FlatAppearance->BorderSize = 0;
+	this->btnExit->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(229)), 
+		static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(53)));
+	this->btnExit->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), 
+		static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+	this->btnExit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+	this->btnExit->ForeColor = System::Drawing::Color::White;
+	this->btnExit->Location = System::Drawing::Point(475, 0);
+	this->btnExit->Margin = System::Windows::Forms::Padding(0);
+	this->btnExit->Name = L"btnExit";
+	this->btnExit->Size = System::Drawing::Size(25, 25);
+	this->btnExit->TabIndex = 7;
+	this->btnExit->Text = L"X";
+	this->btnExit->UseVisualStyleBackColor = true;
+	this->btnExit->Click += gcnew System::EventHandler(this, &frmDatabase::btnExit_Click);
 	// 
 	// lbTitle
 	// 
@@ -68,7 +86,7 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->lbTitle->Location = System::Drawing::Point(12, 36);
 	this->lbTitle->Name = L"lbTitle";
 	this->lbTitle->Size = System::Drawing::Size(267, 31);
-	this->lbTitle->TabIndex = 1;
+	this->lbTitle->TabIndex = 7;
 	this->lbTitle->Text = L"Kết nối Cơ Sở Dữ Liệu";
 	// 
 	// lbServer
@@ -80,7 +98,7 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->lbServer->Location = System::Drawing::Point(57, 126);
 	this->lbServer->Name = L"lbServer";
 	this->lbServer->Size = System::Drawing::Size(77, 22);
-	this->lbServer->TabIndex = 0;
+	this->lbServer->TabIndex = 7;
 	this->lbServer->Text = L"Máy chủ";
 	// 
 	// lbPort
@@ -92,7 +110,7 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->lbPort->Location = System::Drawing::Point(57, 176);
 	this->lbPort->Name = L"lbPort";
 	this->lbPort->Size = System::Drawing::Size(51, 22);
-	this->lbPort->TabIndex = 0;
+	this->lbPort->TabIndex = 7;
 	this->lbPort->Text = L"Cổng";
 	// 
 	// lbDatabase
@@ -104,7 +122,7 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->lbDatabase->Location = System::Drawing::Point(57, 226);
 	this->lbDatabase->Name = L"lbDatabase";
 	this->lbDatabase->Size = System::Drawing::Size(119, 22);
-	this->lbDatabase->TabIndex = 0;
+	this->lbDatabase->TabIndex = 7;
 	this->lbDatabase->Text = L"Cơ sở dữ liệu";
 	// 
 	// lbUsername
@@ -116,7 +134,7 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->lbUsername->Location = System::Drawing::Point(57, 276);
 	this->lbUsername->Name = L"lbUsername";
 	this->lbUsername->Size = System::Drawing::Size(88, 22);
-	this->lbUsername->TabIndex = 0;
+	this->lbUsername->TabIndex = 7;
 	this->lbUsername->Text = L"Tài khoản";
 	// 
 	// lbPassword
@@ -128,7 +146,7 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->lbPassword->Location = System::Drawing::Point(57, 326);
 	this->lbPassword->Name = L"lbPassword";
 	this->lbPassword->Size = System::Drawing::Size(82, 22);
-	this->lbPassword->TabIndex = 0;
+	this->lbPassword->TabIndex = 7;
 	this->lbPassword->Text = L"Mật khẩu";
 	// 
 	// txtServer
@@ -227,26 +245,9 @@ inline void SmartParkingSystem::frmDatabase::InitializeComponent(void)
 	this->btnLogin->UseVisualStyleBackColor = false;
 	this->btnLogin->Click += gcnew System::EventHandler(this, &frmDatabase::btnLogin_Click);
 	// 
-	// btnExit
-	// 
-	this->btnExit->FlatAppearance->BorderSize = 0;
-	this->btnExit->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(229)), 
-		static_cast<System::Int32>(static_cast<System::Byte>(57)), static_cast<System::Int32>(static_cast<System::Byte>(53)));
-	this->btnExit->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), 
-		static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
-	this->btnExit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-	this->btnExit->ForeColor = System::Drawing::Color::White;
-	this->btnExit->Location = System::Drawing::Point(475, 0);
-	this->btnExit->Margin = System::Windows::Forms::Padding(0);
-	this->btnExit->Name = L"btnExit";
-	this->btnExit->Size = System::Drawing::Size(25, 25);
-	this->btnExit->TabIndex = 6;
-	this->btnExit->Text = L"X";
-	this->btnExit->UseVisualStyleBackColor = true;
-	this->btnExit->Click += gcnew System::EventHandler(this, &frmDatabase::btnExit_Click);
-	// 
 	// frmDatabase
 	// 
+	this->AcceptButton = this->btnLogin;
 	this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 	this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 	this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 

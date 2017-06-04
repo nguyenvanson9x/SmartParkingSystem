@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "connect.h"
+#include "app_config.h"
 namespace SmartParkingSystem {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -57,7 +58,9 @@ namespace SmartParkingSystem {
 		bool mouseDown;
 		Point lastLocation;
 		String ^Host, ^Database, ^Port, ^Username, ^Password;
-		
+		void put_to_app_config();
+		void init_app_config();
+
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -338,36 +341,58 @@ namespace SmartParkingSystem {
 		}
 #pragma endregion
 	private: System::Void btnExit_Click(System::Object^  sender, System::EventArgs^  e) {
-		this->Close();
-	}
+				 this->Close();
+			 }
 	private: System::Void pnTitle_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
-		mouseDown = true;
-		lastLocation = e->Location;
-	}
+				 mouseDown = true;
+				 lastLocation = e->Location;
+			 }
 	private: System::Void pnTitle_MouseMove(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
-		if (mouseDown)
-		{
-			if (this->mouseDown) {
-				Point currentScreenPos = PointToScreen(e->Location);
-				Location = Point(currentScreenPos.X - this->lastLocation.X, currentScreenPos.Y - this->lastLocation.Y);
-			}
-		}
-	}
+				 if (mouseDown)
+				 {
+					 if (this->mouseDown) {
+						 Point currentScreenPos = PointToScreen(e->Location);
+						 Location = Point(currentScreenPos.X - this->lastLocation.X, currentScreenPos.Y - this->lastLocation.Y);
+					 }
+				 }
+			 }
 	private: System::Void pnTitle_MouseUp(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
-		mouseDown = false;
-	}
+				 mouseDown = false;
+			 }
 
 	private: System::Void btnCheckConnect_Click(System::Object^  sender, System::EventArgs^  e) {
-		connect^ c;
-		c->Host = txtServer->Text;
-		c->Database = txtDatabase->Text;
-		c->Port = txtPort->Text;
-		c->Username = txtUsername->Text;
-		c->Password = txtPassword->Text;
+				 connect^ c;
+				 c->Host = txtServer->Text;
+				 c->Database = txtDatabase->Text;
+				 c->Port = txtPort->Text;
+				 c->Username = txtUsername->Text;
+				 c->Password = txtPassword->Text;
 
-		MessageBox::Show(c->check_connection().ToString());
-	}
+				 if (c->check_connection() == true) {
+					 MessageBox::Show(L"Cấu hình hợp lệ", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				 }
+				 else 
+					 MessageBox::Show(L"Cấu hình không hợp lệ", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			 }
 	private: System::Void btnSaveConfig_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
+				 connect^ c;
+				 c->Host = txtServer->Text;
+				 c->Database = txtDatabase->Text;
+				 c->Port = txtPort->Text;
+				 c->Username = txtUsername->Text;
+				 c->Password = txtPassword->Text;
+
+				 if (c->check_connection() == true) {
+					 if (ConfigurationManager::AppSettings["host"] == nullptr) {
+						 init_app_config();
+						 put_to_app_config();
+					 }
+					 else
+						 put_to_app_config();
+					 MessageBox::Show(L"Lưu cấu hình thành công", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Information);
+
+				 } else
+					 MessageBox::Show(L"Sai cấu hình", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			 }
 	};
 }

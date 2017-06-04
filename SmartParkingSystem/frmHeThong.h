@@ -109,9 +109,9 @@ namespace SmartParkingSystem {
 			 {
 				 this->components = (gcnew System::ComponentModel::Container());
 				 System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(frmHeThong::typeid));
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 this->pnTitle = (gcnew System::Windows::Forms::Panel());
 				 this->btn_config_db = (gcnew System::Windows::Forms::Button());
 				 this->lbTitle = (gcnew System::Windows::Forms::Label());
@@ -357,15 +357,15 @@ namespace SmartParkingSystem {
 				 this->dgvAccount->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 				 this->dgvAccount->BackgroundColor = System::Drawing::Color::White;
 				 this->dgvAccount->BorderStyle = System::Windows::Forms::BorderStyle::None;
-				 dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				 dataGridViewCellStyle4->BackColor = System::Drawing::SystemColors::Control;
-				 dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				 dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
+				 dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::WindowText;
-				 dataGridViewCellStyle4->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-				 dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				 dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				 this->dgvAccount->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+				 dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+				 dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+				 dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				 dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				 this->dgvAccount->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 				 this->dgvAccount->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 				 this->dgvAccount->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {this->clID, this->clUSERNAME, 
 					 this->clPASSWORD, this->clTEN, this->clCHUCVU});
@@ -373,20 +373,20 @@ namespace SmartParkingSystem {
 				 this->dgvAccount->Margin = System::Windows::Forms::Padding(0);
 				 this->dgvAccount->Name = L"dgvAccount";
 				 this->dgvAccount->ReadOnly = true;
-				 dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				 dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Control;
-				 dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				 dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Control;
+				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
-				 dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-				 dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				 dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				 this->dgvAccount->RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+				 dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::WindowText;
+				 dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+				 dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				 dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				 this->dgvAccount->RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
 				 this->dgvAccount->RowHeadersVisible = false;
 				 this->dgvAccount->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-				 dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->dgvAccount->RowsDefaultCellStyle = dataGridViewCellStyle6;
+				 this->dgvAccount->RowsDefaultCellStyle = dataGridViewCellStyle3;
 				 this->dgvAccount->RowTemplate->Height = 30;
 				 this->dgvAccount->Size = System::Drawing::Size(743, 231);
 				 this->dgvAccount->TabIndex = 12;
@@ -659,12 +659,11 @@ namespace SmartParkingSystem {
 				 this->btnHoantac->ForeColor = System::Drawing::Color::White;
 				 this->btnHoantac->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnHoantac.Image")));
 				 this->btnHoantac->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-				 this->btnHoantac->Location = System::Drawing::Point(168, 440);
+				 this->btnHoantac->Location = System::Drawing::Point(173, 440);
 				 this->btnHoantac->Name = L"btnHoantac";
-				 this->btnHoantac->Size = System::Drawing::Size(115, 33);
+				 this->btnHoantac->Size = System::Drawing::Size(110, 33);
 				 this->btnHoantac->TabIndex = 6;
-				 this->btnHoantac->Text = L"Hoàn tác";
-				 this->btnHoantac->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+				 this->btnHoantac->Text = L"Hủy";
 				 this->btnHoantac->UseVisualStyleBackColor = false;
 				 this->btnHoantac->Click += gcnew System::EventHandler(this, &frmHeThong::btnHoantac_Click);
 				 // 

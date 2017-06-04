@@ -84,7 +84,7 @@ namespace SmartParkingSystem {
 				 this->pnTitle->Margin = System::Windows::Forms::Padding(0);
 				 this->pnTitle->Name = L"pnTitle";
 				 this->pnTitle->Size = System::Drawing::Size(360, 25);
-				 this->pnTitle->TabIndex = 0;
+				 this->pnTitle->TabIndex = 4;
 				 this->pnTitle->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &frmLogin::pnTitle_MouseDown);
 				 this->pnTitle->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmLogin::pnTitle_MouseMove);
 				 this->pnTitle->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmLogin::pnTitle_MouseUp);
@@ -116,7 +116,7 @@ namespace SmartParkingSystem {
 				 this->lbTitle->Location = System::Drawing::Point(12, 36);
 				 this->lbTitle->Name = L"lbTitle";
 				 this->lbTitle->Size = System::Drawing::Size(235, 31);
-				 this->lbTitle->TabIndex = 4;
+				 this->lbTitle->TabIndex = 3;
 				 this->lbTitle->Text = L"Đăng nhập hệ thống";
 				 // 
 				 // txtUsername
@@ -141,7 +141,7 @@ namespace SmartParkingSystem {
 				 this->lbUsername->Location = System::Drawing::Point(41, 130);
 				 this->lbUsername->Name = L"lbUsername";
 				 this->lbUsername->Size = System::Drawing::Size(104, 22);
-				 this->lbUsername->TabIndex = 4;
+				 this->lbUsername->TabIndex = 3;
 				 this->lbUsername->Text = L"Người dùng";
 				 // 
 				 // txtPassword
@@ -155,7 +155,7 @@ namespace SmartParkingSystem {
 				 this->txtPassword->Location = System::Drawing::Point(41, 282);
 				 this->txtPassword->Name = L"txtPassword";
 				 this->txtPassword->Size = System::Drawing::Size(271, 30);
-				 this->txtPassword->TabIndex = 2;
+				 this->txtPassword->TabIndex = 1;
 				 this->txtPassword->UseSystemPasswordChar = true;
 				 // 
 				 // lbPassword
@@ -167,7 +167,7 @@ namespace SmartParkingSystem {
 				 this->lbPassword->Location = System::Drawing::Point(41, 245);
 				 this->lbPassword->Name = L"lbPassword";
 				 this->lbPassword->Size = System::Drawing::Size(82, 22);
-				 this->lbPassword->TabIndex = 4;
+				 this->lbPassword->TabIndex = 3;
 				 this->lbPassword->Text = L"Mật khẩu";
 				 // 
 				 // btnLogin
@@ -188,7 +188,7 @@ namespace SmartParkingSystem {
 				 this->btnLogin->Location = System::Drawing::Point(103, 360);
 				 this->btnLogin->Name = L"btnLogin";
 				 this->btnLogin->Size = System::Drawing::Size(155, 42);
-				 this->btnLogin->TabIndex = 3;
+				 this->btnLogin->TabIndex = 2;
 				 this->btnLogin->Text = L"Đăng nhập";
 				 this->btnLogin->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 				 this->btnLogin->UseVisualStyleBackColor = false;
@@ -196,6 +196,7 @@ namespace SmartParkingSystem {
 				 // 
 				 // frmLogin
 				 // 
+				 this->AcceptButton = this->btnLogin;
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
