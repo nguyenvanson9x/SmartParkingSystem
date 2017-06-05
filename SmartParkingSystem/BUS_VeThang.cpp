@@ -29,8 +29,8 @@ void BUS_VeThang::Delete(int id)
 
 void BUS_VeThang::Search(String ^ search, DataGridView^ dgvTicket)
 {
-	String^ sql = "select * from quanlyvethang";
-	String^ sqlSearch = String::Format("select * from quanlyvethang where BKS = '{0}' or Loaixe = '{1}'", search, search);
+	String^ sql = "select Mathe, BKS, Loaixe, Ngaybatdau, Ngayketthuc, Tien from quanlyvethang";
+	String^ sqlSearch = String::Format("select Mathe, BKS, Loaixe, Ngaybatdau, Ngayketthuc, Tien from quanlyvethang where BKS like '%{0}%' or Loaixe like '%{1}%' or Mathe = '{2}'", search, search, search);
 	if (search->Equals(""))
 		da->Search(sql, dgvTicket);
 	else

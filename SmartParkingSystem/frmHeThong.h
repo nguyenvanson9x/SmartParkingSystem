@@ -182,6 +182,7 @@ namespace SmartParkingSystem {
 				 this->btn_config_db->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(41)), static_cast<System::Int32>(static_cast<System::Byte>(50)), 
 					 static_cast<System::Int32>(static_cast<System::Byte>(56)));
 				 this->btn_config_db->Cursor = System::Windows::Forms::Cursors::Hand;
+				 this->btn_config_db->Enabled = false;
 				 this->btn_config_db->FlatAppearance->BorderSize = 0;
 				 this->btn_config_db->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 				 this->btn_config_db->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
@@ -195,6 +196,7 @@ namespace SmartParkingSystem {
 				 this->btn_config_db->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 				 this->toolTip->SetToolTip(this->btn_config_db, L"Cấu hình Cơ sở Dữ liệu");
 				 this->btn_config_db->UseVisualStyleBackColor = false;
+				 this->btn_config_db->Visible = false;
 				 this->btn_config_db->Click += gcnew System::EventHandler(this, &frmHeThong::btn_config_db_Click);
 				 // 
 				 // lbTitle

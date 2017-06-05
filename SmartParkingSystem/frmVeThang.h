@@ -94,8 +94,8 @@ namespace SmartParkingSystem {
 			 void InitializeComponent(void)
 			 {
 				 System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(frmVeThang::typeid));
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 this->pnTitle = (gcnew System::Windows::Forms::Panel());
 				 this->lbTitle = (gcnew System::Windows::Forms::Label());
 				 this->tbContainer = (gcnew System::Windows::Forms::TableLayoutPanel());
@@ -416,7 +416,7 @@ namespace SmartParkingSystem {
 				 this->cbLoaixe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->cbLoaixe->FormattingEnabled = true;
-				 this->cbLoaixe->Items->AddRange(gcnew cli::array< System::Object^  >(3) {L"Xe đạp", L"Xe máy", L"Xe ô tô"});
+				 this->cbLoaixe->Items->AddRange(gcnew cli::array< System::Object^  >(4) {L"<--Chọn loại xe-->", L"Xe đạp", L"Xe máy", L"Xe ô tô"});
 				 this->cbLoaixe->Location = System::Drawing::Point(133, 155);
 				 this->cbLoaixe->Name = L"cbLoaixe";
 				 this->cbLoaixe->Size = System::Drawing::Size(156, 27);
@@ -510,15 +510,15 @@ namespace SmartParkingSystem {
 				 this->dgvTicket->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 				 this->dgvTicket->BackgroundColor = System::Drawing::Color::White;
 				 this->dgvTicket->BorderStyle = System::Windows::Forms::BorderStyle::None;
-				 dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				 dataGridViewCellStyle3->BackColor = System::Drawing::SystemColors::ActiveCaption;
-				 dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				 dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::ActiveCaption;
+				 dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
-				 dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::WindowText;
-				 dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-				 dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				 dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				 this->dgvTicket->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+				 dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+				 dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+				 dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				 dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				 this->dgvTicket->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 				 this->dgvTicket->ColumnHeadersHeight = 28;
 				 this->dgvTicket->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::DisableResizing;
 				 this->dgvTicket->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {this->clMaThe, this->clBienSo, 
@@ -529,9 +529,9 @@ namespace SmartParkingSystem {
 				 this->dgvTicket->ReadOnly = true;
 				 this->dgvTicket->RowHeadersVisible = false;
 				 this->dgvTicket->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-				 dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->dgvTicket->RowsDefaultCellStyle = dataGridViewCellStyle4;
+				 this->dgvTicket->RowsDefaultCellStyle = dataGridViewCellStyle2;
 				 this->dgvTicket->Size = System::Drawing::Size(743, 467);
 				 this->dgvTicket->TabIndex = 4;
 				 this->dgvTicket->TabStop = false;
@@ -672,6 +672,7 @@ namespace SmartParkingSystem {
 				 // 
 				 // frmVeThang
 				 // 
+				 this->AcceptButton = this->btnTimkiem;
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::White;
@@ -699,14 +700,18 @@ namespace SmartParkingSystem {
 			 }
 	private: System::Void btnThem_Click(System::Object^  sender, System::EventArgs^  e) {
 				 try {
-					 loai_xe = Convert_Hethong::GUI_To_DB(cbLoaixe->SelectedItem->ToString());
-					 bien_xe = txtBienXe->Text;
-					 date_start = txtNgayBatDau->Value.ToString("yyyy-MM-dd");
-					 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
-					 gia_ve = Int32::Parse(txtGiaVe->Text);
-					 VeThang ^ticket = gcnew VeThang(0, loai_xe, bien_xe, date_start, date_end, gia_ve);
-					 b->Add(ticket);
-					 loadData();
+					 if (cbLoaixe->SelectedIndex > 0) {
+						 loai_xe = Convert_Hethong::GUI_To_DB(cbLoaixe->SelectedItem->ToString());
+						 bien_xe = txtBienXe->Text;
+						 date_start = txtNgayBatDau->Value.ToString("yyyy-MM-dd");
+						 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
+						 gia_ve = Int32::Parse(txtGiaVe->Text);
+						 VeThang ^ticket = gcnew VeThang(0, loai_xe, bien_xe, date_start, date_end, gia_ve);
+						 b->Add(ticket);
+						 loadData();
+					 }
+					 else
+						 MessageBox::Show(L"Chưa chọn loại xe", "Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				 }
 				 catch (Exception^ e) {
 					 MessageBox::Show(e->Message);
@@ -717,17 +722,20 @@ namespace SmartParkingSystem {
 				 int id, row;
 				 row = dgvTicket->CurrentCell->RowIndex;
 				 try {
+					 if (cbLoaixe->SelectedIndex > 0) {
+						 id = Int32::Parse(dgvTicket[0, row]->Value->ToString());
+						 loai_xe = Convert_Hethong::GUI_To_DB(cbLoaixe->SelectedItem->ToString());
+						 bien_xe = txtBienXe->Text;
+						 date_start = txtNgayBatDau->Value.ToString("yyyy-MM-dd");
+						 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
+						 gia_ve = Int32::Parse(txtGiaVe->Text);
 
-					 id = Int32::Parse(dgvTicket[0, row]->Value->ToString());
-					 loai_xe = Convert_Hethong::GUI_To_DB(cbLoaixe->SelectedItem->ToString());
-					 bien_xe = txtBienXe->Text;
-					 date_start = txtNgayBatDau->Value.ToString("yyyy-MM-dd");
-					 date_end = txtNgayHetHan->Value.ToString("yyyy-MM-dd");
-					 gia_ve = Int32::Parse(txtGiaVe->Text);
-
-					 VeThang ^ticket = gcnew VeThang(id, loai_xe, bien_xe, date_start, date_end, gia_ve);
-					 b->Update(ticket);
-					 loadData();
+						 VeThang ^ticket = gcnew VeThang(id, loai_xe, bien_xe, date_start, date_end, gia_ve);
+						 b->Update(ticket);
+						 loadData();
+					 }
+					 else
+						 MessageBox::Show(L"Chưa chọn loại xe", "Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				 }
 				 catch (Exception^ e) {
 					 MessageBox::Show(e->Message);
@@ -779,11 +787,19 @@ namespace SmartParkingSystem {
 
 					 txtGiaVe->Text = dgvTicket[5, row]->Value->ToString();
 					 show_Control(true);
+
+					 TimeSpan d = DateTime::Today.Subtract(dt_e);
+					 double days = d.TotalDays;
+
+					 if (days < 0)
+						 txtTrangThai->Text = L"Còn hạn";
+					 else
+						 txtTrangThai->Text = L"Hết hạn";
 				 }
 				 catch (Exception^ e) {
 					 MessageBox::Show(e->Message);
 				 }
-				 
+
 			 }
 	private: void loadData() {
 				 String ^sql = L"select Mathe, BKS, Loaixe, Ngaybatdau, Ngayketthuc, Tien from quanlyvethang;";
@@ -794,8 +810,8 @@ namespace SmartParkingSystem {
 				 txtMaThe->Clear();
 				 cbLoaixe->SelectedIndex = 0;
 				 txtBienXe->Clear();
-				 txtNgayBatDau->Text = "";
-				 txtNgayHetHan->Text = "";
+				 txtNgayBatDau->Value = DateTime::Today;
+				 txtNgayHetHan->Value = txtNgayBatDau->Value.AddDays(30);
 				 txtGiaVe->Clear();
 				 txtTrangThai->Clear();
 			 }

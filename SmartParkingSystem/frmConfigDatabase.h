@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "connect.h"
 #include "app_config.h"
+#include "DBUtils.h"
 namespace SmartParkingSystem {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -267,7 +268,6 @@ namespace SmartParkingSystem {
 				static_cast<System::Int32>(static_cast<System::Byte>(100)));
 			this->btnExit->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnExit->FlatAppearance->BorderSize = 0;
-			this->btnExit->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Orange;
 			this->btnExit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnExit->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
@@ -373,6 +373,7 @@ namespace SmartParkingSystem {
 				 }
 				 else 
 					 MessageBox::Show(L"Cấu hình không hợp lệ", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				 DBUtils::OpenConnection();
 			 }
 	private: System::Void btnSaveConfig_Click(System::Object^  sender, System::EventArgs^  e) {
 				 connect^ c;
@@ -393,6 +394,7 @@ namespace SmartParkingSystem {
 
 				 } else
 					 MessageBox::Show(L"Sai cấu hình", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				 DBUtils::OpenConnection();
 			 }
 	};
 }

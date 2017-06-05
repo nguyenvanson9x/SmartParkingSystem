@@ -58,11 +58,12 @@ void connect::push_to_connect(String^ dS, String^ db, String^ p, String^ u, Stri
 
 bool connect::check_connection()
 {
+	MySqlConnection^ con;
 	try
 	{
-		conn = DBMySQLUtils::GetDBConnection(dataSource, port, database, username, password);
-		conn->Open();
-		return true;
+		con = DBMySQLUtils::GetDBConnection(dataSource, port, database, username, password);
+		con->Open();
+		return (con->State == ConnectionState::Open);
 	}
 	catch (MySqlException^)
 	{

@@ -63,6 +63,12 @@ void DA_VeThang::Delete(int id)
 
 void DA_VeThang::Search(String^ sql, System::Windows::Forms::DataGridView^ dgvTicket)
 {
+	try {
+		DBUtils::loadData(dgvTicket, sql);
+	}
+	catch (Exception^ e) {
+		MessageBox::Show(e->Message);
+	}
 }
 
 void SmartParkingSystem::DA_VeThang::showMoney(String^ sql, System::Windows::Forms::TextBox^ txtGiaVe)
