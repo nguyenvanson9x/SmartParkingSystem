@@ -92,9 +92,9 @@ namespace SmartParkingSystem {
 			 /// </summary>
 			 void InitializeComponent(void)
 			 {
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(frmNhanXe::typeid));
 				 this->pnTitle = (gcnew System::Windows::Forms::Panel());
 				 this->lbTitle = (gcnew System::Windows::Forms::Label());
@@ -206,32 +206,32 @@ namespace SmartParkingSystem {
 					 | System::Windows::Forms::AnchorStyles::Right));
 				 this->dgvCar->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 				 this->dgvCar->BackgroundColor = System::Drawing::Color::White;
-				 dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				 dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
-				 dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold));
-				 dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
-				 dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-				 dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				 dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				 this->dgvCar->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+				 dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				 dataGridViewCellStyle4->BackColor = System::Drawing::SystemColors::Control;
+				 dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold));
+				 dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::WindowText;
+				 dataGridViewCellStyle4->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+				 dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				 dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				 this->dgvCar->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
 				 this->dgvCar->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 				 this->dgvCar->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {this->clSove, this->clBKS, 
 					 this->clLoaive, this->clLoaixe, this->clThoigianvao});
 				 this->dgvCar->Location = System::Drawing::Point(0, 118);
 				 this->dgvCar->Margin = System::Windows::Forms::Padding(0);
 				 this->dgvCar->Name = L"dgvCar";
-				 dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				 dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Control;
-				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-				 dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::WindowText;
-				 dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-				 dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				 dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				 this->dgvCar->RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+				 dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				 dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Control;
+				 dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+				 dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
+				 dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+				 dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				 dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				 this->dgvCar->RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
 				 this->dgvCar->RowHeadersVisible = false;
 				 this->dgvCar->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-				 dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F));
-				 this->dgvCar->RowsDefaultCellStyle = dataGridViewCellStyle3;
+				 dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F));
+				 this->dgvCar->RowsDefaultCellStyle = dataGridViewCellStyle6;
 				 this->dgvCar->Size = System::Drawing::Size(743, 465);
 				 this->dgvCar->TabIndex = 4;
 				 this->dgvCar->DataBindingComplete += gcnew System::Windows::Forms::DataGridViewBindingCompleteEventHandler(this, &frmNhanXe::dgvCar_DataBindingComplete);
@@ -403,12 +403,14 @@ namespace SmartParkingSystem {
 				 // 
 				 this->txtSove->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 					 | System::Windows::Forms::AnchorStyles::Right));
+				 this->txtSove->Enabled = false;
 				 this->txtSove->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->txtSove->Location = System::Drawing::Point(123, 69);
 				 this->txtSove->Name = L"txtSove";
 				 this->txtSove->Size = System::Drawing::Size(170, 26);
 				 this->txtSove->TabIndex = 1;
+				 
 				 // 
 				 // cbLoaive
 				 // 
@@ -658,7 +660,7 @@ namespace SmartParkingSystem {
 				 {
 					 so_ve=Int32::Parse(txtSove->Text);
 					 Xe^ xe =gcnew Xe(so_ve,bks,thoi_gian_vao,nullptr,nullptr,loai_ve,loai_xe);
-					 b->Them(xe,loai_ve,loai_xe);
+					 b->Them(xe);
 					 loadData();
 					 setNull();
 				 }
@@ -695,6 +697,7 @@ namespace SmartParkingSystem {
 
 			 }
 	private: System::Void btnHuy_Click(System::Object^  sender, System::EventArgs^  e) {
+				
 				 setNull();
 			 }
 	private: System::Void frmNhanXe_Load(System::Object^  sender, System::EventArgs^  e) {
@@ -704,9 +707,15 @@ namespace SmartParkingSystem {
 				String^ sql=L"SELECT Sove,BKS,Loaive,Loaixe,Thoigianvao FROM nhanxe WHERE Trangthai='N'";
 				DBUtils::loadDataSort(dgvCar,sql);
 				lbSum->Text=L"Tổng số xe:" + b->showTongXe();
+
+				/*String^ path = "D:\\Demo.xlsx";
+				DBUtils::export_to_excel(dgvCar, path);
+				MessageBox::Show("Exported");*/
 			}
 	private:System::Void setNull(){
-				txtSove->Clear();
+				int tongxegui=b->Ve_tiep_theo()+1;
+				String^ vetiep=System::Convert::ToString(tongxegui);
+				txtSove->Text=vetiep;
 				txtBienso->Clear();
 				txtThoigianvao->Clear();
 				cbLoaixe->Text="";
@@ -721,7 +730,7 @@ namespace SmartParkingSystem {
 			 }
 	private:System::Void setTime(){
 				DateTime date=DateTime::Now;
-				txtThoigianvao->Text=date.ToShortDateString();
+				txtThoigianvao->Text=date.ToString("yyyy-MM-dd");
 			}
 	};
 }

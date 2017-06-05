@@ -104,3 +104,24 @@ void DBUtils::loadData_To_Collection(TextBox ^txt, String ^sql, String ^type)
 	txt->AutoCompleteCustomSource = auto_str;
 	dr->Close();
 }
+
+void DBUtils::export_to_excel(DataGridView^ dgv, String^ path)
+{
+	Excel::Application ^obj = gcnew Excel::Application();
+	obj->Workbooks->Add(Type::Missing);
+	obj->Columns->ColumnWidth = 20;
+	int i, j, n, m;
+	n = dgv->ColumnCount;
+	m = dgv->RowCount;
+
+	for (i = 1; i < n + 1; i++)
+		obj->Cells[1, i] = dgv->Columns[i - 1]->HeaderText;
+
+	for (i = 0; i < m; i++)
+		for (j = 0; j < n; j++)
+			if (dgv->Rows[i]->Cells[j]->Value != nullptr)
+				obj->Cells[i + 2, j + 1] = dgv->Rows[i]->Cells[j]->Value->ToString();
+
+	obj->ActiveWorkbook->SaveCopyAs(path);
+	obj->ActiveWorkbook->Saved = true;
+}

@@ -425,7 +425,7 @@ namespace SmartParkingSystem {
 				 // 
 				 this->txtThoigianra->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 					 | System::Windows::Forms::AnchorStyles::Right));
-				 this->txtThoigianra->CustomFormat = L"dd/MM/yyyy";
+				 this->txtThoigianra->CustomFormat = L"yyyy-MM-dd";
 				 this->txtThoigianra->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->txtThoigianra->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
@@ -709,12 +709,14 @@ namespace SmartParkingSystem {
 	private: System::Void dgvCar_RowEnter(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 				 int row;
 				 row=e->RowIndex;
-
+				  String^ tgr;
 				 txtSove->Text= dgvCar[0, row]->Value->ToString();
 				 txtBienso->Text= dgvCar[1, row]->Value->ToString();
 				 txtLoaive->Text= dgvCar[2, row]->Value->ToString();
 				 txtLoaixe->Text= dgvCar[3, row]->Value->ToString();
-				 txtThoigianvao->Text= dgvCar[4, row]->Value->ToString();
+				 DateTime dt = DateTime::Parse( dgvCar[4, row]->Value->ToString());
+				 tgr=dt.ToString("yyyy-MM-dd");
+				 txtThoigianvao->Text=tgr;
 
 				 b->showData(txtTongtien,txtLoaive->Text,txtLoaixe->Text);
 

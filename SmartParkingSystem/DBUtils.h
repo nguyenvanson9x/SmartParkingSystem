@@ -1,4 +1,5 @@
 ﻿#pragma once
+#define Excel  Microsoft::Office::Interop::Excel
 #include "connect.h"
 namespace SmartParkingSystem {
 	using namespace MySql::Data::MySqlClient;
@@ -23,6 +24,7 @@ namespace SmartParkingSystem {
 		static void loadData(DataGridView^, String^); // Đưa dữ liệu từ csdl vào bảng DataGridView
 		static void loadData_To_Collection(TextBox^, String^, String^); // Gợi ý khi nhập cho Textbox
 		static void loadDataSort(DataGridView^, String^);
+		static void export_to_excel(DataGridView^, String^);
 	};
 }
 

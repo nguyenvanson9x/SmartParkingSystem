@@ -10,10 +10,11 @@ namespace SmartParkingSystem {
 		DA_Nhanxe ^da;
 	public:
 		BUS_Nhanxe(void);
-		void Them(Xe^,String^,String^);
+		void Them(Xe^);
 		void CapNhat(int,String^,String^,String^,String^);
 		void Xoa(int,String^);
 		void Search(String^, DataGridView^);
+		int Ve_tiep_theo();
 		int showTongXe();
 	};
 }

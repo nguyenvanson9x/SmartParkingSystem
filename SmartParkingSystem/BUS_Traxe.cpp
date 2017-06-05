@@ -9,8 +9,8 @@ void BUS_Traxe::Traxe(Xe^ xe,String^ tong_tien){
 	da->UpdateTX(xe->Id,xe);
 };
 void BUS_Traxe::Search(String^ search, DataGridView^ dgv){
-	String^ sql=L"SELECT nhanxe.Sove,nhanxe.BKS,nhanxe.Loaive,xe.Loaixe,nhanxe.Thoigianvao FROM nhanxe,xe WHERE (nhanxe.BKS=xe.BKS) AND (Trangthai='N')";
-	String^ sqlSearch=String::Format("select nhanxe.Sove, nhanxe.BKS, xe.Loaixe, nhanxe.Loaive, nhanxe.Thoigianvao from nhanxe,xe where (nhanxe.BKS = xe.BKS) and (nhanxe.Sove='{0}' or nhanxe.BKS='{1}' or nhanxe.Loaive='{2}' or nhanxe.Thoigianvao='{3}' or xe.Loaixe='{4}') and (nhanxe.Trangthai = 'N')",search,search,search,search,search);
+	String^ sql=L"SELECT Sove,BKS,Loaixe,Loaive,Thoigianvao FROM nhanxe WHERE Trangthai='N'";
+	String^ sqlSearch=String::Format("select Sove,BKS,Loaixe,Loaive,Thoigianvao from nhanxe where (nhanxe.Sove='{0}' or nhanxe.BKS='{1}' or Loaive='{2}' or Thoigianvao='{3}' or Loaixe='{4}') and (nhanxe.Trangthai = 'N')",search,search,search,search,search);
 	if (search->Equals(""))
 		da->Search(sql, dgv);
 	else

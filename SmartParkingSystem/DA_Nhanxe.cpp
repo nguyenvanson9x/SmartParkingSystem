@@ -7,7 +7,7 @@ DA_Nhanxe::DA_Nhanxe(void){
 }
 void DA_Nhanxe::InsertNX(Xe^ xe){
 	String^ loaixe=xe->LoaiXe;
-	String^ sqlInsertNhanxe=String::Format("insert into nhanxe(Sove,BKS,Loaive,Loaixe,Thoigianvao,Trangthai) values ('"+ xe->Id +"','"+ xe->BienKiemSoat +"', '"+ xe->LoaiVe +"','"+ loaixe +"','"+ xe->ThoiGianVao +"', 'N')");
+	String^ sqlInsertNhanxe=String::Format("insert into nhanxe(Sove,BKS,Loaive,Loaixe,Thoigianvao,Trangthai) values ('0','"+ xe->BienKiemSoat +"', '"+ xe->LoaiVe +"','"+ loaixe +"','"+ xe->ThoiGianVao +"', 'N')");
 	try
 	{
 			DBUtils::ExcuteNonQuery(sqlInsertNhanxe);		
@@ -50,43 +50,86 @@ int DA_Nhanxe::TongXe(){
 	}
 	return sum;
 };
-bool DA_Nhanxe::check_Ve(String^ bks,String^ loai_xe){
-	int count=0;
-	String^ sql=String::Format("select * from quanlyvethang where BKS='{0}' and Loaixe='{1}'",bks,loai_xe);
+int DA_Nhanxe::TongXeGui(){
+	int sum=0;
+	String^ sql =String::Format( "select * from nhanxe");
 	MySqlDataReader^ dr;
 	try
 	{
 		dr=DBUtils::getDataReader(sql);
-		if(dr!=nullptr)
-			while(dr->Read())
-				count=count+1;
+		while (dr->Read())
+			sum=sum+1;
 	}catch (Exception^ e)
 	{
 		MessageBox::Show(e->Message);
 	}finally{
 		dr->Close();
 	}
-	if(count>0)
-		return true;
-	return false;
+	return sum;
+};
+int DA_Nhanxe::check_Ve(String^ bks,String^ loai_xe){
+	String^ loaixe=Convert_Hethong::GUI_To_DB(loai_xe);
+	int count=0;
+	String^ sql=L"select * from quanlyvethang where BKS='"+bks+"' and Loaixe='"+loaixe+"'";
+	MySqlDataReader^ dr;
+	try
+	{
+		dr=DBUtils::getDataReader(sql);
+		while(dr->Read())
+			count=count+1;
+	}catch (Exception^ e)
+	{
+		MessageBox::Show(e->Message);
+	}finally{
+		dr->Close();
+	}
+	
+	return count;
 }
-bool DA_Nhanxe::check_gui(String^ bks,String^ loai_xe){
+int DA_Nhanxe::check_gui(String^ bks,String^ loai_xe){
 	int count=0;
-	String^ sql=L"select * from nhanxe,xe where (nhanxe.Loaixe=xe.Loaixe) and (nhanxe.BKS = xe.BKS) and (nhanxe.Trangthai = 'N') and nhanxe.BKS='"+bks+"' and xe.BKS='"+bks+"' and nhanxe.Loaixe='"+loai_xe+"' and xe.Loaixe='"+loai_xe+"'";
+	String^ sql=L"select * from nhanxe where  (nhanxe.Trangthai = 'N') and nhanxe.BKS='"+bks+"' and nhanxe.Loaixe='"+loai_xe+"'";
 	MySqlDataReader^ dr;
 	try
 	{
 		dr=DBUtils::getDataReader(sql);
-		if(dr!=nullptr)
-			while(dr->Read())
-				count=count+1;
+		while(dr->Read())
+			count=count+1;
 	}catch (Exception^ e)
 	{
 		MessageBox::Show(e->Message);
 	}finally{
 		dr->Close();
 	}
-	if(count>0)
-		return false;
-	return true;
+	
+	return count;
+}
+int DA_Nhanxe::check_han_vethang(String^ bks,String^ loai_xe){
+	String^ loaixe=Convert_Hethong::GUI_To_DB(loai_xe),^date_s,^date_e;
+	
+	DateTime ^date_start,^date_end;
+	
+	String^ sql=L"select Ngaybatdau,Ngayketthuc from quanlyvethang where BKS='"+bks+"' and Loaixe='"+loaixe+"'";
+	MySqlDataReader^ dr;
+	try
+	{
+		dr=DBUtils::getDataReader(sql);
+		while(dr->Read()){
+			date_start=(DateTime^)dr["Ngaybatdau"];
+			date_end=(DateTime^)dr["Ngayketthuc"];
+		}
+
+	}catch (Exception^ e)
+	{
+		MessageBox::Show(e->Message);
+	}finally{
+		dr->Close();
+	}
+	date_s=date_start->ToString("yyyy-MM-dd");
+	date_e=date_end->ToString("yyyy-MM-dd");
+	DateTime dt_s = DateTime::Parse(date_s);
+	DateTime dt_e = DateTime::Parse(date_e);
+	TimeSpan d = DateTime::Today.Subtract(dt_e);
+	double days = d.TotalDays;
+	return days;
 }

@@ -1,5 +1,5 @@
 ﻿#pragma once
-
+#include "DBUtils.h"
 namespace SmartParkingSystem {
 
 	using namespace System;
@@ -8,6 +8,7 @@ namespace SmartParkingSystem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	//using namespace Microsoft::Office::Interop::Excel;
 
 	/// <summary>
 	/// Summary for frmThongKe
@@ -527,6 +528,24 @@ namespace SmartParkingSystem {
 	private: System::Void btnThongKe_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	private: System::Void btnXuatExcel_Click(System::Object^  sender, System::EventArgs^  e) {
+				 
+				 //Excel::Application ^obj = gcnew Excel::Application();
+				 //obj->Workbooks->Add(Type::Missing);
+				 //obj->Columns->ColumnWidth = 25;
+				 //int i, j, n, m;
+				 //n = dgvThong_ke->ColumnCount;
+				 //m = dgvThong_ke->RowCount;
+
+				 //for (i = 1; i < n + 1; i++)
+					// obj->Cells[1, i] = dgvThong_ke->Columns[i - 1]->HeaderText;
+
+				 //for (i = 0; i < m; i++)
+					// for (j = 0; j < n; j++)
+					//	 if (dgvThong_ke->Rows[i]->Cells[j]->Value != nullptr)
+					//		 obj->Cells[i + 2, j + 1] = dgvThong_ke->Rows[i]->Cells[j]->Value->ToString();
+
+				 //obj->ActiveWorkbook->SaveCopyAs("D:\\Demo.xlsx");
+				 //obj->ActiveWorkbook->Saved = true;
 			 }
 	private: System::Void frmThongKe_Load(System::Object^  sender, System::EventArgs^  e) {
 			 }
