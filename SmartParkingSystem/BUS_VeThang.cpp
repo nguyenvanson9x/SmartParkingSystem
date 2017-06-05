@@ -11,7 +11,7 @@ void BUS_VeThang::Add(VeThang ^ ticket)
 	if (ticket->BienXe != "")
 		da->Add(ticket);
 	else
-		MessageBox::Show(L"Thông tin không được bỏ trống");
+		MessageBox::Show(L"Thông tin không được bỏ trống", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 }
 
 void BUS_VeThang::Update(VeThang ^ ticket)
@@ -19,7 +19,7 @@ void BUS_VeThang::Update(VeThang ^ ticket)
 	if (ticket->BienXe != "")
 		da->Update(ticket);
 	else
-		MessageBox::Show(L"Thông tin không được bỏ trống");
+		MessageBox::Show(L"Thông tin không được bỏ trống", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 }
 
 void BUS_VeThang::Delete(int id)

@@ -95,11 +95,6 @@ namespace SmartParkingSystem {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clCHUCVU;
 	private: System::Windows::Forms::Button^  btnShowPassWord;
 
-
-
-
-
-
 #pragma region Windows Form Designer generated code
 			 /// <summary>
 			 /// Required method for Designer support - do not modify
@@ -874,7 +869,15 @@ namespace SmartParkingSystem {
 				 txtSearch->Clear();
 			 }
 	private: System::Void btnThaydoi_Click(System::Object^  sender, System::EventArgs^  e) {
-				 b->Thaydoi(cbLoaixe, cbLoaive, txtGiahientai, txtGiadieuchinh);
+				 try
+				 {
+					 b->Thaydoi(cbLoaixe, cbLoaive, txtGiahientai, txtGiadieuchinh);
+				 }
+				 catch (Exception^)
+				 {
+					 MessageBox::Show(L"Chưa chọn Loại vé / Loại xe", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				 }
+				 
 			 }
 	private: System::Void btnHoantac_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }

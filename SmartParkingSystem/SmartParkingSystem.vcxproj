@@ -107,6 +107,8 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\SmartParkingSystem\SmartParkingSystem\BUS_Thongke.cpp" />
+    <ClCompile Include="..\..\..\SmartParkingSystem\SmartParkingSystem\DA_Thongke.cpp" />
     <ClCompile Include="app_config.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="BUS_HeThong.cpp" />
@@ -141,6 +143,8 @@
     <ClCompile Include="Xe.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\SmartParkingSystem\SmartParkingSystem\BUS_Thongke.h" />
+    <ClInclude Include="..\..\..\SmartParkingSystem\SmartParkingSystem\DA_Thongke.h" />
     <ClInclude Include="app_config.h" />
     <ClInclude Include="BUS_HeThong.h" />
     <ClInclude Include="BUS_Nhanxe.h" />

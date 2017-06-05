@@ -11,7 +11,6 @@ namespace SmartParkingSystem {
 		void InsertNX(Xe^);
 		void UpdateNX(int,String^,String^,String^,String^);
 		int TongXe();
-		int TongXeGui();
 		void deleteNX(int,String^);
 		void Search(String^ sqlSearch, DataGridView^ dgv);
 		int check_Ve(String^,String^);

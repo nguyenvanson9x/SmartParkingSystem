@@ -2,7 +2,7 @@
 #include "DBUtils.h"
 
 using namespace SmartParkingSystem;
-
+using namespace System::Collections::Generic;
 DBUtils::DBUtils()
 {
 }
@@ -104,12 +104,12 @@ void DBUtils::loadData_To_Collection(TextBox ^txt, String ^sql, String ^type)
 	txt->AutoCompleteCustomSource = auto_str;
 	dr->Close();
 }
-
-void DBUtils::export_to_excel(DataGridView^ dgv, String^ path)
+void DBUtils::export_to_excel(DataGridView^ dgv)
 {
-	Excel::Application ^obj = gcnew Excel::Application();
+	Excel::Application^ obj = gcnew Excel::Application();
 	obj->Workbooks->Add(Type::Missing);
 	obj->Columns->ColumnWidth = 20;
+	obj->Visible=true;
 	int i, j, n, m;
 	n = dgv->ColumnCount;
 	m = dgv->RowCount;
@@ -122,6 +122,18 @@ void DBUtils::export_to_excel(DataGridView^ dgv, String^ path)
 			if (dgv->Rows[i]->Cells[j]->Value != nullptr)
 				obj->Cells[i + 2, j + 1] = dgv->Rows[i]->Cells[j]->Value->ToString();
 
-	obj->ActiveWorkbook->SaveCopyAs(path);
-	obj->ActiveWorkbook->Saved = true;
+	SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
+	saveFileDialog1->Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+	saveFileDialog1->FilterIndex = 0;
+	saveFileDialog1->RestoreDirectory = true;
+	if ( saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK )
+	{
+			// Code to write the stream goes here
+			obj->ActiveWorkbook->SaveCopyAs(saveFileDialog1->FileName);
+			obj->ActiveWorkbook->Saved = true;
+			obj->Quit();
+	} 
+
+
 }
+

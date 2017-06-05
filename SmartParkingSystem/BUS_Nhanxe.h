@@ -14,7 +14,6 @@ namespace SmartParkingSystem {
 		void CapNhat(int,String^,String^,String^,String^);
 		void Xoa(int,String^);
 		void Search(String^, DataGridView^);
-		int Ve_tiep_theo();
 		int showTongXe();
 	};
 }

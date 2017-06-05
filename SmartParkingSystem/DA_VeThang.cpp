@@ -22,7 +22,7 @@ void DA_VeThang::Add(VeThang ^ ticket)
 		DBUtils::ExcuteNonQuery(sql);
 	}
 	catch(Exception^e) {
-		MessageBox::Show(e->Message);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 
 	}
 }
@@ -45,7 +45,7 @@ void DA_VeThang::Update(VeThang ^ ticket)
 		DBUtils::ExcuteNonQuery(sql);
 	}
 	catch(Exception^e) {
-		MessageBox::Show(e->Message);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 
 	}
 }
@@ -57,7 +57,7 @@ void DA_VeThang::Delete(int id)
 		DBUtils::ExcuteNonQuery(sql);
 	}
 	catch (Exception ^e) {
-		MessageBox::Show(e->Message);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 }
 
@@ -67,7 +67,7 @@ void DA_VeThang::Search(String^ sql, System::Windows::Forms::DataGridView^ dgvTi
 		DBUtils::loadData(dgvTicket, sql);
 	}
 	catch (Exception^ e) {
-		MessageBox::Show(e->Message);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 }
 
@@ -81,7 +81,7 @@ void SmartParkingSystem::DA_VeThang::showMoney(String^ sql, System::Windows::For
 				txtGiaVe->Text = dr["Tien_Vethang"]->ToString();
 	}
 	catch (Exception^ e) {
-		MessageBox::Show(e->Message);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 	finally {
 		dr->Close();

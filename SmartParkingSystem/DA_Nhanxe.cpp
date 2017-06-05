@@ -50,23 +50,6 @@ int DA_Nhanxe::TongXe(){
 	}
 	return sum;
 };
-int DA_Nhanxe::TongXeGui(){
-	int sum=0;
-	String^ sql =String::Format( "select * from nhanxe");
-	MySqlDataReader^ dr;
-	try
-	{
-		dr=DBUtils::getDataReader(sql);
-		while (dr->Read())
-			sum=sum+1;
-	}catch (Exception^ e)
-	{
-		MessageBox::Show(e->Message);
-	}finally{
-		dr->Close();
-	}
-	return sum;
-};
 int DA_Nhanxe::check_Ve(String^ bks,String^ loai_xe){
 	String^ loaixe=Convert_Hethong::GUI_To_DB(loai_xe);
 	int count=0;

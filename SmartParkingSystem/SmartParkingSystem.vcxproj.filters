@@ -154,6 +154,12 @@
     <ClCompile Include="VeThang.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\SmartParkingSystem\SmartParkingSystem\DA_Thongke.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SmartParkingSystem\SmartParkingSystem\BUS_Thongke.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -238,6 +244,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VeThang.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SmartParkingSystem\SmartParkingSystem\BUS_Thongke.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SmartParkingSystem\SmartParkingSystem\DA_Thongke.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

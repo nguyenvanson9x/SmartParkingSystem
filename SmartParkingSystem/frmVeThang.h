@@ -751,7 +751,7 @@ namespace SmartParkingSystem {
 					 loadData();
 				 }
 				 catch (Exception ^e) {
-					 MessageBox::Show(e->Message);
+					 MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				 }
 			 }
 	private: System::Void btnHuy_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -797,7 +797,7 @@ namespace SmartParkingSystem {
 						 txtTrangThai->Text = L"Hết hạn";
 				 }
 				 catch (Exception^ e) {
-					 MessageBox::Show(e->Message);
+					 MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				 }
 
 			 }
@@ -832,7 +832,7 @@ namespace SmartParkingSystem {
 					 b->showMoney(Loaixe, txtGiaVe);
 				 }
 				 catch (Exception^ e) {
-					 MessageBox::Show(e->Message);
+					 MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				 }
 			 }
 	};

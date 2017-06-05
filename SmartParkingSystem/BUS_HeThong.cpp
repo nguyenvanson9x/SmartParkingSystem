@@ -9,7 +9,7 @@ BUS_HeThong::BUS_HeThong(void)
 void BUS_HeThong::Them(HeThong^ user)
 {
 	if (user->HoTen->Equals("") || user->TaiKhoan->Equals("") || user->MatKhau->Equals(""))
-		MessageBox::Show("Thong tin khong duoc bo trong");
+		MessageBox::Show(L"Thông tin không được bỏ trống", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	else
 		da->InsertHT(user);
 }
@@ -54,7 +54,7 @@ void BUS_HeThong::Thaydoi(ComboBox^ cbLoaixe, ComboBox^ cbLoaive,TextBox^ txtGia
 
 	try {
 		if (gia_moi->CompareTo("") == 0)
-			MessageBox::Show(L"Bạn chưa nhập giá mới.");
+			MessageBox::Show(L"Bạn chưa nhập giá mới.", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		else if (Int32::Parse(gia_moi) > 0) {
 			money = Int32::Parse(gia_moi);
 			if (loaive->CompareTo(L"Vé ngày") == 0)
@@ -66,13 +66,13 @@ void BUS_HeThong::Thaydoi(ComboBox^ cbLoaixe, ComboBox^ cbLoaive,TextBox^ txtGia
 			txtGiahientai->Text = temp;
 		}
 		else {
-			MessageBox::Show(L"Giá tiền không hợp lệ");
+			MessageBox::Show(L"Giá tiền không hợp lệ", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			txtGiadieuchinh->Clear();
 		}
 			
 	}
 	catch (Exception^) {
-		MessageBox::Show(L"Lỗi định dạng. Chỉ được nhập số");
+		MessageBox::Show(L"Lỗi định dạng. Chỉ được nhập số", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		txtGiadieuchinh->Clear();
 	}
 }

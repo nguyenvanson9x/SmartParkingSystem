@@ -639,11 +639,14 @@ namespace SmartParkingSystem {
 	private: System::Void dgvCar_RowEnter(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 				 int row;
 				 row=e->RowIndex;
+				 String^ tgr;
 				 txtSove->Text= dgvCar[0, row]->Value->ToString();
 				 txtBienso->Text= dgvCar[1, row]->Value->ToString();
 				 cbLoaive->Text= dgvCar[2, row]->Value->ToString();
 				 cbLoaixe->Text= dgvCar[3, row]->Value->ToString();
-				 txtThoigianvao->Text= dgvCar[4, row]->Value->ToString();
+				 DateTime dt = DateTime::Parse( dgvCar[4, row]->Value->ToString());
+				 tgr=dt.ToString("yyyy-MM-dd");
+				 txtThoigianvao->Text=tgr;
 			 }
 	private: System::Void btnThem_Click(System::Object^  sender, System::EventArgs^  e) {
 
@@ -652,14 +655,13 @@ namespace SmartParkingSystem {
 				 loai_xe=cbLoaixe->Text;
 				 thoi_gian_vao=txtThoigianvao->Text;
 
-				 if (txtSove->Text =="" || bks=="" || loai_xe ==nullptr || loai_ve ==nullptr || thoi_gian_vao=="")
+				 if (bks=="" || loai_xe ==nullptr || loai_ve ==nullptr || thoi_gian_vao=="")
 				 {
 					 MessageBox::Show(L"Thông tin không được bỏ trống!!");
 				 } 
 				 else
 				 {
-					 so_ve=Int32::Parse(txtSove->Text);
-					 Xe^ xe =gcnew Xe(so_ve,bks,thoi_gian_vao,nullptr,nullptr,loai_ve,loai_xe);
+					 Xe^ xe =gcnew Xe(0,bks,thoi_gian_vao,nullptr,nullptr,loai_ve,loai_xe);
 					 b->Them(xe);
 					 loadData();
 					 setNull();
@@ -684,7 +686,7 @@ namespace SmartParkingSystem {
 				 loai_ve=cbLoaive->Text;
 				 loai_xe=cbLoaixe->Text;
 				 thoi_gian_vao=txtThoigianvao->Text;
-				 if (txtSove->Text =="" || bks=="" || loai_xe ==nullptr || loai_ve ==nullptr || thoi_gian_vao=="")
+				 if (bks=="" || loai_xe ==nullptr || loai_ve ==nullptr || thoi_gian_vao=="")
 				 {
 					 MessageBox::Show(L"Thông tin không được bỏ trống!!");
 				 } else{
@@ -697,7 +699,6 @@ namespace SmartParkingSystem {
 
 			 }
 	private: System::Void btnHuy_Click(System::Object^  sender, System::EventArgs^  e) {
-				
 				 setNull();
 			 }
 	private: System::Void frmNhanXe_Load(System::Object^  sender, System::EventArgs^  e) {
@@ -707,15 +708,10 @@ namespace SmartParkingSystem {
 				String^ sql=L"SELECT Sove,BKS,Loaive,Loaixe,Thoigianvao FROM nhanxe WHERE Trangthai='N'";
 				DBUtils::loadDataSort(dgvCar,sql);
 				lbSum->Text=L"Tổng số xe:" + b->showTongXe();
-
-				/*String^ path = "D:\\Demo.xlsx";
-				DBUtils::export_to_excel(dgvCar, path);
-				MessageBox::Show("Exported");*/
+				
 			}
 	private:System::Void setNull(){
-				int tongxegui=b->Ve_tiep_theo()+1;
-				String^ vetiep=System::Convert::ToString(tongxegui);
-				txtSove->Text=vetiep;
+				txtSove->Text="";
 				txtBienso->Clear();
 				txtThoigianvao->Clear();
 				cbLoaixe->Text="";

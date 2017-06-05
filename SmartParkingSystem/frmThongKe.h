@@ -1,5 +1,8 @@
 ﻿#pragma once
+#include "frmConfigDatabase.h"
 #include "DBUtils.h"
+#include "BUS_Thongke.h"
+#include "Convert_Hethong.h"
 namespace SmartParkingSystem {
 
 	using namespace System;
@@ -8,7 +11,6 @@ namespace SmartParkingSystem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	//using namespace Microsoft::Office::Interop::Excel;
 
 	/// <summary>
 	/// Summary for frmThongKe
@@ -19,6 +21,8 @@ namespace SmartParkingSystem {
 		frmThongKe(void)
 		{
 			InitializeComponent();
+			b = gcnew BUS_Thongke();
+			dgvThong_ke->ClearSelection();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -56,6 +60,15 @@ namespace SmartParkingSystem {
 
 	private: System::Windows::Forms::Panel^  pnInfo;
 	private: System::Windows::Forms::DataGridView^  dgvThong_ke;
+
+	private: System::Windows::Forms::Label^  lbTongSoLuot;
+	private: System::Windows::Forms::Label^  lbTongSoTien;
+
+	private:
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		BUS_Thongke^ b;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  ma_the;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  bien_so;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  time_in;
@@ -64,15 +77,8 @@ namespace SmartParkingSystem {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  loai_gui;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  trang_thai;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  tien;
-	private: System::Windows::Forms::DataGridViewButtonColumn^  chi_tiet;
-	private: System::Windows::Forms::Label^  lbTongSoLuot;
-	private: System::Windows::Forms::Label^  lbTongSoTien;
 
-	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		System::ComponentModel::Container ^components;
+	private: System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -81,8 +87,8 @@ namespace SmartParkingSystem {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->pnTitle = (gcnew System::Windows::Forms::Panel());
 			this->lbTitle = (gcnew System::Windows::Forms::Label());
 			this->tbContainer = (gcnew System::Windows::Forms::TableLayoutPanel());
@@ -112,7 +118,6 @@ namespace SmartParkingSystem {
 			this->loai_gui = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->trang_thai = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tien = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->chi_tiet = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
 			this->pnTitle->SuspendLayout();
 			this->tbContainer->SuspendLayout();
 			this->pnThong_Ke->SuspendLayout();
@@ -253,7 +258,7 @@ namespace SmartParkingSystem {
 			// 
 			// dateTo
 			// 
-			this->dateTo->CustomFormat = L"dd-MM-yyyy";
+			this->dateTo->CustomFormat = L"yyyy-MM-dd";
 			this->dateTo->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->dateTo->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
@@ -264,7 +269,7 @@ namespace SmartParkingSystem {
 			// 
 			// dateFrom
 			// 
-			this->dateFrom->CustomFormat = L"dd-MM-yyyy";
+			this->dateFrom->CustomFormat = L"yyyy-MM-dd";
 			this->dateFrom->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->dateFrom->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
@@ -375,7 +380,7 @@ namespace SmartParkingSystem {
 			this->lbTongSoLuot->Name = L"lbTongSoLuot";
 			this->lbTongSoLuot->Size = System::Drawing::Size(119, 22);
 			this->lbTongSoLuot->TabIndex = 21;
-			this->lbTongSoLuot->Text = L"Tổng số lượt:";
+			this->lbTongSoLuot->Text = L"Tổng số xe:";
 			// 
 			// lbTongSoTien
 			// 
@@ -394,25 +399,26 @@ namespace SmartParkingSystem {
 			// 
 			// dgvThong_ke
 			// 
+			this->dgvThong_ke->AllowUserToAddRows = false;
 			this->dgvThong_ke->AllowUserToDeleteRows = false;
 			this->dgvThong_ke->AllowUserToResizeColumns = false;
 			this->dgvThong_ke->AllowUserToResizeRows = false;
 			this->dgvThong_ke->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dgvThong_ke->BackgroundColor = System::Drawing::Color::White;
 			this->dgvThong_ke->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dgvThong_ke->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgvThong_ke->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dgvThong_ke->ColumnHeadersHeight = 28;
 			this->dgvThong_ke->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::DisableResizing;
-			this->dgvThong_ke->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(9) {this->ma_the, this->bien_so, 
-				this->time_in, this->time_out, this->loai_xe, this->loai_gui, this->trang_thai, this->tien, this->chi_tiet});
+			this->dgvThong_ke->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {this->ma_the, this->bien_so, 
+				this->time_in, this->time_out, this->loai_xe, this->loai_gui, this->trang_thai, this->tien});
 			this->dgvThong_ke->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dgvThong_ke->Location = System::Drawing::Point(10, 0);
 			this->dgvThong_ke->Margin = System::Windows::Forms::Padding(0);
@@ -420,16 +426,17 @@ namespace SmartParkingSystem {
 			this->dgvThong_ke->ReadOnly = true;
 			this->dgvThong_ke->RowHeadersVisible = false;
 			this->dgvThong_ke->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dgvThong_ke->RowsDefaultCellStyle = dataGridViewCellStyle6;
+			this->dgvThong_ke->RowsDefaultCellStyle = dataGridViewCellStyle2;
 			this->dgvThong_ke->Size = System::Drawing::Size(1063, 306);
 			this->dgvThong_ke->TabIndex = 7;
 			this->dgvThong_ke->TabStop = false;
+			this->dgvThong_ke->DataBindingComplete += gcnew System::Windows::Forms::DataGridViewBindingCompleteEventHandler(this, &frmThongKe::dgvThong_ke_DataBindingComplete);
 			// 
 			// ma_the
 			// 
-			this->ma_the->DataPropertyName = L"Sove";
+			this->ma_the->DataPropertyName = L"Mathe";
 			this->ma_the->HeaderText = L"Số vé";
 			this->ma_the->Name = L"ma_the";
 			this->ma_the->ReadOnly = true;
@@ -486,19 +493,11 @@ namespace SmartParkingSystem {
 			// tien
 			// 
 			this->tien->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->tien->DataPropertyName = L"Tien";
+			this->tien->DataPropertyName = L"Tongtien";
 			this->tien->HeaderText = L"Tiền";
 			this->tien->Name = L"tien";
 			this->tien->ReadOnly = true;
 			this->tien->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
-			// 
-			// chi_tiet
-			// 
-			this->chi_tiet->HeaderText = L"Xem chi tiết";
-			this->chi_tiet->Name = L"chi_tiet";
-			this->chi_tiet->ReadOnly = true;
-			this->chi_tiet->Resizable = System::Windows::Forms::DataGridViewTriState::True;
-			this->chi_tiet->ToolTipText = L"Xem chi tiết";
 			// 
 			// frmThongKe
 			// 
@@ -526,28 +525,59 @@ namespace SmartParkingSystem {
 		}
 #pragma endregion
 	private: System::Void btnThongKe_Click(System::Object^  sender, System::EventArgs^  e) {
+				String^ date_t=dateTo->Value.ToString("yyyy-MM-dd");
+				String^ date_fr=dateFrom->Value.ToString("yyyy-MM-dd");	
+				String^ bks=txtSoVe->Text;
+				String^ loai_xe= cbLoaiXe->Text;
+				String^ trangthai=cbTrangThai->Text;
+				
+				 if (date_t !="" && date_fr!="" && bks==""&& loai_xe==""&&trangthai=="")
+					 b->Thongke_theo_ngay(dgvThong_ke,date_t,date_fr);
+				 else if(bks!="" && loai_xe==""&&trangthai=="")
+					 b->Thongke_theo_bks(dgvThong_ke,bks);
+				 else if(loai_xe!="" && bks=="" && trangthai=="")
+					 b->Thongke_theo_loaixe(dgvThong_ke,loai_xe);
+				 else if(trangthai!="" && bks=="" && loai_xe=="")
+					 b->Thongke_theo_trangthai(dgvThong_ke,trangthai);
+				 else
+					 b->Thongke_full_luachon(dgvThong_ke,date_t,date_fr,bks,loai_xe,trangthai);
+				 
 			 }
 	private: System::Void btnXuatExcel_Click(System::Object^  sender, System::EventArgs^  e) {
-				 
-				 //Excel::Application ^obj = gcnew Excel::Application();
-				 //obj->Workbooks->Add(Type::Missing);
-				 //obj->Columns->ColumnWidth = 25;
-				 //int i, j, n, m;
-				 //n = dgvThong_ke->ColumnCount;
-				 //m = dgvThong_ke->RowCount;
-
-				 //for (i = 1; i < n + 1; i++)
-					// obj->Cells[1, i] = dgvThong_ke->Columns[i - 1]->HeaderText;
-
-				 //for (i = 0; i < m; i++)
-					// for (j = 0; j < n; j++)
-					//	 if (dgvThong_ke->Rows[i]->Cells[j]->Value != nullptr)
-					//		 obj->Cells[i + 2, j + 1] = dgvThong_ke->Rows[i]->Cells[j]->Value->ToString();
-
-				 //obj->ActiveWorkbook->SaveCopyAs("D:\\Demo.xlsx");
-				 //obj->ActiveWorkbook->Saved = true;
+				 DBUtils::export_to_excel(dgvThong_ke);
 			 }
 	private: System::Void frmThongKe_Load(System::Object^  sender, System::EventArgs^  e) {
+				 loadData();
 			 }
-	};
+	private: System::Void loadData(){
+				 String^ sql=L"SELECT * FROM `thongke`";
+				 DBUtils::loadDataSort(dgvThong_ke,sql);
+				 showTongtien();
+				 showTongxe();
+			 }
+	private:System::Void showTongtien(){
+			int count=dgvThong_ke->RowCount;
+			int sum=0,i;
+			for (i=0;i<count;i++)
+			{
+				sum+=System::Convert::ToInt32(dgvThong_ke[7,i]->Value->ToString());
+			}
+			
+			lbTongSoTien->Text=L"Tổng số tiền: "+sum;
+			};
+	private:System::Void showTongxe(){
+			lbTongSoLuot->Text=L"Tổng số xe: "+dgvThong_ke->RowCount;
+			};
+
+	private:System::Void setNull(){
+			txtSoVe->Clear();
+			cbLoaiXe->Text="";
+			cbTrangThai->Text="";
+			}
+	private: System::Void dgvThong_ke_DataBindingComplete(System::Object^  sender, System::Windows::Forms::DataGridViewBindingCompleteEventArgs^  e) {
+				 dgvThong_ke->ClearSelection();
+				 setNull();
+			 }
+	
+};
 }
