@@ -24,7 +24,7 @@ void DA_Traxe::Search(String^ sqlSearch, DataGridView^ dgv){
 		DBUtils::loadData(dgv, sqlSearch); // thực hiện truy vấn sql, đồng thời đổ kết quả lên bảng dgv
 	}
 	catch (Exception^ e) {
-		MessageBox::Show(e->Message, L"Th�ng b�o", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 };
 
@@ -40,7 +40,7 @@ int DA_Traxe::TongXe(){
 			sum=sum+1;
 	}catch (Exception^ e)
 	{
-		MessageBox::Show(e->Message, L"Th�ng b�o", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}finally{
 		dr->Close();
 	}
@@ -59,7 +59,7 @@ String^ DA_Traxe::TongTien(String ^loai_xe){
 			while(dr->Read())
 				sum=dr["Tien"]->ToString();
 	}catch(Exception^ e){
-		MessageBox::Show(e->Message, L"Th�ng b�o", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}finally{
 		dr->Close();
 	}
