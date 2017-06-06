@@ -15,7 +15,7 @@ namespace SmartParkingSystem {
 		void Search(String^ sqlSearch, DataGridView^ dgv);
 		int check_Ve(String^,String^);
 		int check_gui(String^,String^);
-		int check_han_vethang(String^,String^);
+		double check_han_vethang(String^,String^);
 	};
 
 }

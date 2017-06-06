@@ -22,6 +22,3 @@ void BUS_Thongke::Thongke_theo_trangthai(DataGridView^ dgvThong_ke,String^ trang
 void BUS_Thongke::Thongke_full_luachon(DataGridView^ dgvThong_ke,String^ date_s,String^ date_e,String^ bks,String^ loaixe,String^ trangthai){
 	da->thongke_full_luachon(dgvThong_ke,date_s,date_e,bks,loaixe,trangthai);
 };
-void BUS_Thongke::Xuat_bao_cao(){
-
-};

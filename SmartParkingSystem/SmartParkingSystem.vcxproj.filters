@@ -25,9 +25,6 @@
     <Filter Include="Source Files\Tra xe">
       <UniqueIdentifier>{da8786c0-2a26-45c4-a896-6413fa845d92}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\So do">
-      <UniqueIdentifier>{f3ed4521-a6b1-41ce-a5a4-4afdd62e03dc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Dang nhap">
       <UniqueIdentifier>{b1a78328-f044-4a42-afe8-45a5c3d327ec}</UniqueIdentifier>
     </Filter>
@@ -52,11 +49,14 @@
     <Filter Include="Header Files\Nhanxe">
       <UniqueIdentifier>{5f238df8-f253-4dbc-9c49-383df0e440a2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Xe">
-      <UniqueIdentifier>{355d77f9-3018-45ca-bb03-7cfd6d2c1604}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Traxe">
       <UniqueIdentifier>{fbe0668c-2f7d-4aeb-9348-1a4710b35edf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Ve thang">
+      <UniqueIdentifier>{1754b5e2-b9b3-413e-97d2-4988c64f2690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Thong ke">
+      <UniqueIdentifier>{f7bb0d41-5095-476e-8e90-b91add292b10}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -93,9 +93,6 @@
     </ClCompile>
     <ClCompile Include="frmTraXe.cpp">
       <Filter>Source Files\Tra xe</Filter>
-    </ClCompile>
-    <ClCompile Include="frmSoDo.cpp">
-      <Filter>Source Files\So do</Filter>
     </ClCompile>
     <ClCompile Include="frmLogin.cpp">
       <Filter>Source Files\Dang nhap</Filter>
@@ -136,29 +133,32 @@
     <ClCompile Include="BUS_Nhanxe.cpp">
       <Filter>Source Files\Nhan xe</Filter>
     </ClCompile>
-    <ClCompile Include="Xe.cpp">
-      <Filter>Source Files\Xe</Filter>
-    </ClCompile>
     <ClCompile Include="DA_Traxe.cpp">
       <Filter>Source Files\Tra xe</Filter>
     </ClCompile>
     <ClCompile Include="BUS_Traxe.cpp">
       <Filter>Source Files\Tra xe</Filter>
     </ClCompile>
-    <ClCompile Include="BUS_VeThang.cpp">
+    <ClCompile Include="frmGioiThieu.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BUS_VeThang.cpp">
+      <Filter>Source Files\Ve thang</Filter>
     </ClCompile>
     <ClCompile Include="DA_VeThang.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Ve thang</Filter>
     </ClCompile>
     <ClCompile Include="VeThang.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Ve thang</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nguyen Van Son\Desktop\BUS_Thongke.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="BUS_Thongke.cpp">
+      <Filter>Source Files\Thong ke</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nguyen Van Son\Desktop\DA_Thongke.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="DA_Thongke.cpp">
+      <Filter>Source Files\Thong ke</Filter>
+    </ClCompile>
+    <ClCompile Include="Xe.cpp">
+      <Filter>Source Files\Nhan xe</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -183,9 +183,6 @@
     <ClInclude Include="frmVeThang.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="frmSoDo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="frmThongKe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -193,9 +190,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="frmDatabase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="app_config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="frmConfigDatabase.h">
@@ -234,26 +228,32 @@
     <ClInclude Include="BUS_Traxe.h">
       <Filter>Header Files\Traxe</Filter>
     </ClInclude>
-    <ClInclude Include="BUS_VeThang.h">
+    <ClInclude Include="Xe.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmGioiThieu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_config.h">
+      <Filter>Header Files\Connect</Filter>
+    </ClInclude>
+    <ClInclude Include="BUS_VeThang.h">
+      <Filter>Header Files\Ve thang</Filter>
     </ClInclude>
     <ClInclude Include="DA_VeThang.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Ve thang</Filter>
+    </ClInclude>
+    <ClInclude Include="DBUtils.h">
+      <Filter>Header Files\Connect</Filter>
+    </ClInclude>
+    <ClInclude Include="BUS_Thongke.h">
+      <Filter>Header Files\Thong ke</Filter>
+    </ClInclude>
+    <ClInclude Include="DA_Thongke.h">
+      <Filter>Header Files\Thong ke</Filter>
     </ClInclude>
     <ClInclude Include="VeThang.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\Nguyen Van Son\Desktop\BUS_Thongke.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\Nguyen Van Son\Desktop\DA_Thongke.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\Nguyen Van Son\Desktop\Xe.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\Nguyen Van Son\Desktop\DBUtils.h">
-      <Filter>Header Files\Connect</Filter>
+      <Filter>Header Files\Ve thang</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -290,6 +290,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfigDatabase.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGioiThieu.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

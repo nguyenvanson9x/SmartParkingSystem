@@ -125,11 +125,11 @@
     <ClCompile Include="DBUtils.cpp" />
     <ClCompile Include="frmConfigDatabase.cpp" />
     <ClCompile Include="frmDatabase.cpp" />
+    <ClCompile Include="frmGioiThieu.cpp" />
     <ClCompile Include="frmHeThong.cpp" />
     <ClCompile Include="frmLogin.cpp" />
     <ClCompile Include="frmMain.cpp" />
     <ClCompile Include="frmNhanXe.cpp" />
-    <ClCompile Include="frmSoDo.cpp" />
     <ClCompile Include="frmThongKe.cpp" />
     <ClCompile Include="frmTraXe.cpp" />
     <ClCompile Include="frmVeThang.cpp" />
@@ -151,7 +151,9 @@
     <ClInclude Include="BUS_Thongke.h" />
     <ClInclude Include="DA_Thongke.h" />
     <ClInclude Include="DBUtils.h" />
-    <ClInclude Include="Xe.h" />
+    <ClInclude Include="frmGioiThieu.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="connect.h" />
     <ClInclude Include="Convert_Hethong.h" />
     <ClInclude Include="DA_HeThong.h" />
@@ -177,9 +179,6 @@
     <ClInclude Include="frmNhanXe.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="frmSoDo.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="frmThongKe.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -193,7 +192,6 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="VeThang.h" />
-    <ClInclude Include="Xe.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
@@ -204,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatabase.resx">
       <DependentUpon>frmDatabase.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGioiThieu.resx">
+      <DependentUpon>frmGioiThieu.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHeThong.resx">
       <DependentUpon>frmHeThong.h</DependentUpon>
@@ -217,9 +218,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhanXe.resx">
       <DependentUpon>frmNhanXe.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSoDo.resx">
-      <DependentUpon>frmSoDo.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongKe.resx">
       <DependentUpon>frmThongKe.h</DependentUpon>

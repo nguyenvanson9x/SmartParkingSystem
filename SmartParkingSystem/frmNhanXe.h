@@ -82,6 +82,11 @@ namespace SmartParkingSystem {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clLoaive;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clLoaixe;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  clThoigianvao;
+
+
+
+
+
 			 System::ComponentModel::Container ^components;
 
 
@@ -92,9 +97,9 @@ namespace SmartParkingSystem {
 			 /// </summary>
 			 void InitializeComponent(void)
 			 {
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(frmNhanXe::typeid));
 				 this->pnTitle = (gcnew System::Windows::Forms::Panel());
 				 this->lbTitle = (gcnew System::Windows::Forms::Label());
@@ -206,34 +211,38 @@ namespace SmartParkingSystem {
 					 | System::Windows::Forms::AnchorStyles::Right));
 				 this->dgvCar->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 				 this->dgvCar->BackgroundColor = System::Drawing::Color::White;
-				 dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				 dataGridViewCellStyle4->BackColor = System::Drawing::SystemColors::Control;
-				 dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold));
-				 dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::WindowText;
-				 dataGridViewCellStyle4->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-				 dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				 dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				 this->dgvCar->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+				 this->dgvCar->BorderStyle = System::Windows::Forms::BorderStyle::None;
+				 dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				 dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
+				 dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold));
+				 dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+				 dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+				 dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				 dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				 this->dgvCar->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 				 this->dgvCar->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 				 this->dgvCar->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {this->clSove, this->clBKS, 
 					 this->clLoaive, this->clLoaixe, this->clThoigianvao});
 				 this->dgvCar->Location = System::Drawing::Point(0, 118);
 				 this->dgvCar->Margin = System::Windows::Forms::Padding(0);
 				 this->dgvCar->Name = L"dgvCar";
-				 dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				 dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Control;
-				 dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-				 dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
-				 dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-				 dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				 dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				 this->dgvCar->RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+				 this->dgvCar->ReadOnly = true;
+				 dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				 dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Control;
+				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+				 dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::WindowText;
+				 dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+				 dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				 dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				 this->dgvCar->RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
 				 this->dgvCar->RowHeadersVisible = false;
 				 this->dgvCar->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-				 dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F));
-				 this->dgvCar->RowsDefaultCellStyle = dataGridViewCellStyle6;
+				 dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F));
+				 this->dgvCar->RowsDefaultCellStyle = dataGridViewCellStyle3;
+				 this->dgvCar->RowTemplate->Height = 30;
 				 this->dgvCar->Size = System::Drawing::Size(743, 465);
 				 this->dgvCar->TabIndex = 4;
+				 this->dgvCar->TabStop = false;
 				 this->dgvCar->DataBindingComplete += gcnew System::Windows::Forms::DataGridViewBindingCompleteEventHandler(this, &frmNhanXe::dgvCar_DataBindingComplete);
 				 this->dgvCar->RowEnter += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &frmNhanXe::dgvCar_RowEnter);
 				 // 
@@ -242,30 +251,40 @@ namespace SmartParkingSystem {
 				 this->clSove->DataPropertyName = L"Sove";
 				 this->clSove->HeaderText = L"Số vé";
 				 this->clSove->Name = L"clSove";
+				 this->clSove->ReadOnly = true;
+				 this->clSove->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 				 // 
 				 // clBKS
 				 // 
 				 this->clBKS->DataPropertyName = L"BKS";
 				 this->clBKS->HeaderText = L"Biển kiểm soát";
 				 this->clBKS->Name = L"clBKS";
+				 this->clBKS->ReadOnly = true;
+				 this->clBKS->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 				 // 
 				 // clLoaive
 				 // 
 				 this->clLoaive->DataPropertyName = L"Loaive";
 				 this->clLoaive->HeaderText = L"Loại Vé";
 				 this->clLoaive->Name = L"clLoaive";
+				 this->clLoaive->ReadOnly = true;
+				 this->clLoaive->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 				 // 
 				 // clLoaixe
 				 // 
 				 this->clLoaixe->DataPropertyName = L"Loaixe";
 				 this->clLoaixe->HeaderText = L"Loại Xe";
 				 this->clLoaixe->Name = L"clLoaixe";
+				 this->clLoaixe->ReadOnly = true;
+				 this->clLoaixe->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 				 // 
 				 // clThoigianvao
 				 // 
 				 this->clThoigianvao->DataPropertyName = L"Thoigianvao";
 				 this->clThoigianvao->HeaderText = L"Thời gian vào";
 				 this->clThoigianvao->Name = L"clThoigianvao";
+				 this->clThoigianvao->ReadOnly = true;
+				 this->clThoigianvao->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
 				 // 
 				 // lbSum
 				 // 
@@ -410,12 +429,12 @@ namespace SmartParkingSystem {
 				 this->txtSove->Name = L"txtSove";
 				 this->txtSove->Size = System::Drawing::Size(170, 26);
 				 this->txtSove->TabIndex = 1;
-				 
 				 // 
 				 // cbLoaive
 				 // 
 				 this->cbLoaive->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 					 | System::Windows::Forms::AnchorStyles::Right));
+				 this->cbLoaive->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 				 this->cbLoaive->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->cbLoaive->FormattingEnabled = true;
@@ -429,6 +448,7 @@ namespace SmartParkingSystem {
 				 // 
 				 this->cbLoaixe->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
 					 | System::Windows::Forms::AnchorStyles::Right));
+				 this->cbLoaixe->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 				 this->cbLoaixe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->cbLoaixe->FormattingEnabled = true;
@@ -605,6 +625,7 @@ namespace SmartParkingSystem {
 				 // 
 				 // frmNhanXe
 				 // 
+				 this->AcceptButton = this->btnTimkiem;
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::White;
@@ -645,7 +666,7 @@ namespace SmartParkingSystem {
 				 cbLoaive->Text= dgvCar[2, row]->Value->ToString();
 				 cbLoaixe->Text= dgvCar[3, row]->Value->ToString();
 				 DateTime dt = DateTime::Parse( dgvCar[4, row]->Value->ToString());
-				 tgr=dt.ToString("yyyy-MM-dd");
+				 tgr=dt.ToString("dd-MM-yyyy");
 				 txtThoigianvao->Text=tgr;
 			 }
 	private: System::Void btnThem_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -653,7 +674,9 @@ namespace SmartParkingSystem {
 				 bks=txtBienso->Text;
 				 loai_ve=cbLoaive->Text;
 				 loai_xe=cbLoaixe->Text;
-				 thoi_gian_vao=txtThoigianvao->Text;
+
+				 DateTime dt = DateTime::Parse(txtThoigianvao->Text);
+				 thoi_gian_vao=dt.ToString("yyyy-MM-dd");
 
 				 if (bks=="" || loai_xe ==nullptr || loai_ve ==nullptr || thoi_gian_vao=="")
 				 {
@@ -666,8 +689,6 @@ namespace SmartParkingSystem {
 					 loadData();
 					 setNull();
 				 }
-
-
 			 }
 	private: System::Void btnXoa_Click(System::Object^  sender, System::EventArgs^  e) {
 				 int row;
@@ -685,10 +706,13 @@ namespace SmartParkingSystem {
 				 bks=txtBienso->Text;
 				 loai_ve=cbLoaive->Text;
 				 loai_xe=cbLoaixe->Text;
-				 thoi_gian_vao=txtThoigianvao->Text;
+				 
+				 DateTime dt = DateTime::Parse(txtThoigianvao->Text);
+				 thoi_gian_vao=dt.ToString("yyyy-MM-dd");
+
 				 if (bks=="" || loai_xe ==nullptr || loai_ve ==nullptr || thoi_gian_vao=="")
 				 {
-					 MessageBox::Show(L"Thông tin không được bỏ trống!!");
+					 MessageBox::Show(L"Thông tin không được bỏ trống!", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				 } else{
 					 so_ve=Int32::Parse(txtSove->Text);
 
@@ -726,7 +750,7 @@ namespace SmartParkingSystem {
 			 }
 	private:System::Void setTime(){
 				DateTime date=DateTime::Now;
-				txtThoigianvao->Text=date.ToString("yyyy-MM-dd");
+				txtThoigianvao->Text=date.ToString("dd-MM-yyyy");
 			}
 	};
 }

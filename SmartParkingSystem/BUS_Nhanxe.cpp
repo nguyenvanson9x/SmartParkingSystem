@@ -14,17 +14,17 @@ void BUS_Nhanxe::Them(Xe^ xe){
 			da->InsertNX(xe);
 		else{
 			if (da->check_Ve(xe->BienKiemSoat,loai_xe)==0){
-				MessageBox::Show(L"Vé chưa đăng kí !!");
+				MessageBox::Show(L"Vé chưa đăng kí !", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			}else if (da->check_han_vethang(xe->BienKiemSoat,loai_xe)>=0)
 			{
-				MessageBox::Show(L"Vé đã hết hạn!!");
+				MessageBox::Show(L"Vé đã hết hạn !", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			}else {
 				da->InsertNX(xe);
 			}
 		}
 	} 
 	else
-		MessageBox::Show(L"Xe đã gửi rồi!!");
+		MessageBox::Show(L"Xe đã gửi rồi!!", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	
 };
 void BUS_Nhanxe::CapNhat(int sove,String^ bks,String^ loai_ve,String^ loai_xe,String^ thoi_gian_vao){

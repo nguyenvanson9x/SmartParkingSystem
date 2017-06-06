@@ -14,7 +14,7 @@ void DA_Nhanxe::InsertNX(Xe^ xe){
 	}
 	catch (Exception^ e)
 	{
-			MessageBox::Show(e->Message);
+			MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 };
 void DA_Nhanxe::UpdateNX(int sove,String^ bks,String^ loai_ve,String^ loai_xe,String^ thoi_gian_vao){
@@ -30,7 +30,7 @@ void DA_Nhanxe::Search(String^ sqlSearch, DataGridView^ dgv){
 		DBUtils::loadData(dgv, sqlSearch);
 	}
 	catch (Exception^ e) {
-		MessageBox::Show(e->Message);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 }
 int DA_Nhanxe::TongXe(){
@@ -44,7 +44,7 @@ int DA_Nhanxe::TongXe(){
 			sum=sum+1;
 	}catch (Exception^ e)
 	{
-		MessageBox::Show(e->Message);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}finally{
 		dr->Close();
 	}
@@ -62,7 +62,7 @@ int DA_Nhanxe::check_Ve(String^ bks,String^ loai_xe){
 			count=count+1;
 	}catch (Exception^ e)
 	{
-		MessageBox::Show(e->Message);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}finally{
 		dr->Close();
 	}
@@ -80,14 +80,14 @@ int DA_Nhanxe::check_gui(String^ bks,String^ loai_xe){
 			count=count+1;
 	}catch (Exception^ e)
 	{
-		MessageBox::Show(e->Message);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}finally{
 		dr->Close();
 	}
 	
 	return count;
 }
-int DA_Nhanxe::check_han_vethang(String^ bks,String^ loai_xe){
+double DA_Nhanxe::check_han_vethang(String^ bks,String^ loai_xe){
 	String^ loaixe=Convert_Hethong::GUI_To_DB(loai_xe),^date_s,^date_e;
 	
 	DateTime ^date_start,^date_end;
@@ -113,6 +113,5 @@ int DA_Nhanxe::check_han_vethang(String^ bks,String^ loai_xe){
 	DateTime dt_s = DateTime::Parse(date_s);
 	DateTime dt_e = DateTime::Parse(date_e);
 	TimeSpan d = DateTime::Today.Subtract(dt_e);
-	double days = d.TotalDays;
-	return days;
+	return d.TotalDays;
 }

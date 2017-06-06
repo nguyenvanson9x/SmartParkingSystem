@@ -87,8 +87,10 @@ namespace SmartParkingSystem {
 			 /// </summary>
 			 void InitializeComponent(void)
 			 {
+				 System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(frmThongKe::typeid));
 				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 this->pnTitle = (gcnew System::Windows::Forms::Panel());
 				 this->lbTitle = (gcnew System::Windows::Forms::Label());
 				 this->tbContainer = (gcnew System::Windows::Forms::TableLayoutPanel());
@@ -204,8 +206,8 @@ namespace SmartParkingSystem {
 				 this->pnCenter->Location = System::Drawing::Point(10, 10);
 				 this->pnCenter->Margin = System::Windows::Forms::Padding(0);
 				 this->pnCenter->Name = L"pnCenter";
-				 this->pnCenter->Size = System::Drawing::Size(1063, 305);
-				 this->pnCenter->TabIndex = 15;
+				 this->pnCenter->Size = System::Drawing::Size(1063, 296);
+				 this->pnCenter->TabIndex = 8;
 				 // 
 				 // btnXuatExcel
 				 // 
@@ -217,12 +219,14 @@ namespace SmartParkingSystem {
 				 this->btnXuatExcel->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->btnXuatExcel->ForeColor = System::Drawing::Color::White;
+				 this->btnXuatExcel->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnXuatExcel.Image")));
 				 this->btnXuatExcel->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-				 this->btnXuatExcel->Location = System::Drawing::Point(516, 205);
+				 this->btnXuatExcel->Location = System::Drawing::Point(387, 219);
 				 this->btnXuatExcel->Name = L"btnXuatExcel";
-				 this->btnXuatExcel->Size = System::Drawing::Size(133, 33);
-				 this->btnXuatExcel->TabIndex = 16;
+				 this->btnXuatExcel->Size = System::Drawing::Size(170, 38);
+				 this->btnXuatExcel->TabIndex = 6;
 				 this->btnXuatExcel->Text = L"Xuất ra Excel";
+				 this->btnXuatExcel->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 				 this->btnXuatExcel->UseVisualStyleBackColor = false;
 				 this->btnXuatExcel->Click += gcnew System::EventHandler(this, &frmThongKe::btnXuatExcel_Click);
 				 // 
@@ -236,12 +240,14 @@ namespace SmartParkingSystem {
 				 this->btnThongKe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->btnThongKe->ForeColor = System::Drawing::Color::White;
+				 this->btnThongKe->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"btnThongKe.Image")));
 				 this->btnThongKe->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-				 this->btnThongKe->Location = System::Drawing::Point(362, 205);
+				 this->btnThongKe->Location = System::Drawing::Point(207, 219);
 				 this->btnThongKe->Name = L"btnThongKe";
-				 this->btnThongKe->Size = System::Drawing::Size(125, 33);
-				 this->btnThongKe->TabIndex = 15;
+				 this->btnThongKe->Size = System::Drawing::Size(140, 38);
+				 this->btnThongKe->TabIndex = 5;
 				 this->btnThongKe->Text = L"Thống kê";
+				 this->btnThongKe->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 				 this->btnThongKe->UseVisualStyleBackColor = false;
 				 this->btnThongKe->Click += gcnew System::EventHandler(this, &frmThongKe::btnThongKe_Click);
 				 // 
@@ -253,30 +259,30 @@ namespace SmartParkingSystem {
 				 this->lbFrom->Location = System::Drawing::Point(139, 73);
 				 this->lbFrom->Name = L"lbFrom";
 				 this->lbFrom->Size = System::Drawing::Size(62, 19);
-				 this->lbFrom->TabIndex = 0;
+				 this->lbFrom->TabIndex = 8;
 				 this->lbFrom->Text = L"Từ ngày:";
 				 // 
 				 // dateTo
 				 // 
-				 this->dateTo->CustomFormat = L"yyyy-MM-dd";
+				 this->dateTo->CustomFormat = L"dd-MM-yyyy";
 				 this->dateTo->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->dateTo->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 				 this->dateTo->Location = System::Drawing::Point(491, 73);
 				 this->dateTo->Name = L"dateTo";
 				 this->dateTo->Size = System::Drawing::Size(149, 26);
-				 this->dateTo->TabIndex = 14;
+				 this->dateTo->TabIndex = 1;
 				 // 
 				 // dateFrom
 				 // 
-				 this->dateFrom->CustomFormat = L"yyyy-MM-dd";
+				 this->dateFrom->CustomFormat = L"dd-MM-yyyy";
 				 this->dateFrom->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->dateFrom->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 				 this->dateFrom->Location = System::Drawing::Point(207, 73);
 				 this->dateFrom->Name = L"dateFrom";
 				 this->dateFrom->Size = System::Drawing::Size(149, 26);
-				 this->dateFrom->TabIndex = 13;
+				 this->dateFrom->TabIndex = 0;
 				 // 
 				 // lbTo
 				 // 
@@ -286,7 +292,7 @@ namespace SmartParkingSystem {
 				 this->lbTo->Location = System::Drawing::Point(416, 73);
 				 this->lbTo->Name = L"lbTo";
 				 this->lbTo->Size = System::Drawing::Size(69, 19);
-				 this->lbTo->TabIndex = 4;
+				 this->lbTo->TabIndex = 8;
 				 this->lbTo->Text = L"Đến ngày:";
 				 // 
 				 // cbLoaiXe
@@ -306,10 +312,11 @@ namespace SmartParkingSystem {
 				 this->lbLoaiXe->AutoSize = true;
 				 this->lbLoaiXe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
+				 this->lbLoaiXe->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 				 this->lbLoaiXe->Location = System::Drawing::Point(139, 138);
 				 this->lbLoaiXe->Name = L"lbLoaiXe";
 				 this->lbLoaiXe->Size = System::Drawing::Size(57, 19);
-				 this->lbLoaiXe->TabIndex = 2;
+				 this->lbLoaiXe->TabIndex = 8;
 				 this->lbLoaiXe->Text = L"Loại xe:";
 				 // 
 				 // cbTrangThai
@@ -322,7 +329,7 @@ namespace SmartParkingSystem {
 				 this->cbTrangThai->Location = System::Drawing::Point(491, 135);
 				 this->cbTrangThai->Name = L"cbTrangThai";
 				 this->cbTrangThai->Size = System::Drawing::Size(149, 27);
-				 this->cbTrangThai->TabIndex = 7;
+				 this->cbTrangThai->TabIndex = 4;
 				 // 
 				 // lbTrangThai
 				 // 
@@ -332,7 +339,7 @@ namespace SmartParkingSystem {
 				 this->lbTrangThai->Location = System::Drawing::Point(416, 138);
 				 this->lbTrangThai->Name = L"lbTrangThai";
 				 this->lbTrangThai->Size = System::Drawing::Size(71, 19);
-				 this->lbTrangThai->TabIndex = 6;
+				 this->lbTrangThai->TabIndex = 8;
 				 this->lbTrangThai->Text = L"Trạng thái:";
 				 // 
 				 // txtSoVe
@@ -342,7 +349,7 @@ namespace SmartParkingSystem {
 				 this->txtSoVe->Location = System::Drawing::Point(775, 73);
 				 this->txtSoVe->Name = L"txtSoVe";
 				 this->txtSoVe->Size = System::Drawing::Size(149, 26);
-				 this->txtSoVe->TabIndex = 9;
+				 this->txtSoVe->TabIndex = 2;
 				 // 
 				 // lbMaVe
 				 // 
@@ -351,9 +358,9 @@ namespace SmartParkingSystem {
 					 static_cast<System::Byte>(0)));
 				 this->lbMaVe->Location = System::Drawing::Point(700, 73);
 				 this->lbMaVe->Name = L"lbMaVe";
-				 this->lbMaVe->Size = System::Drawing::Size(69, 19);
+				 this->lbMaVe->Size = System::Drawing::Size(57, 19);
 				 this->lbMaVe->TabIndex = 8;
-				 this->lbMaVe->Text = L"Mã vé xe:";
+				 this->lbMaVe->Text = L"Biển số:";
 				 // 
 				 // pnInfo
 				 // 
@@ -378,8 +385,8 @@ namespace SmartParkingSystem {
 				 this->lbTongSoLuot->Location = System::Drawing::Point(15, 284);
 				 this->lbTongSoLuot->Margin = System::Windows::Forms::Padding(0);
 				 this->lbTongSoLuot->Name = L"lbTongSoLuot";
-				 this->lbTongSoLuot->Size = System::Drawing::Size(119, 22);
-				 this->lbTongSoLuot->TabIndex = 21;
+				 this->lbTongSoLuot->Size = System::Drawing::Size(104, 22);
+				 this->lbTongSoLuot->TabIndex = 8;
 				 this->lbTongSoLuot->Text = L"Tổng số xe:";
 				 // 
 				 // lbTongSoTien
@@ -394,7 +401,7 @@ namespace SmartParkingSystem {
 				 this->lbTongSoTien->Margin = System::Windows::Forms::Padding(0);
 				 this->lbTongSoTien->Name = L"lbTongSoTien";
 				 this->lbTongSoTien->Size = System::Drawing::Size(121, 22);
-				 this->lbTongSoTien->TabIndex = 20;
+				 this->lbTongSoTien->TabIndex = 8;
 				 this->lbTongSoTien->Text = L"Tổng số tiền: ";
 				 // 
 				 // dgvThong_ke
@@ -408,15 +415,13 @@ namespace SmartParkingSystem {
 				 this->dgvThong_ke->BorderStyle = System::Windows::Forms::BorderStyle::None;
 				 dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
 				 dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::ActiveCaption;
-				 dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-					 static_cast<System::Byte>(0)));
+				 dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold));
 				 dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
 				 dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
 				 dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
 				 dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
 				 this->dgvThong_ke->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-				 this->dgvThong_ke->ColumnHeadersHeight = 28;
-				 this->dgvThong_ke->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::DisableResizing;
+				 this->dgvThong_ke->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 				 this->dgvThong_ke->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {this->ma_the, this->bien_so, 
 					 this->time_in, this->time_out, this->loai_xe, this->loai_gui, this->trang_thai, this->tien});
 				 this->dgvThong_ke->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -424,11 +429,20 @@ namespace SmartParkingSystem {
 				 this->dgvThong_ke->Margin = System::Windows::Forms::Padding(0);
 				 this->dgvThong_ke->Name = L"dgvThong_ke";
 				 this->dgvThong_ke->ReadOnly = true;
+				 dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				 dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Control;
+				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+				 dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::WindowText;
+				 dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+				 dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				 dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				 this->dgvThong_ke->RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
 				 this->dgvThong_ke->RowHeadersVisible = false;
 				 this->dgvThong_ke->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->dgvThong_ke->RowsDefaultCellStyle = dataGridViewCellStyle2;
+				 this->dgvThong_ke->RowsDefaultCellStyle = dataGridViewCellStyle3;
+				 this->dgvThong_ke->RowTemplate->Height = 30;
 				 this->dgvThong_ke->Size = System::Drawing::Size(1063, 306);
 				 this->dgvThong_ke->TabIndex = 7;
 				 this->dgvThong_ke->TabStop = false;
@@ -501,6 +515,7 @@ namespace SmartParkingSystem {
 				 // 
 				 // frmThongKe
 				 // 
+				 this->AcceptButton = this->btnThongKe;
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::White;
@@ -541,6 +556,8 @@ namespace SmartParkingSystem {
 					 b->Thongke_theo_trangthai(dgvThong_ke,trangthai);
 				 else
 					 b->Thongke_full_luachon(dgvThong_ke,date_fr,date_t,bks,loai_xe,trangthai);
+				 showTongtien();
+				 showTongxe();
 
 			 }
 	private: System::Void btnXuatExcel_Click(System::Object^  sender, System::EventArgs^  e) {

@@ -213,6 +213,7 @@ namespace SmartParkingSystem {
 				 this->pnTicket->Name = L"pnTicket";
 				 this->pnTicket->Size = System::Drawing::Size(313, 612);
 				 this->pnTicket->TabIndex = 2;
+
 				 // 
 				 // txtTrangThai
 				 // 

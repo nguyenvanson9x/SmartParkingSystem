@@ -800,6 +800,7 @@ namespace SmartParkingSystem {
 				 // 
 				 // frmHeThong
 				 // 
+				 this->AcceptButton = this->btnTimkiem;
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::White;
@@ -928,7 +929,7 @@ namespace SmartParkingSystem {
 			 }
 	private: System::Void dgvAccount_DataBindingComplete(System::Object^  sender, System::Windows::Forms::DataGridViewBindingCompleteEventArgs^  e) {
 				 dgvAccount->ClearSelection();
-				 dgvAccount->CurrentRow->Selected = false;
+				 //dgvAccount->CurrentRow->Selected = false;
 				 setNull();
 			 }
 	private: void Enable_Button(bool add, bool other) {

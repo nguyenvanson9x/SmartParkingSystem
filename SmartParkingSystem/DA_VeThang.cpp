@@ -100,7 +100,7 @@ int DA_VeThang::TongSoThe()
 				sum = Int32::Parse(dr["sum"]->ToString());
 	}
 	catch (Exception^ e) {
-		MessageBox::Show(e->Message);
+		MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 	finally {
 		dr->Close();

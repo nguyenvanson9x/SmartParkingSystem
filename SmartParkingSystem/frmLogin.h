@@ -224,106 +224,108 @@ namespace SmartParkingSystem {
 			 }
 #pragma endregion
 	private: System::Void pnTitle_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
-		mouseDown = true;
-		lastLocation = e->Location;
-	}
+				 mouseDown = true;
+				 lastLocation = e->Location;
+			 }
 	private: System::Void pnTitle_MouseMove(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
-		if (mouseDown)
-		{
-			if (this->mouseDown) {
-				Point currentScreenPos = PointToScreen(e->Location);
-				Location = Point(currentScreenPos.X - this->lastLocation.X, currentScreenPos.Y - this->lastLocation.Y);
-			}
-		}
-	}
+				 if (mouseDown)
+				 {
+					 if (this->mouseDown) {
+						 Point currentScreenPos = PointToScreen(e->Location);
+						 Location = Point(currentScreenPos.X - this->lastLocation.X, currentScreenPos.Y - this->lastLocation.Y);
+					 }
+				 }
+			 }
 	private: System::Void pnTitle_MouseUp(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
-		mouseDown = false;
-	}
+				 mouseDown = false;
+			 }
 	private: System::Void btnLogin_Click(System::Object^  sender, System::EventArgs^  e) {
 
-		String ^user, ^pass;
-		user = txtUsername->Text;
-		pass = txtPassword->Text;
+				 String ^user, ^pass;
+				 user = txtUsername->Text;
+				 pass = txtPassword->Text;
 
-		if (user->Length == 0)
-		{
-			if (pass->Length == 0)
-			{
-				MessageBox::Show(this, L"Bạn chưa nhập tên đăng nhập và mật khẩu", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				txtUsername->Focus();
-				txtUsername->SelectAll();
-			}
-			else
-			{
-				MessageBox::Show(this, L"Bạn chưa nhập tên đăng nhập", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				txtUsername->Focus();
-				txtUsername->SelectAll();
-			}
-		}
-		else if (pass->Length == 0)
-		{
-			MessageBox::Show(this, L"Bạn chưa nhập mật khẩu", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			txtPassword->Focus();
-		}
-		else
-		{
-			String ^sql = "select USERNAME,PASSWORD,CHUCVU from taikhoan where USERNAME='" + txtUsername->Text + "'and PASSWORD='" + txtPassword->Text + "'";
-			MySqlDataReader ^dr = nullptr;
-			try
-			{
-				dr = DBUtils::getDataReader(sql);
-				if (dr != nullptr)
-				{
-					if (dr->Read())
-					{
-						String ^username, ^password;
-						int type;
-						username = (String^)dr["USERNAME"];
-						password = (String^)dr["PASSWORD"];
-						type = (int)dr["CHUCVU"];
-						if (user->Equals(username) && pass->Equals(password))
-						{
-							Hide();
-							frmMain^ main = gcnew frmMain();
-							main->Show();
-							this->txtPassword->Clear();
-							switch (type)
-							{
-							case 1:
-								main->get_btnHeThong()->Enabled = true;
-								main->get_btnHeThong()->Visible = true;
-								break;
-							case 0:
-								main->get_btnHeThong()->Enabled = false;
-								main->get_btnHeThong()->Visible = false;
-								break;
-							default:
-								break;
-							}
-						}
-					}
-					else
-					{
-						MessageBox::Show(this, L"Tên đăng nhập hoặc mật khẩu không đúng", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Error);
-						txtUsername->Focus();
-						txtUsername->SelectAll();
-					}
-				}
-			}
-			catch (Exception ^e)
-				{
-					MessageBox::Show(e->Message);
-				}
-			finally
-			{
-				if (dr != nullptr)
-					dr->Close();
-				DBUtils::disConnect();
-			}
-		}
-	}
+				 if (user->Length == 0)
+				 {
+					 if (pass->Length == 0)
+					 {
+						 MessageBox::Show(this, L"Bạn chưa nhập tên đăng nhập và mật khẩu", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Error);
+						 txtUsername->Focus();
+						 txtUsername->SelectAll();
+					 }
+					 else
+					 {
+						 MessageBox::Show(this, L"Bạn chưa nhập tên đăng nhập", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Error);
+						 txtUsername->Focus();
+						 txtUsername->SelectAll();
+					 }
+				 }
+				 else if (pass->Length == 0)
+				 {
+					 MessageBox::Show(this, L"Bạn chưa nhập mật khẩu", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					 txtPassword->Focus();
+				 }
+				 else
+				 {
+					 String ^sql = "select USERNAME,PASSWORD,CHUCVU from taikhoan where USERNAME='" + txtUsername->Text + "'and PASSWORD='" + txtPassword->Text + "'";
+					 MySqlDataReader ^dr;
+					 try
+					 {
+						 dr = DBUtils::getDataReader(sql);
+						 if (dr != nullptr)
+						 {
+							 if (dr->Read())
+							 {
+								 String ^username, ^password;
+								 int type;
+								 username = (String^)dr["USERNAME"];
+								 password = (String^)dr["PASSWORD"];
+								 type = (int)dr["CHUCVU"];
+								 if (user->Equals(username) && pass->Equals(password))
+								 {
+									 Hide();
+									 frmMain^ main = gcnew frmMain();
+									 main->Show();
+									 this->txtPassword->Clear();
+									 switch (type)
+									 {
+									 case 1:
+										 main->get_btnHeThong()->Enabled = true;
+										 main->get_btnHeThong()->Visible = true;
+										 break;
+									 case 0:
+										 main->get_btnHeThong()->Enabled = false;
+										 //main->get_btnHeThong()->Visible = false;
+										 break;
+									 default:
+										 break;
+									 }
+								 }
+
+							 }
+							 else
+							 {
+								 MessageBox::Show(this, L"Tên đăng nhập hoặc mật khẩu không đúng", L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Error);
+								 txtUsername->Focus();
+								 txtUsername->SelectAll();
+							 }
+						 }
+						 dr->Close();
+					 }
+					 catch (Exception ^e)
+					 {
+						 dr->Close();
+						 MessageBox::Show(e->Message);
+					 }
+					 finally
+					 {
+						 dr->Close();
+						 DBUtils::disConnect();
+					 }
+				 }
+			 }
 	private: System::Void btnExit_Click(System::Object^  sender, System::EventArgs^  e) {
-		Environment::Exit(0);
-	}
+				 Environment::Exit(0);
+			 }
 	};
 }
