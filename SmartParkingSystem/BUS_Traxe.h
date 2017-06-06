@@ -10,9 +10,9 @@ namespace SmartParkingSystem {
 		DA_Traxe ^da;
 	public:
 		BUS_Traxe(void);
-		void Traxe(Xe^,String^);
-		void Search(String^, DataGridView^);
-		void showData(TextBox^,String^,String^);
-		int showTongXe();
+		void Traxe(Xe^,String^); // trả xe
+		void Search(String^, DataGridView^); // tìm kiếm theo từ khóa, kết quả được đổ lên bảng datagridview
+		void showData(TextBox^,String^,String^); // tính tổng số tiền cần trả, kết quả được hiển thị lên textbox
+		int showTongXe(); // tính tổng số xe
 	};
 }

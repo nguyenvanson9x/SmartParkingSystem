@@ -668,42 +668,69 @@ namespace SmartParkingSystem {
 
 			 }
 #pragma endregion
+			//Sự kiện cho nút Tìm Kiếm
 	private: System::Void btnTimkiem_Click(System::Object^  sender, System::EventArgs^  e) {
+				 // Lấy ra từ khóa để tìm kiếm
 				 String^ search=txtSearch->Text;
+				 // Đẩy từ khóa xuống lớp bussiness để xử lý, kết quả sẽ hiển thị lên bảng dgvCar
 				 b->Search(search,dgvCar);
+				 // Xóa từ khóa khỏi khung tìm kiếm
 				 txtSearch->Clear();
 			 }
+
+			 // Sự kiện cho nút Trở lại
 	private: System::Void btnTrolai_Click(System::Object^  sender, System::EventArgs^  e) {
+				 // Quay về bảng ban đầu
 				 loadData();
 				 txtSearch->Clear();
 			 }
+
+			 // Sự kiện cho nút Trả xe
 	private: System::Void btnTraxe_Click(System::Object^  sender, System::EventArgs^  e) {
+				 // Lấy ra các thông tin của xe cần trả
 				 id=txtSove->Text;
 				 bks=txtBienso->Text;
 				 loai_ve=txtLoaive->Text;
 				 loai_xe=txtLoaixe->Text;
-				 thoi_gian_ra=txtThoigianra->Value.ToString("yyyy-MM-dd");
+				 thoi_gian_ra=txtThoigianra->Value.ToString("yyyy-MM-dd"); // Đổi định dạng datetime về yyyy-MM-dd, để khớp với cấu trúc date của csdl
 				 thoi_gian_vao=txtThoigianvao->Text;
 				 gia_ve=txtTongtien->Text;
 				 so_ve=Int32::Parse(id);
+				 // Kết thúc lấy thông tin
+
+				 // Tạo đối tượng lưu trữ thông tin của xe cần trả
 				 Xe^ xe=gcnew Xe(so_ve,bks,thoi_gian_vao,thoi_gian_ra,gia_ve,loai_ve,loai_xe);
+				 // Đẩy thông tin của xe đó xuống lớp bussiness để xử lý
 				 b->Traxe(xe,txtTongtien->Text);
+
+				 // Làm mới lại bảng chứa danh sách xe
 				 loadData();
+				 // Vô hiệu hóa nút Trả xe
 				 btnTraxe->Enabled = false;
 
 			 }
+
+			 // Sự kiện cho nút Hủy
 	private: System::Void btnHuy_Click(System::Object^  sender, System::EventArgs^  e) {
+				 // Xóa bỏ các thông tin về xe ở trên giao diện ứng dụng
 				 setNull();
+				 // Vô hiệu hóa nút Trả xe
 				 btnTraxe->Enabled = false;
 			 }
+
+			 // Sự kiện này được gọi khi frame được load lần đầu tiên
 	private: System::Void frmTraXe_Load(System::Object^  sender, System::EventArgs^  e) {
 				 loadData();
 			 }
+
+			 // Hàm lấy danh sách xe từ csld, rồi đổ lên bảng dgvCar
 	private:System::Void loadData(){
 				String^ sql=L"SELECT Sove,BKS,Loaive,Loaixe,Thoigianvao FROM nhanxe WHERE Trangthai='N'";
 				DBUtils::loadDataSort(dgvCar,sql);
 				lbSum->Text=L"Tổng số xe:" + b->showTongXe();
 			}
+
+			// Xóa bỏ các thông tin của xe được chọn khỏi giao diện
 	private:System::Void setNull(){
 				txtSove->Clear();
 				txtBienso->Clear();
@@ -713,9 +740,13 @@ namespace SmartParkingSystem {
 				txtTongtien->Clear();
 				txtThoigianvao->Clear();
 			}
+
+			// Sự kiện bấm vào 1 dòng của bảng dgvCar
 	private: System::Void dgvCar_RowEnter(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 				 int row;
-				 row = e->RowIndex;
+				 row = e->RowIndex; // lấy ra chỉ số dòng
+
+				 // Lấy ra thông tin của 1 xe từ bảng dgvCar 
 				 String^ tgr;
 				 txtSove->Text= dgvCar[0, row]->Value->ToString();
 				 txtBienso->Text= dgvCar[1, row]->Value->ToString();
@@ -724,14 +755,24 @@ namespace SmartParkingSystem {
 				 DateTime dt = DateTime::Parse( dgvCar[4, row]->Value->ToString());
 				 tgr=dt.ToString("dd-MM-yyyy");
 				 txtThoigianvao->Text=tgr;
+				 // Kết thúc lấy dữ liệu
 
+				 // Tính tổng số tiền cần trả từ csdl, rồi gán giá trị vào txtTongTien
 				 b->showData(txtTongtien,txtLoaive->Text,txtLoaixe->Text);
+
+				 // Kích hoạt lại nút Trả xe, phục vụ cho việc trả xe
 				 btnTraxe->Enabled = true;
 			 }
+
+			 // Sự kiện xảy ra sau khi đổ xong dữ liệu lên bảng dgvCar
 	private: System::Void dgvCar_DataBindingComplete(System::Object^  sender, System::Windows::Forms::DataGridViewBindingCompleteEventArgs^  e) {
+				 // Bỏ lựa chọn dòng đầu tiên của bảng
 				 dgvCar->ClearSelection();
-				 // dgvCar->CurrentRow->Selected = false;
+				
+				 // Xóa bỏ các thông tin của xe trên giao diện
 				 setNull();
+
+				 //Vô hiệu hóa nút Trả xe
 				 btnTraxe->Enabled = false;
 			 }
 
