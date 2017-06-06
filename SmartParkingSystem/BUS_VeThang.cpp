@@ -42,3 +42,8 @@ void BUS_VeThang::showMoney(String^ Loaixe, TextBox^ txtGiaVe)
 	String^ sql = String::Format("select Tien_Vethang from loaixe where Loaixe = '{0}'", Loaixe);
 	da->showMoney(sql, txtGiaVe);
 }
+
+int BUS_VeThang::TongSoThe()
+{
+	return da->TongSoThe();
+}

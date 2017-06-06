@@ -22,6 +22,7 @@ namespace SmartParkingSystem {
 		{
 			InitializeComponent();
 			b = gcnew BUS_VeThang();
+			dgvTicket->ClearSelection();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -535,6 +536,7 @@ namespace SmartParkingSystem {
 				 this->dgvTicket->Size = System::Drawing::Size(743, 467);
 				 this->dgvTicket->TabIndex = 4;
 				 this->dgvTicket->TabStop = false;
+				 this->dgvTicket->DataBindingComplete += gcnew System::Windows::Forms::DataGridViewBindingCompleteEventHandler(this, &frmVeThang::dgvTicket_DataBindingComplete);
 				 this->dgvTicket->RowEnter += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &frmVeThang::dgvTicket_RowEnter);
 				 // 
 				 // clMaThe
@@ -709,6 +711,7 @@ namespace SmartParkingSystem {
 						 VeThang ^ticket = gcnew VeThang(0, loai_xe, bien_xe, date_start, date_end, gia_ve);
 						 b->Add(ticket);
 						 loadData();
+						 show_Control(false);
 					 }
 					 else
 						 MessageBox::Show(L"Chưa chọn loại xe", "Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -733,6 +736,7 @@ namespace SmartParkingSystem {
 						 VeThang ^ticket = gcnew VeThang(id, loai_xe, bien_xe, date_start, date_end, gia_ve);
 						 b->Update(ticket);
 						 loadData();
+						 show_Control(false);
 					 }
 					 else
 						 MessageBox::Show(L"Chưa chọn loại xe", "Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -749,6 +753,7 @@ namespace SmartParkingSystem {
 
 					 b->Delete(id);
 					 loadData();
+					 show_Control(false);
 				 }
 				 catch (Exception ^e) {
 					 MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -804,6 +809,7 @@ namespace SmartParkingSystem {
 	private: void loadData() {
 				 String ^sql = L"select Mathe, BKS, Loaixe, Ngaybatdau, Ngayketthuc, Tien from quanlyvethang;";
 				 DBUtils::loadData(dgvTicket, sql);
+				 lbSum->Text = L"Tổng số thẻ: " + b->TongSoThe();				
 				 show_Control(true);
 			 }
 	private: void setNull() {
@@ -835,5 +841,10 @@ namespace SmartParkingSystem {
 					 MessageBox::Show(e->Message, L"Thông báo", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				 }
 			 }
-	};
+	private: System::Void dgvTicket_DataBindingComplete(System::Object^  sender, System::Windows::Forms::DataGridViewBindingCompleteEventArgs^  e) {
+				 dgvTicket->ClearSelection();
+				 setNull();
+				 show_Control(false);
+			 }
+};
 }

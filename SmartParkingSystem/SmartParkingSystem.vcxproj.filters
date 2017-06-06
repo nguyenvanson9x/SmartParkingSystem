@@ -154,10 +154,10 @@
     <ClCompile Include="VeThang.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\SmartParkingSystem\SmartParkingSystem\DA_Thongke.cpp">
+    <ClCompile Include="C:\Users\Nguyen Van Son\Desktop\BUS_Thongke.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\SmartParkingSystem\SmartParkingSystem\BUS_Thongke.cpp">
+    <ClCompile Include="C:\Users\Nguyen Van Son\Desktop\DA_Thongke.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -219,9 +219,6 @@
     <ClInclude Include="DBMySQLUtils.h">
       <Filter>Header Files\Connect</Filter>
     </ClInclude>
-    <ClInclude Include="DBUtils.h">
-      <Filter>Header Files\Connect</Filter>
-    </ClInclude>
     <ClInclude Include="DA_Nhanxe.h">
       <Filter>Header Files\Nhanxe</Filter>
     </ClInclude>
@@ -246,11 +243,17 @@
     <ClInclude Include="VeThang.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\SmartParkingSystem\SmartParkingSystem\BUS_Thongke.h">
+    <ClInclude Include="C:\Users\Nguyen Van Son\Desktop\BUS_Thongke.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\SmartParkingSystem\SmartParkingSystem\DA_Thongke.h">
+    <ClInclude Include="C:\Users\Nguyen Van Son\Desktop\DA_Thongke.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nguyen Van Son\Desktop\Xe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nguyen Van Son\Desktop\DBUtils.h">
+      <Filter>Header Files\Connect</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

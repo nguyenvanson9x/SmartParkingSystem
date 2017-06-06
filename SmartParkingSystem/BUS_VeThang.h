@@ -16,6 +16,7 @@ namespace SmartParkingSystem {
 		void Delete(int id);
 		void Search(String ^ search, System::Windows::Forms::DataGridView^ dgvTicket);
 		void showMoney(String^ Loaixe, System::Windows::Forms::TextBox^ txtGiaVe);
+		int TongSoThe();
 	};
 }
 

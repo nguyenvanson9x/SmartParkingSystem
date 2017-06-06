@@ -13,7 +13,7 @@ namespace SmartParkingSystem {
 		void thongke_theo_loaixe(DataGridView^,String^);
 		void thongke_theo_trangthai(DataGridView^,String^);
 		void thongke_full_luachon(DataGridView^,String^,String^,String^,String^,String^);
-		void xuat_bao_cao();
+		//void xuat_bao_cao();
 		
 	};
 

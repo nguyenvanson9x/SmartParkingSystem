@@ -16,7 +16,7 @@ void DA_VeThang::Add(VeThang ^ ticket)
 	date_start = ticket->DateStart;
 	date_end = ticket->DateEnd;
 	gia_ve = ticket->GiaVe;
-	
+
 	sql = String::Format("insert into quanlyvethang (Mathe, BKS, Loaixe, Ngaybatdau, Ngayketthuc, Tien) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')","0", bien_xe, loai_xe, date_start, date_end, gia_ve);
 	try {
 		DBUtils::ExcuteNonQuery(sql);
@@ -86,4 +86,24 @@ void SmartParkingSystem::DA_VeThang::showMoney(String^ sql, System::Windows::For
 	finally {
 		dr->Close();
 	}
+}
+
+int DA_VeThang::TongSoThe()
+{
+	int sum = 0;
+	String^ sql =String::Format( "select count(*) as sum from quanlyvethang");
+	MySqlDataReader^ dr;
+	try {
+		dr = DBUtils::getDataReader(sql);
+		if (dr != nullptr)
+			while (dr->Read())
+				sum = Int32::Parse(dr["sum"]->ToString());
+	}
+	catch (Exception^ e) {
+		MessageBox::Show(e->Message);
+	}
+	finally {
+		dr->Close();
+	}
+	return sum;
 }
