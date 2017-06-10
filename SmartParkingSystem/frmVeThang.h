@@ -213,7 +213,6 @@ namespace SmartParkingSystem {
 				 this->pnTicket->Name = L"pnTicket";
 				 this->pnTicket->Size = System::Drawing::Size(313, 612);
 				 this->pnTicket->TabIndex = 2;
-
 				 // 
 				 // txtTrangThai
 				 // 
@@ -534,6 +533,7 @@ namespace SmartParkingSystem {
 				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				 this->dgvTicket->RowsDefaultCellStyle = dataGridViewCellStyle2;
+				 this->dgvTicket->RowTemplate->Height = 30;
 				 this->dgvTicket->Size = System::Drawing::Size(743, 467);
 				 this->dgvTicket->TabIndex = 4;
 				 this->dgvTicket->TabStop = false;

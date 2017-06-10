@@ -115,3 +115,21 @@ double DA_Nhanxe::check_han_vethang(String^ bks,String^ loai_xe){
 	TimeSpan d = DateTime::Today.Subtract(dt_e);
 	return d.TotalDays;
 }
+int DA_Nhanxe::get_tongxedap(){
+	int count=0;
+	String^ sql=L"select * from nhanxe where  nhanxe.Loaixe='Xe đạp'";
+	MySqlDataReader^ dr;
+	try
+	{
+		dr=DBUtils::getDataReader(sql);
+		while(dr->Read())
+			count=count+1;
+	}catch (Exception^ e)
+	{
+		MessageBox::Show(e->Message);
+	}finally{
+		dr->Close();
+	}
+
+	return count;
+}

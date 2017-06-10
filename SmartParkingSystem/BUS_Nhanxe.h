@@ -15,5 +15,6 @@ namespace SmartParkingSystem {
 		void Xoa(int,String^);
 		void Search(String^, DataGridView^);
 		int showTongXe();
+		int tong_xedap();
 	};
 }

@@ -16,6 +16,7 @@ namespace SmartParkingSystem {
 		int check_Ve(String^,String^);
 		int check_gui(String^,String^);
 		double check_han_vethang(String^,String^);
+		int get_tongxedap();
 	};
 
 }

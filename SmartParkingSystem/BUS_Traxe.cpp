@@ -14,7 +14,7 @@ void BUS_Traxe::Traxe(Xe^ xe,String^ tong_tien){
 // xử lý tìm kiếm
 void BUS_Traxe::Search(String^ search, DataGridView^ dgv){
 	String^ sql=L"SELECT Sove,BKS,Loaixe,Loaive,Thoigianvao FROM nhanxe WHERE Trangthai='N'";
-	String^ sqlSearch=String::Format("select Sove,BKS,Loaixe,Loaive,Thoigianvao from nhanxe where (nhanxe.Sove='{0}' or nhanxe.BKS='{1}' or Loaive='{2}' or Thoigianvao='{3}' or Loaixe='{4}') and (nhanxe.Trangthai = 'N')",search,search,search,search,search);
+	String^ sqlSearch=String::Format("select Sove,BKS,Loaixe,Loaive,Thoigianvao from nhanxe where (nhanxe.Sove='{0}' or nhanxe.BKS like'%{1}%' or Loaive like '%{2}%' or Thoigianvao='{3}' or Loaixe like '%{4}%') and (nhanxe.Trangthai = 'N')",search,search,search,search,search);
 	if (search->Equals("")) // Nếu từ khóa là rỗng thì lấy ra toàn bộ thông tin xe, rồi đổ vả bảng dgv
 		da->Search(sql, dgv);
 	else

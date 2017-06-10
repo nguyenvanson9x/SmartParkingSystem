@@ -1,0 +1,117 @@
+﻿Build started 6/10/2017 1:36:13 PM.
+     1>Project "D:\NguyenVanSon\SmartParkingSystem\SmartParkingSystem\SmartParkingSystem.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\SmartParkingSystem.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       ClCompile:
+         D:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\SmartParkingSystem.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /FU"D:\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Excel.dll" /FU"C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.0\MySql.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Configuration.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Web.Services.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt stdafx.cpp /clr:nostdlib 
+         stdafx.cpp
+         D:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\SmartParkingSystem.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /FU"D:\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Excel.dll" /FU"C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.0\MySql.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Configuration.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Web.Services.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt app_config.cpp AssemblyInfo.cpp BUS_HeThong.cpp BUS_Nhanxe.cpp BUS_Traxe.cpp BUS_VeThang.cpp BUS_Thongke.cpp DA_Thongke.cpp connect.cpp Convert_Hethong.cpp DA_HeThong.cpp DA_Nhanxe.cpp DA_Traxe.cpp DA_VeThang.cpp DBMySQLUtils.cpp DBUtils.cpp frmConfigDatabase.cpp frmDatabase.cpp frmGioiThieu.cpp frmHeThong.cpp frmLogin.cpp frmMain.cpp frmNhanXe.cpp frmThongKe.cpp frmTraXe.cpp frmVeThang.cpp HeThong.cpp Xe.cpp SmartParkingSystem.cpp VeThang.cpp Xe.cpp /clr:nostdlib 
+         app_config.cpp
+         AssemblyInfo.cpp
+         BUS_HeThong.cpp
+         BUS_Nhanxe.cpp
+         BUS_Traxe.cpp
+         BUS_VeThang.cpp
+         BUS_Thongke.cpp
+         DA_Thongke.cpp
+         connect.cpp
+         Convert_Hethong.cpp
+         DA_HeThong.cpp
+         DA_Nhanxe.cpp
+         DA_Traxe.cpp
+         DA_VeThang.cpp
+         DBMySQLUtils.cpp
+         DBUtils.cpp
+         frmConfigDatabase.cpp
+         frmDatabase.cpp
+         frmGioiThieu.cpp
+         frmHeThong.cpp
+         Generating Code...
+         Compiling...
+         frmLogin.cpp
+         frmMain.cpp
+         frmNhanXe.cpp
+         frmThongKe.cpp
+         frmTraXe.cpp
+         frmVeThang.cpp
+         HeThong.cpp
+         Xe.cpp
+         SmartParkingSystem.cpp
+         VeThang.cpp
+         Xe.cpp
+         Generating Code...
+         D:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /analyze- /errorReport:prompt "C:\Users\Nguyen Van Son\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cpp"
+         .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+       CoreResGen:
+         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"D:\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Excel.dll" /r:"C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.0\MySql.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Configuration.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Web.Services.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile frmConfigDatabase.resx,Release\SmartParkingSystem.frmConfigDatabase.resources frmDatabase.resx,Release\SmartParkingSystem.frmDatabase.resources frmGioiThieu.resx,Release\SmartParkingSystem.frmGioiThieu.resources frmHeThong.resx,Release\SmartParkingSystem.frmHeThong.resources frmLogin.resx,Release\SmartParkingSystem.frmLogin.resources frmMain.resX,Release\SmartParkingSystem.frmMain.resources frmNhanXe.resx,Release\SmartParkingSystem.frmNhanXe.resources frmThongKe.resx,Release\SmartParkingSystem.frmThongKe.resources frmTraXe.resx,Release\SmartParkingSystem.frmTraXe.resources frmVeThang.resx,Release\SmartParkingSystem.frmVeThang.resources
+         Processing resource file "frmConfigDatabase.resx" into "Release\SmartParkingSystem.frmConfigDatabase.resources".
+         Processing resource file "frmDatabase.resx" into "Release\SmartParkingSystem.frmDatabase.resources".
+         Processing resource file "frmGioiThieu.resx" into "Release\SmartParkingSystem.frmGioiThieu.resources".
+         Processing resource file "frmHeThong.resx" into "Release\SmartParkingSystem.frmHeThong.resources".
+         Processing resource file "frmLogin.resx" into "Release\SmartParkingSystem.frmLogin.resources".
+         Processing resource file "frmMain.resX" into "Release\SmartParkingSystem.frmMain.resources".
+         Processing resource file "frmNhanXe.resx" into "Release\SmartParkingSystem.frmNhanXe.resources".
+         Processing resource file "frmThongKe.resx" into "Release\SmartParkingSystem.frmThongKe.resources".
+         Processing resource file "frmTraXe.resx" into "Release\SmartParkingSystem.frmTraXe.resources".
+         Processing resource file "frmVeThang.resx" into "Release\SmartParkingSystem.frmVeThang.resources".
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Release\app.res" app.rc 
+       Link:
+         D:\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NguyenVanSon\SmartParkingSystem\Release\SmartParkingSystem.exe" /INCREMENTAL:NO /NOLOGO /ASSEMBLYRESOURCE:Release\SmartParkingSystem.frmConfigDatabase.resources /ASSEMBLYRESOURCE:Release\SmartParkingSystem.frmDatabase.resources /ASSEMBLYRESOURCE:Release\SmartParkingSystem.frmGioiThieu.resources /ASSEMBLYRESOURCE:Release\SmartParkingSystem.frmHeThong.resources /ASSEMBLYRESOURCE:Release\SmartParkingSystem.frmLogin.resources /ASSEMBLYRESOURCE:Release\SmartParkingSystem.frmMain.resources /ASSEMBLYRESOURCE:Release\SmartParkingSystem.frmNhanXe.resources /ASSEMBLYRESOURCE:Release\SmartParkingSystem.frmThongKe.resources /ASSEMBLYRESOURCE:Release\SmartParkingSystem.frmTraXe.resources /ASSEMBLYRESOURCE:Release\SmartParkingSystem.frmVeThang.resources /MANIFEST /ManifestFile:"Release\SmartParkingSystem.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\NguyenVanSon\SmartParkingSystem\Release\SmartParkingSystem.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Release\app.res
+         Release\app_config.obj
+         Release\AssemblyInfo.obj
+         Release\BUS_HeThong.obj
+         Release\BUS_Nhanxe.obj
+         Release\BUS_Traxe.obj
+         Release\BUS_VeThang.obj
+         Release\BUS_Thongke.obj
+         Release\DA_Thongke.obj
+         Release\connect.obj
+         Release\Convert_Hethong.obj
+         Release\DA_HeThong.obj
+         Release\DA_Nhanxe.obj
+         Release\DA_Traxe.obj
+         Release\DA_VeThang.obj
+         Release\DBMySQLUtils.obj
+         Release\DBUtils.obj
+         Release\frmConfigDatabase.obj
+         Release\frmDatabase.obj
+         Release\frmGioiThieu.obj
+         Release\frmHeThong.obj
+         Release\frmLogin.obj
+         Release\frmMain.obj
+         Release\frmNhanXe.obj
+         Release\frmThongKe.obj
+         Release\frmTraXe.obj
+         Release\frmVeThang.obj
+         Release\HeThong.obj
+         Release\Xe.obj
+         Release\SmartParkingSystem.obj
+         Release\stdafx.obj
+         Release\VeThang.obj
+         Release\Xe.obj
+         "Release\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+     1>Release\Xe.obj : warning LNK4042: object specified more than once; extras ignored
+         SmartParkingSystem.vcxproj -> D:\NguyenVanSon\SmartParkingSystem\Release\SmartParkingSystem.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\NguyenVanSon\SmartParkingSystem\Release\SmartParkingSystem.exe;#1" /manifest Release\SmartParkingSystem.exe.intermediate.manifest
+       _CopyFilesMarkedCopyLocal:
+         Copying file from "D:\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Excel.dll" to "D:\NguyenVanSon\SmartParkingSystem\Release\Microsoft.Office.Interop.Excel.dll".
+         Copying file from "D:\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\office.dll" to "D:\NguyenVanSon\SmartParkingSystem\Release\office.dll".
+         Copying file from "D:\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Vbe.Interop.dll" to "D:\NguyenVanSon\SmartParkingSystem\Release\Microsoft.Vbe.Interop.dll".
+         Copying file from "D:\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Excel.xml" to "D:\NguyenVanSon\SmartParkingSystem\Release\Microsoft.Office.Interop.Excel.xml".
+         Copying file from "D:\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\office.xml" to "D:\NguyenVanSon\SmartParkingSystem\Release\office.xml".
+       PostBuildEvent:
+         copy app.config "D:\NguyenVanSon\SmartParkingSystem\Release\SmartParkingSystem.exe.config"
+         :VCEnd
+                 1 file(s) copied.
+       FinalizeBuildStatus:
+         Deleting file "Release\SmartParkingSystem.unsuccessfulbuild".
+         Touching "Release\SmartParkingSystem.lastbuildstate".
+     1>Done Building Project "D:\NguyenVanSon\SmartParkingSystem\SmartParkingSystem\SmartParkingSystem.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:19.63

@@ -452,11 +452,12 @@ namespace SmartParkingSystem {
 				 this->cbLoaixe->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 					 static_cast<System::Byte>(0)));
 				 this->cbLoaixe->FormattingEnabled = true;
-				 this->cbLoaixe->Items->AddRange(gcnew cli::array< System::Object^  >(3) {L"Xe đạp", L"Xe máy", L"Xe ô tô"});
+				 this->cbLoaixe->Items->AddRange(gcnew cli::array< System::Object^  >(4) {L"<--Chọn loại xe-->", L"Xe đạp", L"Xe máy", L"Xe ô tô"});
 				 this->cbLoaixe->Location = System::Drawing::Point(123, 168);
 				 this->cbLoaixe->Name = L"cbLoaixe";
 				 this->cbLoaixe->Size = System::Drawing::Size(170, 27);
 				 this->cbLoaixe->TabIndex = 2;
+				 this->cbLoaixe->SelectedIndexChanged += gcnew System::EventHandler(this, &frmNhanXe::cbLoaixe_SelectedIndexChanged);
 				 // 
 				 // lbThoigianvao
 				 // 
@@ -727,6 +728,7 @@ namespace SmartParkingSystem {
 			 }
 	private: System::Void frmNhanXe_Load(System::Object^  sender, System::EventArgs^  e) {
 				 loadData();
+				 cbLoaixe->SelectedIndex = 0;
 			 }
 	private:System::Void loadData(){
 				String^ sql=L"SELECT Sove,BKS,Loaive,Loaixe,Thoigianvao FROM nhanxe WHERE Trangthai='N'";
@@ -741,10 +743,11 @@ namespace SmartParkingSystem {
 				cbLoaixe->Text="";
 				cbLoaive->Text="";
 				setTime();
+				cbLoaixe->SelectedIndex = 0;
 			}
 	private: System::Void dgvCar_DataBindingComplete(System::Object^  sender, System::Windows::Forms::DataGridViewBindingCompleteEventArgs^  e) {
 				 dgvCar->ClearSelection();
-				 //dgvCar->CurrentRow->Selected = false;
+				 //dgvCar->CurrentRow->Select`ed = false;
 				 setNull();
 				 //setTime();
 			 }
@@ -752,5 +755,13 @@ namespace SmartParkingSystem {
 				DateTime date=DateTime::Now;
 				txtThoigianvao->Text=date.ToString("dd-MM-yyyy");
 			}
-	};
+	private: System::Void cbLoaixe_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+				 String^ loai_xe_gui=cbLoaixe->Text;
+				 int soxe=b->tong_xedap()+1;
+				 if (loai_xe_gui->Equals(L"Xe đạp"))
+				 {
+					 txtBienso->Text=L"B"+soxe;
+				 } 
+			 }
+};
 }

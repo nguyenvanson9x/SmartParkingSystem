@@ -28,7 +28,7 @@ void BUS_HeThong::Xoa(int id)
 void BUS_HeThong::Search(String^ search, DataGridView^ dgv)
 {
 	String^ sql = "select * from TAIKHOAN";
-	String^ sqlSearch = String::Format("select * from taikhoan where username = '{0}' or ten = '{1}'", search, search);
+	String^ sqlSearch = String::Format("select * from taikhoan where username like '%{0}%' or ten like '%{1}%'", search, search);
 	if (search->Equals(""))
 		da->Search(sql, dgv);
 	else

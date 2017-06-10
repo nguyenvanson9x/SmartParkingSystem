@@ -134,6 +134,7 @@
     <ClCompile Include="frmTraXe.cpp" />
     <ClCompile Include="frmVeThang.cpp" />
     <ClCompile Include="HeThong.cpp" />
+    <ClCompile Include="Xe.cpp" />
     <ClCompile Include="SmartParkingSystem.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -151,6 +152,7 @@
     <ClInclude Include="BUS_Thongke.h" />
     <ClInclude Include="DA_Thongke.h" />
     <ClInclude Include="DBUtils.h" />
+     <ClInclude Include="Xe.h" />
     <ClInclude Include="frmGioiThieu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
